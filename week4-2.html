@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4.2: Sui and Tang China — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '?';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #7a5c3a;
+    color: #f5f0e8;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    margin-bottom: 0;
+  }
+
+  .takeaway {
+    background: #e8e0d0;
+    border-left: 3px solid #7a5c3a;
+    padding: 1.75rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .takeaway .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 1rem;
+  }
+
+  .takeaway p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .takeaway p:last-child { margin-bottom: 0; }
+
+  .page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .nav-btn.primary {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn.primary:hover { background: #5e4630; }
+
+  .nav-btn.secondary {
+    background: transparent;
+    color: #7a5c3a;
+    border: 1px solid #c4a87a;
+  }
+
+  .nav-btn.secondary:hover { background: #ebe4d6; }
+
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .page-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #9a8b78;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 4.2</div>
+    <h1>Sui and Tang China</h1>
+    <p class="subtitle">Reunification, golden ages, and the only woman to hold the title of emperor.</p>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment" id="prog1"></div>
+    <div class="progress-segment" id="prog2"></div>
+    <div class="progress-segment" id="prog3"></div>
+    <div class="progress-segment" id="prog4"></div>
+    <div class="progress-segment" id="prog5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" data-page="1">
+    <div class="section-num">Part One</div>
+    <h2>The Sui: Reunification by Force</h2>
+
+    <p>When the Han dynasty collapsed in 220 CE, China fractured. For the next 350 years, no single dynasty controlled the whole country. Then, in 589 CE, a man named Yang Jian reunited China and founded the Sui dynasty. His story is a study in ambition and ruthlessness.</p>
+
+    <p>Yang Jian was born in 541 into an old, wealthy, powerful Buddhist family of mixed Turkish and Chinese ancestry. His father was the "Duke" of Sui. Jian was appointed to government posts as a teenager in the Northern Zhou dynasty, which then ruled most of northern China. When his father died, he was made a general. When the Northern Zhou emperor died in 578, Jian named himself regent for the infant prince, then spent two years battling and eliminating rival Zhou princes. By 580 he was Prime Minister. In 581, he arranged for the boy emperor to abdicate and proclaimed himself the first Sui emperor.</p>
+
+    <p>As emperor, Yang Jian wore royal robes, held court — and executed fifty-nine members of the old Zhou royal family. He ruled only northern China at first, but by 589 he defeated the Chen dynasty of the south. For the first time in 350 years since the Han collapse, China was again unified.</p>
+
+    <p>Yang Jian took the title "Sui Wendi" — "civil emperor of Sui" — a name that belied his bloody rise to power. It was probably borrowed from an earlier Han ruler of the same name. Like the Han before him, Sui Wendi governed with a blend of Confucianism, Daoism, and Legalism, selecting officials based on their ability and using them to weaken powerful noble families. He was also a supporter of Buddhism, claiming to be a "universal ruler." In 585 he declared: "Buddha entrusts the universal law to princes of states… We accept Buddha's trust."</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Sui Wendi's title means "civil emperor," yet his path to power was anything but civil. Why might a ruler who seized power through violence want to present himself as a scholarly, peaceable leader?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" disabled>&larr; Back</button>
+      <span class="page-num">1 of 5</span>
+      <button class="nav-btn primary" onclick="goToPage(2)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" data-page="2">
+    <div class="section-num">Part Two</div>
+    <h2>Grand Ambitions, Overextension, and Collapse</h2>
+
+    <p>The Sui dynasty's greatest accomplishment was the Grand Canal — a 700-mile waterway stretching from Chang'an in northern China to near Shanghai on the east-central coast. The canal was designed to bring rice from the south to the north, though it also allowed Sui Wendi to travel by barge to the warm, green southern regions he was fond of. Sui Wendi's son, Yangdi, took over in 604 and continued the ambitious agenda.</p>
+
+    <p>The Sui also attempted to conquer Korea, which they viewed as an extension of China's domain. But both the canal and the Korean campaign placed enormous burdens on ordinary people. Peasants were expected to spend a few weeks per year on public projects and military service, but the canal required tens of thousands of men for months on end, and Korea required years. People had no time left for their own farming. In 618, a flood led to famine. Peasant rebellions broke out across the country.</p>
+
+    <p>The pattern should look familiar. Like the Qin dynasty before it, the Sui tried to do too much, too fast. Like the Qin, the Sui succeeded in unifying much of China — but overextension brought both dynasties down. Among the rebel leaders was a man who already held a high position in the Sui regime, and who would found the next great dynasty.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Grand Canal was an extraordinary engineering achievement that served China for centuries — but its construction helped destroy the dynasty that built it. How should we weigh long-term benefits against the human costs of monumental projects?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(1)">&larr; Back</button>
+      <span class="page-num">2 of 5</span>
+      <button class="nav-btn primary" onclick="goToPage(3)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" data-page="3">
+    <div class="section-num">Part Three</div>
+    <h2>The Tang Dynasty: Four Pillars of Power</h2>
+
+    <p>In 618, Li Yuan — head of an old Turkish-Chinese family related to the Sui by marriage — declared the beginning of the Tang dynasty. He controlled an army in a northern region called Tang, and when the Sui emperor suspected him of disloyalty and threatened arrest, Li Yuan and his son Li Shimin allied with other rebel armies, captured the Sui capital, and took power.</p>
+
+    <p>Li Shimin was extraordinarily ambitious. In 626, he had his older brother murdered and forced his father to retire. He took the throne himself and became known as Tang Taizong — "Great Ancestor." Despite the bloody start, he is considered one of China's greatest emperors, and the Tang dynasty he shaped rested on four key practices.</p>
+
+    <p><strong>First, the examination system.</strong> Tang Taizong relied on smart, outspoken advisers, but he also promoted officials who came through formal examinations, held regularly across the realm. Those who passed received degrees making them eligible for government positions. One result was that many boys received a good education — studying the Confucian classics from the age of five or six. Even those who failed the exams contributed to a growing class of educated men who participated in arts, literature, painting, and calligraphy.</p>
+
+    <p><strong>Second, land reform.</strong> The Tang implemented an "equal field" system meant to give every farmer an equal portion of land. It was never entirely successful — hard to manage at scale — but it did raise agricultural production. More rice led to exports via the Grand Canal, and city workers benefited as more trade meant more jobs for merchants and craftsmen.</p>
+
+    <p><strong>Third, support for Buddhism.</strong> By the Tang period, Buddhism in China had become deeply Chinese, producing new schools like the "Pure Land School," which encouraged devotion to the Bodhisattva of Infinite Mercy. In 629, a monk named Xuanzang traveled to India in search of original Buddhist texts, bringing back sutras and providing the first outsider's account of India. Buddhism also stimulated printing — monks carved wood blocks with words, dipped them in ink, and pressed them onto paper (which had been invented in China during the Han period). Buddhism even stimulated tea drinking: monks drank tea to stay alert during long religious sessions and served it to guests instead of alcohol.</p>
+
+    <p><strong>Fourth, imperial expansion.</strong> Military expansion toward Korea was largely unsuccessful, but economic expansion along the Silk Road thrived. The Tang established military bases stretching all the way to the Pamirs in modern Afghanistan. China sent silk, herbal medicines, and ceramics down the Silk Road and received musical instruments and musicians from Persia, gold and silver vessels, and horses. From India came cotton; from Byzantium came glassware and jewelry. Chinese merchants also transshipped goods onward to Korea and Japan.</p>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(2)">&larr; Back</button>
+      <span class="page-num">3 of 5</span>
+      <button class="nav-btn primary" onclick="goToPage(4)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" data-page="4">
+    <div class="section-num">Part Four</div>
+    <h2>Wu Zhao: The Only Woman Emperor</h2>
+
+    <p>In 640, a bright, educated, beautiful, and ambitious young woman was presented to Emperor Taizong as a concubine. Her name was Wu Zhao, and she quickly became a favorite. When Taizong died, she married his son, Emperor Gaozong. They had two sons together — though Gaozong had already marked a different son as his heir. Wu Zhao arranged to have the emperor's primary wife murdered.</p>
+
+    <p>When Gaozong was crippled by a stroke, Wu Zhao ruled on his behalf for the rest of his life. A later history wrote of her: "The great powers of all under heaven devolved on the empress. Promotion and demotion, life or death, were settled by her word. The emperor sat with folded hands." When Gaozong died in 683, Wu Zhao ruled as regent. In 690, she took the extraordinary step of proclaiming herself emperor — not empress, but <em>emperor</em> — calling herself "Holy and Divine Emperor of the Zhou Dynasty." She governed for fifteen years, peacefully retired, and died in 705. Power returned to the Tang imperial family.</p>
+
+    <p>The next major Tang ruler, Xuanzong (r. 713–756), was a patron of the arts but let his personal life undermine his rule. His lover, the concubine Yang Guifei, consumed his attention, and he gave government posts to her incompetent family members. The government fell into turmoil. In 755, his general An Lushan rebelled, plunging the country into civil war. The Tang regained control in 763 but never recovered their former glory.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Wu Zhao claimed the title of "emperor" rather than "empress." What is the significance of that choice — and what does it tell us about how power and gender operated in Tang China?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(3)">&larr; Back</button>
+      <span class="page-num">4 of 5</span>
+      <button class="nav-btn primary" onclick="goToPage(5)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" data-page="5">
+    <div class="section-num">Part Five</div>
+    <h2>High Tang Culture and the Long Decline</h2>
+
+    <p>At its height, Tang China was a sophisticated, cosmopolitan civilization. Leisure culture flourished — archery, hunting, polo, cock-fighting. Vacations emerged for visiting family, attending weddings, and observing life ceremonies. Chinese New Year was celebrated with heavy drinking. Paper technology advanced further: the "tea bag" (paper-wrapped tea) appeared, and toilet paper was developed.</p>
+
+    <p>Women's roles varied sharply by setting. Urban women fared better than their rural counterparts. Some became Daoist priestesses. Women played polo. A class of courtesans emerged — educated, vocal, and critical of men. But there were darker realities too: a shortage of women led to the trafficking of Korean and Central Asian girls into China as slaves, though Tang law officially forbade the enslavement of free persons.</p>
+
+    <p>As the dynasty weakened, intellectuals began criticizing Buddhism as "barbarian" — foreign and uncultured. They revisited Confucianism, and the scholar Han Yu's "Memorial on the Bone of the Buddha" became a landmark text in the backlash against Buddhist influence. A new, reinvigorated Confucianism — often called Neo-Confucianism — would become the dominant intellectual tradition in the post-Tang era.</p>
+
+    <p>By the 830s, the Tang empire was plagued by corruption, tax shortfalls, and high rents that fell hardest on ordinary people. A massive rebellion led by Huang Chao raged from 875 to 884. Millions died, and the Tang noble class was wiped out. The last Tang ruler died in 907, and China once again fell into disarray. The Tang era is remembered above all for its poetry — writers like Wang Wei, Li Bai, and Du Fu, who captured the brilliance and sorrow of their age.</p>
+
+    <div class="divider"></div>
+
+    <div class="takeaway">
+      <div class="label">Key Takeaways</div>
+      <p><strong>The Sui reunified China but repeated the Qin's fatal mistake.</strong> Both dynasties accomplished enormous feats of centralization and infrastructure — and both collapsed from overextending their populations. The pattern of short, transformative dynasties followed by longer, more stable ones is a recurring rhythm in Chinese history.</p>
+      <p><strong>The Tang built on every dynasty before it.</strong> The examination system, the Silk Road, the blending of Confucian, Daoist, Legalist, and Buddhist ideas — none of these were Tang inventions. The Tang achievement was synthesis: taking centuries of experimentation and making it work at scale.</p>
+      <p><strong>Wu Zhao broke every rule and governed effectively.</strong> She is the only woman in Chinese history to hold the title of emperor. Her career reveals both the rigidity of gender norms and their limits — she operated within the system even as she shattered its most fundamental assumption about who could rule.</p>
+      <p><strong>Cultural confidence and political decline can coexist.</strong> The late Tang produced some of China's greatest poetry and most vibrant urban culture — even as the dynasty was collapsing. The intellectual turn against Buddhism and toward a revitalized Confucianism during this period would shape East Asian thought for centuries.</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(4)">&larr; Back</button>
+      <span class="page-num">5 of 5</span>
+      <button class="nav-btn primary" disabled>Complete</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const totalPages = 5;
+
+  function goToPage(n) {
+    document.querySelector('.page.active').classList.remove('active');
+    document.querySelector('[data-page="' + n + '"]').classList.add('active');
+
+    for (var i = 1; i <= totalPages; i++) {
+      document.getElementById('prog' + i).classList.toggle('active', i <= n);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.getElementById('prog1').classList.add('active');
+</script>
+
+</body>
+</html>
