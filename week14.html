@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 14.1: Ming China — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 1.1rem;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    line-height: 1.7;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(196, 168, 122, 0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .key-takeaways li:last-child { border-bottom: none; }
+
+  .key-takeaways li::before {
+    content: '→ ';
+    color: #c4a87a;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #7a5c3a;
+    background: transparent;
+    color: #7a5c3a;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: transparent;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #a0927e;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="course-tag">HIST 1210 · Week 14.1</div>
+    <h1>Ming China</h1>
+    <p class="subtitle">From the fall of the Mongol Yuan dynasty to the rise and retreat of the greatest naval fleet the world had ever seen, 1368–1435 CE.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="prog-1"></div>
+    <div class="progress-segment" id="prog-2"></div>
+    <div class="progress-segment" id="prog-3"></div>
+    <div class="progress-segment" id="prog-4"></div>
+    <div class="progress-segment" id="prog-5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="section-num">Part One</div>
+    <h2>From Beggar to Emperor: The Rise of Zhu Yuanzhang (1328–1368 CE)</h2>
+
+    <p>In Week 10, we studied the Mongol Yuan dynasty that ruled China from 1271 to 1368 CE. By the mid-fourteenth century, the Yuan was fading — weakened by internal divisions, corruption, and growing Chinese resentment of Mongol rule. The man who would overthrow it came from the most unlikely of origins.</p>
+
+    <p>Zhu Yuanzhang was born in 1328 CE into a poor family in central China. He was only basically literate. At the age of sixteen, his father, mother, and elder brother all died of the Black Death — the same plague that was simultaneously devastating Europe. Left with nothing, Zhu survived by begging before finding refuge in a Buddhist monastery, where he may have received a bit more education.</p>
+
+    <p>When Yuan troops attacked the monastery — fearing it was a base for the White Lotus rebels, a Buddhist-inspired resistance movement — Zhu joined the rebels. He married a rebel leader's daughter. He had unusual looks: tall, dark, bushy, with a big nose and big ears. But he grew disgusted with rebel politics and took some followers southward, where for a decade he led his own troops against both Mongol forces and rival rebel leaders.</p>
+
+    <p>Zhu was shrewd. He befriended Confucian leaders and maintained his old White Lotus connections, building a coalition that combined military strength with scholarly legitimacy. After defeating a major rival in south-central China in 1363 CE and again in the Yangzi River valley in 1367–1368 CE, he proclaimed a new dynasty: Ming — meaning "brilliance." The name carried a double meaning: "enlightened government" in the Confucian sense, and the "brilliance" of Maitreya Buddha worshipped by the White Lotus rebels. It was a name designed to satisfy both audiences.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Zhu Yuanzhang rose from begging and a monastery to founding a dynasty. Compare his path to power with General Yi Songgye in Korea (Week 13.2), who also founded a dynasty by refusing to follow orders and seizing the moment. What do their stories tell us about how new dynasties are born in East Asia?</p>
+    </div>
+
+    <p>By 1368 CE, Zhu launched an offensive against Dadu, the Yuan capital (modern Beijing). The Mongol ruler fled to the steppe. Ming troops looted and pillaged the city. Zhu then created his own capital at Yingtian — modern-day Nanjing — on the Yangzi River. He took the title Taizu, meaning "Grand Ancestor," the same title that Korea's King T'aejo would later adopt in a different transliteration when he founded the Chosŏn dynasty in 1392 CE.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="section-num">Part Two</div>
+    <h2>Taizu's Reforms (1368–1398 CE)</h2>
+
+    <p>As emperor, Zhu Yuanzhang — now Taizu — set out to serve the interests of the common people. He established public schools and urged local scholars to create more. He restored the civil service examination system that had been disrupted under Mongol rule. Recall from Week 4 that the examination system had been a cornerstone of Chinese governance since the Han dynasty (206 BCE–220 CE) and had been refined under the Tang (618–907 CE) and Song (960–1279 CE). Taizu took the exams seriously: when too many students from wealthy families succeeded, he suspended the exams out of fairness. He once said, "We sincerely sought worthies but the world responded with flunkies."</p>
+
+    <p>Taizu wanted scholars to serve ordinary people, not just accumulate prestige. He once banned two scholars who could not answer basic questions about the cost of rice or where they had actually worked. His reforms extended to the legal code as well: he passed laws to protect debtors and merchants from corrupt moneylenders. The laws also offered some protections to women, although women were not prominent in public life under the Ming.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Taizu came from poverty and seemed genuinely committed to the common people. But he also tortured suspects, applied the punishment of slow death by slicing, and sometimes executed entire families for one person's crime. How do we reconcile a ruler's reforms with his brutality? Is this a contradiction, or does it tell us something about how power works?</p>
+    </div>
+
+    <p>Indeed, Taizu had a nasty side. He prosecuted some of his own early supporters for corruption. He tortured suspects and applied horrific punishments. In old age, he grew increasingly suspicious — in 1396 CE, he executed an advisor for being "too critical," a shocking act in Confucian politics, where advisors were traditionally supposed to be free from prosecution for offering honest counsel.</p>
+
+    <p>Taizu's foreign policy was largely defensive — a sharp contrast to the expansionist Mongol Yuan dynasty that preceded him. He believed that expansion of territory was not healthy for peace. Korea, Japan, Annam (Vietnam), and Java were placed on an official list of states not to be invaded. After three decades of rule, Taizu died in 1398 CE, and a succession struggle immediately followed. His grandson initially took the throne, but Taizu's fourth son, Zhu Di, claimed he was the chosen successor. The two fought a civil war, and Zhu Di won in 1402 CE.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="section-num">Part Three</div>
+    <h2>Yongle, the Eunuchs, and Beijing (1402–1424 CE)</h2>
+
+    <p>Zhu Di took the title Yongle — meaning "perpetual happiness" — and proved to be a more expansive ruler than his father. Like Taizu, he chose qualified officials to surround him and compiled a massive collection of Chinese literature, keeping the scholar class happy. But Yongle also relied heavily on eunuchs — castrated men who had served as servants to rulers since ancient times across many Asian civilizations.</p>
+
+    <p>Eunuchs were valued by rulers for specific reasons: they could work among the women of the court without fear of scandal, and because they had no families of their own, they were considered totally devoted to the ruler. Under Yongle, however, eunuchs gained unprecedented power. They developed a secret police that operated outside the law, creating a deep tension between the eunuchs of the "inner palace" and the Confucian scholar-officials of the "outer palace." This tension would define Ming court politics for generations.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The tension between eunuchs and scholar-officials — "inner palace" versus "outer palace" — is a recurring pattern in Chinese imperial history. Compare this to the tension between the Fujiwara regents and the emperor in Heian Japan (Week 13.1), or between daimyo and the shogun. What happens when the people closest to a ruler are not the same people who run the government?</p>
+    </div>
+
+    <p>Yongle was more aggressive in foreign policy than his father. He built a new northern capital — Beijing, meaning "northern capital" — near the old Mongol capital of Dadu that Taizu had conquered in 1368 CE. He helped rebuild the Great Wall and pulled troops back to its line as a defensive barrier. He tried repeatedly to take the fight to the Mongols on the steppe, but never succeeded in defeating them.</p>
+
+    <p>Meanwhile, Ming China was largely secure and prosperous. Agriculture remained the dominant industry, but cotton and silk cloth were also produced in factories. Tea was grown, processed, packaged, and sold. Ming porcelain — distinctive white and cobalt blue — was in high demand across Asia and beyond. And with Silk Road trade declining — in part because the Central Asian cities that had served as trade hubs never fully recovered from the devastation of Timur Leng's rampages (which we discussed in the context of Week 10's Mongol aftermath) — sea-borne trade was picking up. Unable to control the steppe, Yongle turned to the sea.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="section-num">Part Four</div>
+    <h2>Zheng He and the Treasure Fleets (1405–1433 CE)</h2>
+
+    <p>Between 1403 and 1406 CE, Yongle ordered shipyards to build an astonishing 1,600 ships. The largest were 440 feet long — five times larger than the ships Christopher Columbus would sail across the Atlantic nearly a century later. The fleets included treasure ships, troop ships, warships, horse transport ships, supply ships, and water tanker ships. Nothing like them had ever been assembled.</p>
+
+    <p>To command this fleet, Yongle appointed Zheng He as admiral. Zheng He was a Muslim originally from Central Asia who had helped Yongle during the civil war. He was not particularly experienced at sea, but he was a great leader — and Yongle trusted him completely. From 1405 to 1421 CE, Yongle supported six major expeditions under Zheng He's command.</p>
+
+    <p>The voyages were largely diplomatic — designed to establish trade relationships and place China at the center of a maritime network stretching across Southeast Asia, India, the Arabian Peninsula, and East Africa. On the fifth voyage, Zheng He reached East Africa and brought back a giraffe — an animal that had never been seen in China. These were not voyages of conquest. They were voyages of display: demonstrations of Ming China's wealth, power, and reach.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Zheng He's treasure fleets were larger and more advanced than anything Europe would produce for another century. Yet China chose to stop. European powers, starting with Portugal and Spain, would soon use smaller ships to build colonial empires. What does it mean that having the capability to dominate the seas and actually doing so are two very different things?</p>
+    </div>
+
+    <p>By the early 1420s CE, Yongle began losing interest in the sea voyages. He was spending time and resources on building Beijing and defending the northern frontier against raiders. Yongle died in 1424 CE, and his successor immediately ended all sea voyages. The fleet sat idle.</p>
+
+    <p>In 1430 CE, a new emperor — Xuanzong — authorized one final voyage: the seventh. It was the largest yet: 300 ships and 27,500 men, sailing once again to East Africa. Zheng He died at sea during this voyage. He had commanded the greatest naval expeditions the world had ever seen, and he did not live to return from the last one.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page-5">
+    <div class="section-num">Part Five</div>
+    <h2>The End of the Voyages and Ming Retreat (1433–1440s CE)</h2>
+
+    <p>With Zheng He dead, the Confucian scholar-officials saw their chance to strike at the eunuchs' power. The voyages had been a eunuch project from the beginning — Zheng He himself was a eunuch, and the expeditions had been organized through the eunuch-controlled inner palace, not through the Confucian bureaucracy. The scholar-officials urged a final end to all sea voyages, and they got their way.</p>
+
+    <p>Ming power began to decline after Emperor Xuanzong died in 1435 CE. By 1440 CE, the once-mighty fleet was down to just 350 ships, many of them repurposed as barges to move goods from southern China to the north along internal waterways. The government continued to try to control sea trade by requiring licenses and restricting private ships to two masts or fewer. But private trade proved difficult to suppress — China continued to export silk, tea, and porcelain to Southeast Asia in exchange for silver.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Ming government deliberately dismantled the most powerful navy in the world. Consider this alongside what was happening in Korea at the same time (Week 13.2): King Sejong was pouring resources into hangul, moveable type, and scientific research. Both states were turning inward — but in very different ways. What does "turning inward" mean when it produces a writing system versus when it means burning your fleet?</p>
+    </div>
+
+    <p>The retreat from the sea was not simply a policy decision — it reflected a deeper tension in Ming China between two visions of the state. The eunuchs, with their access to the emperor and their control of naval expeditions, represented a court-centered, outward-looking China willing to project power across the oceans. The Confucian scholar-officials represented a bureaucratic, inward-looking China focused on agriculture, education, and proper governance at home. After Zheng He, the scholars won — and China would not again attempt to dominate the seas.</p>
+
+    <p>The consequences were enormous, though no one could have predicted them at the time. Within decades of China's retreat from the oceans, European ships — far smaller and less advanced than Zheng He's treasure ships — would begin arriving in Asian waters. The Portuguese reached the Indian Ocean in 1498 CE. The Spanish crossed the Pacific soon after. The age of European maritime expansion was beginning just as China's was ending. The world that this course has traced — the world of Asian civilizations connected by land routes, sea lanes, and shared traditions across thousands of years — was about to be transformed by forces arriving from beyond its borders.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Zhu Yuanzhang rose from poverty and rebellion to found the Ming dynasty in 1368 CE, overthrowing the Mongol Yuan dynasty and establishing his capital at Nanjing.</li>
+        <li>As Emperor Taizu (r. 1368–1398 CE), he restored the civil service exams, established public schools, and reformed the legal code — but also ruled with increasing brutality in his later years.</li>
+        <li>His son Yongle (r. 1402–1424 CE) moved the capital to Beijing, rebuilt the Great Wall, and relied heavily on eunuchs, creating a lasting tension between the "inner palace" and Confucian scholar-officials.</li>
+        <li>Between 1405 and 1433 CE, Zheng He commanded seven massive naval expeditions — the largest fleets the world had ever seen — reaching Southeast Asia, India, Arabia, and East Africa.</li>
+        <li>The voyages were diplomatic, not colonial: designed to establish trade and display Chinese power, not to conquer territory.</li>
+        <li>After Zheng He's death in 1433 CE, Confucian scholar-officials ended the voyages and dismantled the fleet. By 1440 CE, Ming China had turned decisively inward.</li>
+        <li>China's retreat from the seas coincided with the beginning of European maritime expansion — Portuguese ships reached the Indian Ocean in 1498 CE — reshaping the global order that this course has traced.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + n).classList.add('active');
+  for (let i = 1; i <= 5; i++) {
+    const seg = document.getElementById('prog-' + i);
+    if (i <= n) seg.classList.add('active');
+    else seg.classList.remove('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
