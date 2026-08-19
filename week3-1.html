@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 3.1: Buddhism — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active {
+    background: #7a5c3a;
+  }
+
+  .page { display: none; }
+  .page.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9a8b78;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+
+  .callout {
+    background: #ebe4d6;
+    border-left: 3px solid #c4a87a;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .callout .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: #4a3d2f;
+  }
+
+  .key-term {
+    font-weight: 600;
+    color: #5e4628;
+  }
+
+  .takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 1.75rem 1.75rem;
+    border-radius: 6px;
+    margin: 2rem 0;
+  }
+
+  .takeaways .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .takeaways li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .takeaways li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn.primary {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn.primary:hover {
+    background: #5e4628;
+  }
+
+  .nav-btn.secondary {
+    background: transparent;
+    color: #7a5c3a;
+    border: 1px solid #c4a87a;
+  }
+
+  .nav-btn.secondary:hover {
+    background: #ebe4d6;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .page-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #9a8b78;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 3.1</div>
+    <h1>Buddhism</h1>
+    <div class="subtitle">A faith born from Hindu roots that charted a "Middle Way" between asceticism and worldly life</div>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment" id="prog1"></div>
+    <div class="progress-segment" id="prog2"></div>
+    <div class="progress-segment" id="prog3"></div>
+    <div class="progress-segment" id="prog4"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" data-page="1">
+    <div class="section-num">Part One</div>
+    <h2>The Buddha and the Middle Way</h2>
+
+    <p>Buddhism begins with a single figure: <span class="key-term">Gautama Buddha</span>, who lived roughly between 550 and 450 BCE. Rather than choosing between the extremes of harsh self-denial and ordinary worldly life, the Buddha pursued what he called the <span class="key-term">"Middle Way"</span> — a path of disciplined moderation.</p>
+
+    <p>According to tradition, Gautama gained enlightenment while sitting under a <span class="key-term">pipal tree</span> at Gaya in the region of Bihar. In Buddhist symbolism, the pipal tree is associated with the Buddha's birth and awakening, while the <span class="key-term">stupa</span> — a domed monument — is associated with his death. He is believed to have died at about the age of 80.</p>
+
+    <div class="divider"></div>
+
+    <h2>Three Concepts Inherited from Hinduism</h2>
+
+    <p>Buddhism did not emerge from nothing. Three of its foundational ideas came directly from the Hindu tradition that preceded it:</p>
+
+    <p><span class="key-term">Samsara</span> — the cycle of transmigration, the endless round of birth, death, and rebirth that all living beings are caught in.</p>
+
+    <p><span class="key-term">Karma</span> — the moral law of cause and effect. One's deeds in this life shape the circumstances of the next. The word itself simply means "deeds."</p>
+
+    <p><span class="key-term">Nirvana</span> — liberation or release from the cycle of rebirth. This is the Buddhist equivalent of the Hindu concept of <em>moksha</em>, though the two traditions understand the nature of that liberation differently.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>Buddhism shares its core vocabulary — samsara, karma, liberation — with Hinduism. What does it mean for a new religious movement to borrow its parent tradition's framework while fundamentally reinterpreting its conclusions?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" disabled>← Previous</button>
+      <span class="page-num">1 of 4</span>
+      <button class="nav-btn primary" onclick="goTo(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" data-page="2">
+    <div class="section-num">Part Two</div>
+    <h2>The Four Noble Truths</h2>
+
+    <p>The core of the Buddha's teaching is compressed into four propositions, known as the <span class="key-term">Four Noble Truths</span>:</p>
+
+    <p><strong>First:</strong> Life is suffering (<em>dukh</em>).</p>
+    <p><strong>Second:</strong> Suffering is caused by desire.</p>
+    <p><strong>Third:</strong> End desire and you end suffering.</p>
+    <p><strong>Fourth:</strong> The way to end suffering is through the Eightfold Path.</p>
+
+    <p>Notice the structure: diagnosis, cause, prognosis, treatment. The Buddha is often compared to a physician — not prescribing belief, but identifying a problem and offering a method.</p>
+
+    <div class="divider"></div>
+
+    <h2>The Eightfold Path</h2>
+
+    <p>The Fourth Noble Truth points to a practical discipline — eight principles for living that, taken together, lead toward the cessation of suffering:</p>
+
+    <p>Right views. Right aspirations. Right speech. Right conduct. Right livelihood. Right effort. Right mindfulness. Right consciousness.</p>
+
+    <p>These are not commandments handed down by a god. They are practices — habits of attention, behavior, and thought that the Buddha argued any person could cultivate. The path is demanding but democratic: it requires no priest, no sacrifice, no ritual intermediary.</p>
+
+    <p>This was a direct challenge to the Vedic Brahmanical system that dominated South Asian religious life. In that system, access to the sacred required Brahman priests who performed elaborate rituals and sacrifices on behalf of others. The Four Noble Truths and the Eightfold Path bypassed all of this. They offered a diagnosis of suffering and a practical method for ending it that any individual could follow — regardless of birth, caste, or access to a priestly class. Where the Brahmanical system made spiritual progress dependent on ritual intermediaries, Buddhism made it a matter of personal discipline.</p>
+
+    <p>This accessibility had enormous consequences. Because the Four Noble Truths required no priesthood and no ritual infrastructure, Buddhism was portable in a way that Brahmanical Hinduism was not. It could be taught, learned, and practiced anywhere — which helps explain why Buddhism eventually spread far beyond India, across Central Asia, East Asia, and Southeast Asia, while Brahmanical Hinduism remained more closely tied to the social structures of the subcontinent.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>The Eightfold Path requires no priestly intermediary and no sacrificial ritual. How does this contrast with the Vedic Brahmanical system you studied in Week 2? What kinds of people might have found this alternative appealing — and why?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goTo(1)">← Previous</button>
+      <span class="page-num">2 of 4</span>
+      <button class="nav-btn primary" onclick="goTo(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" data-page="3">
+    <div class="section-num">Part Three</div>
+    <h2>The Sangham: Buddhist Community and Monastic Life</h2>
+
+    <p>Buddhism's institutional structure was <span class="key-term">monastic</span>. The basic unit of organization was the <span class="key-term">sangham</span> — a community or meeting of monks. But monasteries were not free-floating spiritual retreats. They required money, justification, and ideology to sustain themselves.</p>
+
+    <p>Different sangham denominations existed, and monks from various communities would gather during the rainy season. Monasteries were largely self-enclosed worlds, and <span class="key-term">monastic councils</span> held the authority to decide what counted as canonical scripture. Near the city of Patna, a university for Buddhist studies was established — one of the earliest formal centers of religious learning in South Asia.</p>
+
+    <p>Buddhism also embraced <span class="key-term">pilgrimage</span> — travel to places where the Buddha had lived and taught. Rather than worshipping images of the Buddha himself (at least in the early centuries), followers venerated symbols: the <em>lotus</em>, the <em>pipal tree</em>, the <em>umbrella</em>, the <em>stupa</em>, and the <em>empty throne</em>.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>The sangham needed money, justification, and ideology. What does it tell us about the relationship between religion and material resources that even a faith built on renouncing desire required an economic infrastructure to survive?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goTo(2)">← Previous</button>
+      <span class="page-num">3 of 4</span>
+      <button class="nav-btn primary" onclick="goTo(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" data-page="4">
+    <div class="section-num">Part Four</div>
+    <h2>Two Branches of Buddhism</h2>
+
+    <p>As Buddhism spread, it divided into two major branches, each with a distinct character:</p>
+
+    <p><span class="key-term">Theravada Buddhism</span> ("Way of the Elders") stayed closer to what practitioners considered the original teachings. It emphasized worship of the historic Buddha only, held up the <em>arhat</em> — the perfected disciple — as the ideal, and stressed monastic lifestyle and individual self-effort. Simple and austere, Theravada Buddhism remains popular today in Burma and Thailand.</p>
+
+    <p><span class="key-term">Mahayana Buddhism</span> ("Greater Vehicle") evolved a larger, more elaborate system. It introduced a wide number of deities who could be approached by ordinary people, stressed lay life over monasticism, and centered on the figure of the <em>bodhisattva</em> — a being destined to become a Buddha who delays final liberation to help others. Mahayana Buddhism featured complex rituals and devotional practices, and it spread broadly across Central and East Asia.</p>
+
+    <div class="divider"></div>
+
+    <h2>Buddhism and Jainism: Parallel Paths</h2>
+
+    <p>Buddhism and Jainism emerged in the same region (modern Bihar), in the same era, and in opposition to many of the same things. The parallels are striking: both founders came from royal families. Both were non-Brahmans who were critical of the Brahmanical establishment. Both rejected Vedic sacrifice, animal sacrifice, and the varna system. Both used non-Sanskritic languages. Both developed missionary tendencies.</p>
+
+    <p>Yet their trajectories diverged. Buddhism spread far beyond India — across Central Asia, East Asia, and Southeast Asia — but eventually declined and nearly disappeared within the subcontinent itself. Jainism, by contrast, never spread beyond India, but it never died there either.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>Two faiths born in the same place, at the same time, rejecting many of the same things — yet one spread globally and faded at home, while the other stayed local and survived. What might account for such different outcomes?</p>
+    </div>
+
+    <div class="takeaways">
+      <div class="label">Key Takeaways</div>
+      <ul>
+        <li>Buddhism inherited samsara, karma, and the idea of liberation from Hinduism but reinterpreted each concept.</li>
+        <li>The Four Noble Truths diagnose suffering and prescribe the Eightfold Path as a practical, non-ritualistic remedy.</li>
+        <li>The sangham provided Buddhism's institutional backbone — monastic, self-governing, and dependent on material support.</li>
+        <li>Theravada and Mahayana represent two fundamentally different visions of Buddhist practice: austere self-effort versus devotional community.</li>
+        <li>Buddhism and Jainism share deep structural parallels, but their geographic fates were opposite.</li>
+      </ul>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goTo(3)">← Previous</button>
+      <span class="page-num">4 of 4</span>
+      <button class="nav-btn primary" disabled>Complete ✓</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const pages = document.querySelectorAll('.page');
+  const totalPages = pages.length;
+
+  function goTo(n) {
+    pages.forEach(p => p.classList.remove('active'));
+    document.querySelector(`[data-page="${n}"]`).classList.add('active');
+    for (let i = 1; i <= totalPages; i++) {
+      document.getElementById('prog' + i).classList.toggle('active', i <= n);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  goTo(1);
+</script>
+
+</body>
+</html>
