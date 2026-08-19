@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4.1: Early China — Philosophies and First Empires — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* Header */
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  /* Progress bar */
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  /* Pages */
+  .page { display: none; }
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Content */
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  /* Callout */
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '?';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #7a5c3a;
+    color: #f5f0e8;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    margin-bottom: 0;
+  }
+
+  /* Key takeaways */
+  .takeaway {
+    background: #e8e0d0;
+    border-left: 3px solid #7a5c3a;
+    padding: 1.75rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .takeaway .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 1rem;
+  }
+
+  .takeaway p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .takeaway p:last-child { margin-bottom: 0; }
+
+  /* Navigation */
+  .page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .nav-btn.primary {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn.primary:hover { background: #5e4630; }
+
+  .nav-btn.secondary {
+    background: transparent;
+    color: #7a5c3a;
+    border: 1px solid #c4a87a;
+  }
+
+  .nav-btn.secondary:hover { background: #ebe4d6; }
+
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .page-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #9a8b78;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 4.1</div>
+    <h1>Early China: Philosophies and First Empires</h1>
+    <p class="subtitle">From competing ideas in a fragmented land to the first unified empire and the opening of the Silk Road.</p>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment" id="prog1"></div>
+    <div class="progress-segment" id="prog2"></div>
+    <div class="progress-segment" id="prog3"></div>
+    <div class="progress-segment" id="prog4"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" data-page="1">
+    <div class="section-num">Part One</div>
+    <h2>Confucius and His World</h2>
+
+    <p>Like Jainism and Buddhism — which we have already encountered — Confucianism begins with a single person, starts around the sixth century BCE, grows out of frustration with the status quo, and spreads through preaching and disciples. The parallels are striking, and not coincidental: across Asia, this was an era of profound intellectual ferment.</p>
+
+    <p>The man we call "Confucius" was born Kong Zhongni (551–479 BCE) in the state of Lu in northeastern China. His father, a military officer, died when Zhongni was only three, and he was raised by his mother in semi-poverty. Despite this, he received a good education and eventually took a government position in Lu, working a variety of jobs — shepherd, cowherd, clerk, bookkeeper. He grew frustrated at not being promoted.</p>
+
+    <p>In mid-life, Zhongni traveled to other states looking for a ruler who would accept his radical idea: that government service should not be tied to birth, but to intelligence, education, and virtue. "The noble-minded person loves virtue," he said. "The ordinary-minded person loves what serves his own interests." No ruler would take him up on this.</p>
+
+    <p>Zhongni returned to Lu and became a teacher. His students began calling him "Kongzi" — Master Kong. The name "Confucius" was given to him centuries later by European Christian missionaries in the seventeenth century. There is no Chinese word for "Confucianism," though the term <em>Ru</em> refers to people who study the classics.</p>
+
+    <p>Master Kong taught his students to value kindness, justice, virtue, and respect for family and ancestors. His ideal world was one where everyone existed within a web of family relationships linked by trust, obligation, and obedience. At the time, China was a patchwork of small, competing states — not unified, not peaceful. Confucius hoped his students would change things.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Confucius believed government positions should be earned through merit, not birth. Why might rulers in a fragmented China have been reluctant to accept this idea?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" disabled>&larr; Back</button>
+      <span class="page-num">1 of 4</span>
+      <button class="nav-btn primary" onclick="goToPage(2)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" data-page="2">
+    <div class="section-num">Part Two</div>
+    <h2>Texts, Beliefs, and Rival Schools</h2>
+
+    <p>Confucianism became the mainstream of Chinese and East Asian tradition, built around five core classics: the <em>Book of Documents</em> (speeches from earlier Zhou kings), the <em>Book of Odes</em> (about 300 songs and poems), the <em>Book of Changes</em> (a divination handbook), <em>The Rites</em> (three books on ritual matters), and the <em>Spring and Autumn Annals</em> (a history of Confucius's home state). These five were later expanded to thirteen, and they remained at the center of Chinese formal education until the twentieth century.</p>
+
+    <p>These texts were valued because they were thought to be old — because they harkened back to a supposed "glorious" past. Studying them meant dry memorization, though Confucius himself warned: "To learn without thinking is unavailing; to think without learning is dangerous." Over time, the Confucian classics spread to Japan and Korea, where scholars could read them in the original Chinese, not in translation. Their appeal was partly because they came from a larger and "successful" China, but also because they offered something that felt like universal truth.</p>
+
+    <p>The central message of Confucianism is leadership by moral example. Confucius argued that regulation and punishment only teach people to find ways around the rules. But if you lead by proper ritual (<em>li</em>) and moral force (<em>de</em>), people would "spontaneously correct themselves." The key figure was the Confucian gentleman who upholds three core virtues among many: <em>li</em> (ritual, as a means of self-discipline), <em>ren</em> (humanness — the ability to empathize, expressed in the principle "what you do not want for yourself, do not do to others"), and <em>xiao</em> (filial piety — showing respect to parents and ancestors).</p>
+
+    <p>There is a tension within this system. On one side, filial piety is deeply hierarchical — you respect your elders and parents. On the other, the meritocratic ideal says anyone can rise through self-improvement. Over time, the merit-based idea won, finding its most concrete form in the Chinese civil service examination. But Chinese society also recognized that merit itself is necessarily unequal: everyone can try to perfect themselves, but not everyone does, nor at the same time.</p>
+
+    <p>Confucius's ideas were not the only ones circulating. The <strong>Daoists</strong>, followers of the semi-legendary Laozi ("Old Master," d. 531 BCE), believed that everything follows the eternal Dao — the "Way" or "Path" — the force behind all processes of change. Daoists wanted leadership in tune with the Way. The <strong>Legalists</strong>, by contrast, were realists who believed that if laws were clear and specific, everyone would do their duty. For Legalists, law — not personal involvement by the ruler — was the key to order. During Confucius's time, none of these philosophies ever gained full dominance. It was a time of competing ideas.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Confucians, Daoists, and Legalists each proposed a different answer to the same question: how do you create social order? Which of their approaches seems most realistic to you — and what does "realistic" even mean in this context?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(1)">&larr; Back</button>
+      <span class="page-num">2 of 4</span>
+      <button class="nav-btn primary" onclick="goToPage(3)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" data-page="3">
+    <div class="section-num">Part Three</div>
+    <h2>The Qin: China's First Empire</h2>
+
+    <p>While philosophers debated the right way to govern, the political landscape was shifting. Across the ancient world, small kingdoms were consolidating into larger empires: the Greek city-states gave way to Alexander the Great by the fourth century BCE; India consolidated under the Maurya dynasty of Ashoka (r. 268–232 BCE). China underwent a similar process, and its first empire was the Qin (221–207 BCE).</p>
+
+    <p>The Qin began as a peripheral state in the northwest, with its capital at Xianyang on the Yellow River. Officially founded in 770 BCE as one of many states in the earlier Zhou period, Qin was not as well developed as some of its neighbors. But its location on the frontier made it more warlike and more willing to experiment with non-Confucian ideas — particularly Legalism. Qin might have had what historians call "the advantage of backwardness." As early as 361 BCE, the Qin leader Lord Shang had promulgated new legal codes, unified weights and measurements, centralized the bureaucracy, and created non-hereditary titles.</p>
+
+    <p>In 221 BCE, the ruler of Qin united the country by force, conquering six other states. He took a new title: Qin Shi Huangdi — "First Emperor of Qin." The word <em>huangdi</em>, meaning "emperor," was itself a new innovation at this moment, and it would be used until 1912. Qin Shi Huangdi standardized the country's money and written language, built a wall to protect the northern frontier (an early form of the later Great Wall), and supported agriculture and water systems. He was proud, declaring: "Wherever there are traces of people, there are none who are not my subjects."</p>
+
+    <p>However, his laws were strict and the population began to rebel. Hoping to live well in the afterlife, he built a great tomb near the modern city of Xi'an, guarded by thousands of clay soldiers. He died in 210 BCE. His son succeeded him but was quickly overthrown. China went into a period of warfare before a new empire emerged. The Qin dynasty lasted barely fifteen years — but it set the template for what a Chinese empire could be: centralized authority, standardized systems, monumental architecture.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Qin used Legalist methods — strict laws, centralized control — to unify China. Why might a system that was effective at conquering and standardizing have been unable to sustain itself?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(2)">&larr; Back</button>
+      <span class="page-num">3 of 4</span>
+      <button class="nav-btn primary" onclick="goToPage(4)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" data-page="4">
+    <div class="section-num">Part Four</div>
+    <h2>The Han Dynasty and the Silk Road</h2>
+
+    <p>The Han dynasty (206 BCE – 220 CE) would last over four centuries and support two major projects: Confucian government and Silk Road trade. Its most powerful ruler was Emperor Wu (r. 141–87 BCE), who took the throne at age fifteen and ruled for fifty-four years — a length not repeated for centuries.</p>
+
+    <p>Wu created a stable, centralized government by borrowing from several schools of thought. From the Legalists he took law and management techniques. From the Daoists came his reliance on spiritual power. And from Confucius — most importantly — came his belief that education and virtue should be the basis of government. Wu held an examination in 140 BCE and selected one hundred young scholars, most of them commoners. Some became his advisers. This was a fundamental change: for the first time, a merit-based system for selecting officials was taking shape. This combined political philosophy — drawing on Legalist, Daoist, and Confucian ideas together — is what we call "Confucianism" today, though it includes much more than what Kongzi himself taught.</p>
+
+    <p>Wu faced a serious problem: nomadic warriors raiding his northern frontier. His foot soldiers — armed with spears, swords, and crossbows — were not enough. He needed cavalry. Wu sent an official named Zhang Qian to explore the lands west of China in search of horses. Zhang was gone twelve years, traveling thousands of miles on foot and horseback. He returned with news: the peoples of Central Asia had horses and wanted silk. Wu sent caravans of silk-laden camels westward, and the trade proved enormously successful. This was the birth of the Silk Road.</p>
+
+    <p>By around 100 BCE, trade along the Silk Road was thriving. Chinese silk reached the Middle East and Rome. In return, Roman, Greek, Persian, and Indian goods and ideas flowed into China. Among those ideas was Buddhism, which reached the Han capital of Luoyang by the mid-first century CE. At the same time, Daoism — influenced by Buddhism — developed into an organized religion with temples, priests, rituals, and sacred texts. The "Way" was becoming more Buddhist in character. When the Han dynasty collapsed in 220 CE, China became divided. During the next 350 years, many intellectuals — dismayed by corruption — became Buddhist monks. Buddhism continued to grow, eventually spreading to Korea and Japan.</p>
+
+    <div class="divider"></div>
+
+    <div class="takeaway">
+      <div class="label">Key Takeaways</div>
+      <p><strong>China's intellectual foundations were laid during a time of political fragmentation.</strong> Confucians, Daoists, and Legalists each proposed a different answer to the question of how to create order. No single school won outright — the most durable governing philosophy, which we now call "Confucianism," was actually a synthesis of all three.</p>
+      <p><strong>The Qin unified China by force but could not hold it.</strong> Their Legalist methods — standardization, centralization, strict law — were powerful tools of state-building but generated resistance that brought the dynasty down in barely fifteen years.</p>
+      <p><strong>The Han made the synthesis work.</strong> Emperor Wu combined Legalist administration, Daoist spiritual authority, and Confucian meritocracy into a durable governing model. His civil service examination fundamentally changed who could hold power.</p>
+      <p><strong>The Silk Road was not just a trade route.</strong> It carried goods, but it also carried faith. Buddhism traveled the Silk Road into China, mingled with local traditions, and reshaped Chinese intellectual and religious life for centuries to come.</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(3)">&larr; Back</button>
+      <span class="page-num">4 of 4</span>
+      <button class="nav-btn primary" disabled>Complete</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const totalPages = 4;
+
+  function goToPage(n) {
+    document.querySelector('.page.active').classList.remove('active');
+    document.querySelector('[data-page="' + n + '"]').classList.add('active');
+
+    for (var i = 1; i <= totalPages; i++) {
+      document.getElementById('prog' + i).classList.toggle('active', i <= n);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.getElementById('prog1').classList.add('active');
+</script>
+
+</body>
+</html>
