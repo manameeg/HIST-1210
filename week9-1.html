@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 9.1: Song China — Power, Diplomacy, and the Scholar-Official | HST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 1.1rem;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    margin-bottom: 0;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem;
+    border-radius: 6px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(196,168,122,0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .key-takeaways li:last-child { border-bottom: none; }
+
+  .key-takeaways li::before {
+    content: '—';
+    color: #c4a87a;
+    margin-right: 0.5rem;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: none;
+    border: 1.5px solid #7a5c3a;
+    color: #7a5c3a;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: none;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #7a5c3a;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="course-tag">HST 1210 · Week 9.1</div>
+    <h1>Song China: Power, Diplomacy, and the Scholar-Official</h1>
+    <p class="subtitle">Three rival states, a new kind of government, and the exam system that shaped Chinese society for centuries.</p>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment active"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="section-num">Part One</div>
+    <h2>A Time of Competing Powers</h2>
+
+    <p>When the Tang dynasty collapsed in 907 CE, China did not simply pass from one dynasty to the next. Instead, the former empire fractured into a landscape of competing powers. The period that followed was a time of regional rivalry, military tension, and creative political experimentation. Three major states emerged to dominate this world: the Khitan Liao dynasty, the Song dynasty, and the Xixia (Western Xia) dynasty.</p>
+
+    <p>Understanding the Song dynasty requires understanding its neighbors — because the Song defined itself largely in response to the threats on its borders.</p>
+
+    <div class="divider"></div>
+
+    <p>The first of these powers was the <strong>Khitan Liao dynasty</strong>. In the tenth century, a chief named Yelu Abaoji united the Khitan people — hunters and herders who lived in northeastern China. When the Tang dynasty collapsed, Abaoji extended his authority southward to the Great Wall. He was described as an expert horseman, archer, and enforcer of order among his people. He declared himself head of a new dynasty, naming it <strong>Liao</strong> after a river in his homeland.</p>
+
+    <p>Abaoji governed through an unusual dual system. He appointed military men to govern the Khitan and Liao people of the steppe in the northeast, while civilians administered the Chinese population living near the Great Wall in the south. Despite ruling Chinese subjects, Abaoji was wary of Chinese cultural influence. He reportedly said: <em>"I can speak Chinese, but I never speak it in the presence of my people because I fear that they may emulate the Chinese and grow soft and timid."</em></p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Why would Abaoji create two separate governments for two different groups of people within his empire? What does this tell us about the challenges of ruling a diverse population?</p>
+    </div>
+
+    <p>The second power was the <strong>Song dynasty</strong> itself. In 960, a Chinese military commander named <strong>Zhao Kuangyin</strong> conquered the portion of China that the Liao dynasty did not control. He called his new empire Song. Zhao took three decisive steps: he kept his army under strict control, established a capital at <strong>Kaifeng</strong> on the south bank of the Yellow River, and appointed civil officials — rather than military men — to govern the country.</p>
+
+    <p>The Song dynasty's approach to its northern neighbors was distinctive. Rather than relying primarily on military force, the Song depended on <strong>diplomacy</strong> and <strong>payments</strong>. They paid the Liao dynasty 200,000 bolts of silk and 100,000 ounces of silver per year so the Khitan would not attack. They also tried to maintain goodwill by sending women to serve as wives to Khitan emperors.</p>
+
+    <p>The third power was the <strong>Xixia dynasty</strong>, also called the Tangut empire or Western Xia. In 1038, the Tangut people — who were related to the Tibetans — established the Xixia dynasty in northwestern China. By 1044, the Song were sending silk, silver, and tea to the Xixia as well, simply to keep the peace. Like Abaoji before him, the Tangut chief was concerned about Chinese cultural influence and worried about Chinese "softness."</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 4</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="section-num">Part Two</div>
+    <h2>The Song Exam System</h2>
+
+    <p>The Song dynasty's emphasis on civilian governance rather than military power helped produce one of the most important institutions in Chinese history: the civil service examination system. While exams had existed in earlier dynasties, under the Song the system reached its peak of importance and influence.</p>
+
+    <p>Several features of Song political life shaped the exam system. Government officials continued to use family connections to hold high posts. A class of "scholar-officials" retained considerable power. And Song subjects increasingly believed that public service was an obligation for educated people. The exam system formalized all of this — it created a structured pathway from education to government service, supported by an entire culture of preparation.</p>
+
+    <div class="divider"></div>
+
+    <p>The examination was held roughly every three years at the <strong>county</strong>, <strong>prefecture</strong>, and <strong>national</strong> levels. Competition was fierce: only about 10 percent of candidates passed. However, some passing grades were reserved for candidates from different regions, so the results would be geographically representative. In practice, most successful candidates already came from wealthy families, but the system at least introduced the principle of merit alongside privilege.</p>
+
+    <p>What was it like to prepare for the exam? For boys in Song China, education began at <strong>age five</strong>. A family would hire a private tutor, and a boy might be joined by his brothers or cousins. The first eight to ten years were devoted entirely to <strong>memorizing the Confucian classics</strong> — works of philosophy, literature, and history. Students also practiced writing Chinese characters with brush and ink. Bad handwriting on the exam was an automatic failure.</p>
+
+    <p>Only in the teenage years did a tutor begin teaching the <em>meaning</em> of what students had memorized. The exam itself demanded sophisticated interpretation. A sample question might ask students to explain two lines of classical poetry: <em>"Stalwart was Duke Liu / Not one to sit down or relax."</em> A student needed to know that these lines came from the <em>Classic of Poetry</em>, that the poem described a nobleman who traveled north, and that the real subject of the question was northern frontier policy. Answers could take the form of an essay or a poem. Students could take the exam more than once, starting in their early teenage years.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Song exam system rewarded years of memorization followed by interpretation. How does this compare to how you are assessed in your own education? What does a society's exam system reveal about what it values?</p>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 4</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="section-num">Part Three</div>
+    <h2>From Northern Song to Southern Song</h2>
+
+    <p>The balance of power among the three states did not hold. In the early twelfth century, the Khitan Liao dynasty began to weaken. A new force — the <strong>Jurchen people</strong> from northeastern China — challenged and defeated the Khitan, establishing the <strong>Jin dynasty</strong> in its place.</p>
+
+    <p>The Jurchens did not stop there. They began to push southward, attacking Song territory. The Song ruler at the time, Emperor <strong>Qinzong</strong> (r. 1126–27), was weak, and in 1126 the Song abandoned their northern capital of Kaifeng. This moment marks a fundamental turning point: from 1127 until the end of the dynasty, the Song is known as the <strong>Southern Song</strong>.</p>
+
+    <div class="divider"></div>
+
+    <p>The Southern Song established a new capital at <strong>Lin'an</strong> — modern-day <strong>Hangzhou</strong> — on the southern coast. This was remarkable: it was the first time in Chinese history that a seaport served as the imperial capital. The move had far-reaching consequences. Cut off from the overland Silk Road by the Jin state to the north, Southern Song merchants turned increasingly to the sea, expanding trade with <strong>Southeast Asia</strong> and across the <strong>Indian Ocean</strong>.</p>
+
+    <p>This pivot from land to sea transformed the Song economy and set the stage for a wave of innovation. Proximity to the coast at Hangzhou drove advances in shipbuilding: the development of <strong>multiple masts</strong>, <strong>sternpost rudders</strong>, and <strong>magnetic compasses</strong> for navigation. These were not small improvements — they represented a leap in maritime technology that would shape oceanic trade for centuries.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Song lost territory in the north but became a major maritime power as a result. Can a political crisis also be a catalyst for innovation? What other examples can you think of?</p>
+    </div>
+
+    <p>Meanwhile, Song military engineers developed new weapons. "Fire powder" — gunpowder — had been known since the Tang dynasty, but the Song were the first to weaponize it systematically. They mixed powder and oil in a bamboo pole to create a <strong>flame thrower</strong>, which helped defeat a Jurchen attack in 1120. Engineers also developed bombs and rockets that could be launched by catapult.</p>
+
+    <p>Agricultural innovation kept pace. In 1012, the Song began importing rice seed from Southeast Asia. Through selective breeding, they developed new strains that allowed up to <strong>three plantings per year</strong> — a dramatic increase in food production that supported a growing urban population.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 4</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="section-num">Part Four</div>
+    <h2>Neo-Confucianism: A New Philosophy for a New Era</h2>
+
+    <p>The Song period also saw a major intellectual development. Buddhism had posed a serious challenge to Confucianism for centuries, offering answers to questions about life, death, and the nature of existence that the Confucian classics did not easily address. Song philosophers felt the need to respond.</p>
+
+    <p>The most important figure in this response was <strong>Zhu Xi</strong>, a scholar-bureaucrat born in southern China. Zhu rejected Buddhism but recognized that Confucianism, as traditionally understood, was not adequate for the spiritual questions people were asking. His solution was creative: he borrowed ideas from Daoism and wove them into a reimagined Confucian framework.</p>
+
+    <div class="divider"></div>
+
+    <p>Zhu Xi taught that the visible world is a temporary reflection of an eternal, perfect pattern. The spiritual goal of every person, he argued, should be to make their life conform as closely as possible to that eternal perfection. This was a fundamentally different emphasis from traditional Confucianism's focus on social roles and public duty. Zhu was not interested in reforming governments — he was interested in reforming the self.</p>
+
+    <p>His ideas became known as <strong>neo-Confucianism</strong>. The movement proved enormously influential. Neo-Confucianism would go on to shape intellectual life not only in China but across East Asia for centuries, becoming the dominant philosophical tradition of the late imperial period.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Zhu Xi borrowed from Daoism to strengthen Confucianism against the challenge of Buddhism. What does it mean for a philosophical tradition to absorb ideas from its rivals? Is that a sign of strength or weakness?</p>
+    </div>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>After the Tang collapsed, three rival states — the Khitan Liao, Song, and Xixia — competed for power, and the Song relied on diplomacy and payments rather than military dominance.</li>
+        <li>The Song civil service exam system reached its peak, creating a class of scholar-officials through a grueling process of memorization, calligraphy, and interpretation of the Confucian classics.</li>
+        <li>When the Jurchens (Jin dynasty) conquered the north in 1127, the Southern Song moved to the coastal city of Hangzhou, pivoting from overland Silk Road trade to maritime commerce across Southeast Asia and the Indian Ocean.</li>
+        <li>This pivot drove innovations in navigation, shipbuilding, gunpowder weapons, and agricultural techniques like selective rice breeding.</li>
+        <li>Zhu Xi's neo-Confucianism blended Confucian and Daoist ideas to address spiritual questions that Buddhism had raised, becoming one of the most influential philosophical movements in East Asian history.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 4</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showPage(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + n).classList.add('active');
+    document.querySelectorAll('.progress-segment').forEach((s, i) => {
+      s.classList.toggle('active', i < n);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
