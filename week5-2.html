@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5.2: Indo-Islamic Society and Culture — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '?';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #7a5c3a;
+    color: #f5f0e8;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem 1.75rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e8e0d2;
+  }
+
+  .key-takeaways li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #7a5c3a;
+    border-radius: 3px;
+    background: transparent;
+    color: #7a5c3a;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: transparent;
+    color: #7a5c3a;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 5.2</div>
+    <h1>Indo-Islamic Society and Culture</h1>
+    <div class="subtitle">How two great civilizations met, mixed, and transformed each other — and why the story is far more complicated than "Hindu vs. Muslim."</div>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="seg1"></div>
+    <div class="progress-segment" id="seg2"></div>
+    <div class="progress-segment" id="seg3"></div>
+    <div class="progress-segment" id="seg4"></div>
+    <div class="progress-segment" id="seg5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <div class="section-num">Part 1</div>
+    <h2>Naming "the Other"</h2>
+    <p>One of the most revealing things about the encounter between Islamic and South Asian cultures is how each side referred to the other. The early Muslim invaders used the word "Hindu" not as a religious category but as a socio-geographic designation. In the early accounts, everybody in South Asia — including Buddhists and Jains — was a "Hindu." They were simply the people who lived beyond the Indus River.</p>
+    <p>South Asians returned the favor. Rather than calling the new arrivals "Muslims," early sources used ethnic names like "Turks," or geographical terms like <em>Yavanas</em> — a word originally applied to the Greeks but eventually used for anyone from West Asia. Other sources called the invaders <em>mleccha</em>, a derogatory Sanskrit term meaning essentially "foreign barbarians." It was the same label later applied to Christian Europeans. South Asians continued using this kind of ethnic and regional terminology as late as the fifteenth century.</p>
+    <p>The point is important: conflicts that we look back on and interpret as "religious" were not nearly so simple in the minds of the people who lived through them.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>If neither side initially used religious labels for the other, what does that suggest about how central religion actually was to the early encounters? When and why might religious labels have become more important?</p>
+    </div>
+
+    <p>It is also worth noting that South Asians were well acquainted with Arabs and other Western Asian peoples long before Islam even existed. Especially along the western coast, South Asians had been in contact with Arabs, Persians, and Africans for literally thousands of years through extensive trade networks across the Arabian Sea. There were even resident Arab communities in the main merchant ports. So while Islam may have been new, the people who brought it were by no means strangers.</p>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" disabled>← Back</button>
+      <button class="nav-btn" onclick="showPage(2)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <div class="section-num">Part 2</div>
+    <h2>Muslim Social Structure in South Asia</h2>
+    <p>Within the South Asian Muslim community, three distinct social strata emerged. At the top were the <strong>foreign-born elites</strong> — people from Turkey, Persia, Arabia, and elsewhere in Western Asia who had come to South Asia as leaders of invading forces or as palace officials, military commanders, judges, and teachers. In the early centuries, skilled and educated people from across the Muslim world came to South Asia to seek their fortunes, perhaps not unlike how, centuries later, young Englishmen would "come out" to India to find career opportunities that were scarce at home.</p>
+    <p>The most successful of these immigrants moved into powerful administrative positions and were brought into the <em>iqta</em> system. Iqtas were grants of land — usually including villages — that became the domains of the holders, from which they derived their incomes. Often iqta holders became rural landlords, setting up residences or forts in their districts while serving at court. But because these elites mixed very little with local people, caring only about extracting taxes and tribute, there was not much cultural contact between them and the rural peasantry.</p>
+    <p>Below the foreign-born elite was a second tier: <strong>Indian-born Muslim elites</strong>. After a few generations this group grew to be sizeable, but there was always tension between them and the foreign-born elites, who claimed cultural superiority by virtue of having been raised in the "more civilized" regions of Western Asia. These native-born Muslims made up a large part of the ruling bureaucracy in major cities like Delhi, and they were important in integrating Islamic civilization into South Asian society.</p>
+    <p>At the bottom of the pecking order were the <strong>South Asian converts to Islam</strong>. These were people generally looked down upon by anyone with a foreign pedigree, even though they were — at least in principle — accepted into the religious brotherhood of Islam.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>This three-tiered Muslim hierarchy looks remarkably like a caste system. What does it suggest about whether Islam actually offered social equality to its converts in South Asia?</p>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <button class="nav-btn" onclick="showPage(3)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <div class="section-num">Part 3</div>
+    <h2>Two Schools of Islam: Ulema and Sufism</h2>
+    <p>As in many other parts of the Islamic world, South Asian Islam divided into major schools. The <em>ulema</em> — the "learned men" tradition — stressed the importance of studying the Quran and other religious texts. People in this tradition emphasized learning and following complex Islamic law and theology in every aspect of life.</p>
+    <p>The other major tradition rejected what it saw as dry legalism and instead emphasized the mystical nature of God and the need to cultivate a personal relationship of devotion to the divine. Members of this tradition were known as <strong>Sufis</strong> — originally wandering teachers who preached simplicity, piety, and devotion. Sufism had been part of Islam practically since the beginning and had achieved popularity in many parts of the Islamic world. But when it came to South Asia, it found a vast and receptive audience.</p>
+    <p>The reason is striking: Sufism was remarkably similar to indigenous forms of devotional worship in South Asia, especially <em>Bhakti</em> devotionalism, which we studied in earlier weeks. Both Bhakti and Sufism emphasized personal devotion. Both were implicitly anti-elitist and anti-hierarchical. Bhakti was an alternative to high-caste Brahmanic Hinduism; Sufism was an alternative to the legalism and elitism of the ulema. The Sufis denied the need to rigidly follow Muslim legalisms and rejected the role of religious clerics and judges.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>We have now seen two "devotional alternatives" to establishment religion — Bhakti within Hinduism and Sufism within Islam. Why do you think anti-hierarchical, emotion-centered religious movements keep emerging across different traditions?</p>
+    </div>
+
+    <p>As Muslim rulers spread across South Asia from about the fourteenth century onward, Sufi masters — known as <em>pirs</em> — spread in their wake. In many parts of the subcontinent, they found very receptive audiences among Bhakti-oriented Hindus who were attracted to the Sufi messages of piety and devotion to a mystical God. Not surprisingly, elite Muslims tended to follow the ulema school, while poorer and locally converted Muslims favored the Sufi approach.</p>
+    <p>By the fourteenth century, new Sufi orders had developed that claimed South Asia as their spiritual home. One of these, the <strong>Chishti</strong> order, became especially popular among South Asian-born Muslims. Important Chishti shrines sprang up across the subcontinent, becoming objects of devotion not only for Muslims but also for many Hindus. Especially for lower-caste Hindus, worshipping a Sufi saint at one of these shrines was practically identical to worshipping a Hindu god at a nearby temple — both appealed to the same devotional sentiments.</p>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <button class="nav-btn" onclick="showPage(4)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <div class="section-num">Part 4</div>
+    <h2>Why People Actually Converted</h2>
+    <p>If there was so much crossover between Hindu and Muslim devotional practices, why did some South Asians convert to Islam? The answer is more economic than spiritual.</p>
+    <p>Non-Muslims were treated much as Jews and Christians had been treated elsewhere in the Islamic world: tolerated, but classified as non-believers and made subject to a special head tax called the <em>jizya</em> that Muslims did not have to pay. It is likely that some South Asians converted simply to escape this tax. This was especially true in urban areas, where tax regulations were more scrupulously enforced than in the countryside — and indeed, more urban than rural people converted.</p>
+    <p>The urban groups most likely to convert were artisans and merchants, who had to deal not only with the jizya but also a variety of commercial taxes and tariffs imposed on non-Muslims. For urban tradesmen and businessmen, conversion was a good move both socially and economically. For centuries, and even to this day, Islam has tended to be an urban religion in much of northern and central India, encompassing many of the commercial castes and occupations.</p>
+    <p>Islam was also successful in <strong>Bengal</strong> for related reasons. Bengal was one of the few places where Buddhism had remained relatively strong right up to the time of the Turkish conquests, partly because of the patronage of the Bengali Pala kings and the merchant community. Under Islamic rule, the kings were gone, and before long many of the merchants had converted too. In <strong>Punjab</strong>, remnant Buddhist communities converted at least in part as a way of being associated with the powerful state force trying to repel repeated Mongol incursions.</p>
+    <p>In other parts of the subcontinent, especially as Sufi orders became more popular, there are instances of voluntary conversion by large groups of poor, low-caste peasants — people already at the bottom of the Hindu social order who had nothing to lose from joining a community that was at least ideologically more egalitarian.</p>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <button class="nav-btn" onclick="showPage(5)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page5">
+    <div class="section-num">Part 5</div>
+    <h2>South Asian Islam: Something New</h2>
+    <p>One of the most interesting things about Islam in South Asia is how different it became from Islamic societies elsewhere. While elite ulema practice remained fairly consistent across the Islamic world, at the popular level South Asian Islam emerged as something entirely new.</p>
+    <p>South Asians did not share the same idea of "conversion" that others did. As we have discussed throughout this course, South Asian religious impulses had for centuries tended to be more inclusive than exclusive. So even when South Asians converted to Islam, many treated their conversion less as a rejection of their previous traditions than as the <em>addition</em> of a new one. Many converts continued to worship local folk deities at their own temples and shrines. And most remarkably, most continued to follow the caste rules into which they had been born.</p>
+    <p>The result was the seemingly paradoxical development of <strong>Muslim caste communities</strong> that practiced the same kinds of caste endogamy and social prohibitions they had observed as Hindus. They continued to adhere to regional cultural and linguistic identities. Ideally, Islamic society is supposed to be a brotherhood of equals sharing the same faith, the same law, and the same language — Arabic. But in South Asia that unity was almost completely broken down, replaced by a caste-based hierarchical society that looked an awful lot like Hindu society.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>If Muslim converts kept their caste rules, worshipped at Hindu shrines, and identified by language and region rather than religion, how meaningful is the label "conversion"? What does this tell us about how religion actually works in people's daily lives versus how we categorize it in textbooks?</p>
+    </div>
+
+    <div class="divider"></div>
+    <h2>Indo-Islamic Architecture</h2>
+    <p>The cultural encounter between Islam and South Asia is visible in architecture as well. The arrival of Islam introduced entirely new types of monumental buildings to the subcontinent. The most notable of these was the <strong>tomb</strong>. Hindus believe in cremation and reincarnation, so there was no tradition of tomb-building. But in Islamic culture, as in the West, the dead are buried, and their burial structures became monuments to their glory and that of their successors. The most famous example, the Taj Mahal, is a tomb — we will discuss it when we get to the Mughal Empire.</p>
+    <p>The other new building form was the <strong>mosque</strong>. In some ways the mosque is broadly analogous to the Hindu temple. But whereas Hindu temples are designed to accommodate individual worshippers engaged in individual acts of worship, mosques are designed for communities of worshippers — sometimes huge numbers — who gather at the same time for joint worship and instruction. Huge mosques were built with tall towers from which to call people to prayer, and these structures came to dominate many of the major cities of northern and central India.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Neither side initially used religious labels for the other — South Asians called the invaders "Turks" or "barbarians," while the invaders called everyone in South Asia "Hindu" regardless of faith.</li>
+        <li>Muslim society in South Asia developed its own three-tiered hierarchy: foreign-born elites, Indian-born elites, and local converts — a structure that resembled the caste system it claimed to replace.</li>
+        <li>Sufism found a natural audience in South Asia because of its deep similarities to Bhakti devotionalism — both were anti-hierarchical, devotion-centered alternatives to establishment religion.</li>
+        <li>Conversion was driven more by economics (the jizya tax, commercial regulations) and geography (agricultural frontiers) than by force or ideology.</li>
+        <li>South Asian Islam became something genuinely new: converts kept their caste rules, worshipped at local shrines, and maintained regional identities, producing a syncretic Islam unlike anything elsewhere in the Muslim world.</li>
+        <li>Islam introduced new architectural forms to South Asia — tombs and mosques — that had no precedent in Hindu building traditions.</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <button class="nav-btn" disabled>Complete ✓</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + n).classList.add('active');
+  for (let i = 1; i <= 5; i++) {
+    document.getElementById('seg' + i).classList.toggle('active', i <= n);
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
