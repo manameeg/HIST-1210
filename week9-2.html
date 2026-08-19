@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 9.2: Song China — Reform, Cities, and the Lives of Women | HST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 1.1rem;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    margin-bottom: 0;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem;
+    border-radius: 6px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(196,168,122,0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .key-takeaways li:last-child { border-bottom: none; }
+
+  .key-takeaways li::before {
+    content: '—';
+    color: #c4a87a;
+    margin-right: 0.5rem;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: none;
+    border: 1.5px solid #7a5c3a;
+    color: #7a5c3a;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: none;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #7a5c3a;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="course-tag">HST 1210 · Week 9.2</div>
+    <h1>Song China: Reform, Cities, and the Lives of Women</h1>
+    <p class="subtitle">A chancellor who threatened the old guard, cities with a million people, and a poet who wrote her own story.</p>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment active"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="section-num">Part One</div>
+    <h2>Wang Anshi and the Crisis of Tax Reform</h2>
+
+    <p>Song China's scholar-official class enjoyed considerable privilege — including, in many cases, the privilege of not paying taxes. Under the Song, large estates developed across the countryside. The owners of these estates, who were often scholar-officials themselves, found ways to avoid their tax obligations. The result was predictable: a series of budget deficits, widespread inflation, and a growing need for new ideas.</p>
+
+    <p>Emperor <strong>Shenzong</strong> (r. 1067–85) sought advice from a man named <strong>Wang Anshi</strong> — a poet, chancellor, statesman, and economist. Wang Anshi believed that the state had a responsibility to provide for its people. When he came to power as Chancellor in 1069, he proposed a sweeping three-part reform.</p>
+
+    <div class="divider"></div>
+
+    <p>The first part targeted <strong>state finance and trade</strong>. Wang Anshi proposed paying workers in cash for labor, rather than imposing unpaid "free" labor on them for public works projects. He increased the use of copper coins in the economy. Most significantly, he established <strong>direct loans to farmers</strong> at planting season, to be repaid at harvest — a system designed to free peasants from dependence on private moneylenders. He also set up pensions for the aged and unemployed, as well as public orphanages, hospitals, dispensaries, hospices, cemeteries, and granaries.</p>
+
+    <p>The second part addressed <strong>defense</strong>. Wang Anshi created the <em>baojia</em> system — a community-based system of law enforcement and civil control that shifted power to local leaders on the ground.</p>
+
+    <p>The third part focused on <strong>education and governance</strong>. He introduced new tests on law, military affairs, medicine, and mathematics. Old-school bureaucrats resented the changes. The National Academy, which had formerly served as little more than a holding ground for officials waiting for a job, was transformed into a real school.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Wang Anshi's reforms were meant to help ordinary people, but they were fiercely opposed by the scholar-official class. Why would a powerful group resist reforms aimed at reducing inequality — even when the state itself was running deficits?</p>
+    </div>
+
+    <p>Wang Anshi's program threatened the old guard at every level. His reforms undermined the tax advantages of wealthy estates, disrupted the exam system that preserved elite status, and gave the central government new tools to intervene in the economy. The opposition, led by figures like the poet and official <strong>Su Shi</strong>, was fierce — as you will see in this week's reading.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="section-num">Part Two</div>
+    <h2>Cities of a Million</h2>
+
+    <p>Song China was one of the most urbanized societies in the medieval world. About <strong>20 percent</strong> of the population lived in cities — an extraordinary figure for the period. The two greatest cities, <strong>Kaifeng</strong> and <strong>Lin'an</strong> (Hangzhou), each had populations of a million people or more.</p>
+
+    <p>These urban centers were hubs of trade, manufacturing, and government. Workers produced porcelain, silk, cloth, and tea. A witness who described Kaifeng in 1147 reported that the city had <strong>72 large restaurants</strong> and many smaller ones. The city also had two large bakeries with 50 ovens each, supplying buns and cakes to vendors who sold them from morning to midnight.</p>
+
+    <div class="divider"></div>
+
+    <p>The scale of Song urban life represented something genuinely new. These were not merely administrative capitals — they were commercial ecosystems, dense with markets, entertainment districts, and workshops. The Southern Song capital of Lin'an, situated on the coast, added maritime trade to this mix. Merchants, artisans, and laborers all found a place in the urban economy, and the sheer density of people in these cities created a culture distinctly different from the rural world that had long defined Chinese civilization.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>A city with 72 large restaurants and round-the-clock bakeries suggests a population with disposable income and leisure time. What does the food economy of a city tell us about its broader social structure?</p>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="section-num">Part Three</div>
+    <h2>Art and the Rejection of Urban Life</h2>
+
+    <p>Paradoxically, even as Song cities boomed, much of Song art turned away from the urban world. Song artists painted large scroll-type paintings that depicted landscapes and, occasionally, scenes of city life. But the most celebrated works were dominated by <strong>mountains</strong> — towering, misty peaks that dwarfed human figures to the point of insignificance.</p>
+
+    <p>The most important landscape painter of the Song period was <strong>Fan Kuan</strong>. Fan Kuan retreated from urban life entirely, became a Daoist, and lived in isolation in central China. His paintings depict towering mountains where humans appear tiny and insignificant — a visual argument for the superiority of nature over human ambition.</p>
+
+    <div class="divider"></div>
+
+    <p>Fan Kuan's retreat was part of a broader pattern. The Song intellectual world created a strong demand for books — booksellers, distributors, and printers all thrived during this period. But the content of much Song art and literature reflected a tension at the heart of the dynasty: the very prosperity and urbanization that made intellectual life possible also produced a longing for escape from it.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Fan Kuan lived alone in the mountains, yet his paintings were bought and admired by urban elites. What does it mean when a society celebrates images of withdrawal from the very way of life it is building?</p>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="section-num">Part Four</div>
+    <h2>Women Under the Song: Li Qingzhao</h2>
+
+    <p>The rise of the Song scholar class had a <strong>mixed impact</strong> on women. On one hand, the renewed interest in Confucianism reinforced expectations that women should be modest, obedient, and should not draw attention to themselves. Women became increasingly subject to male control. On the other hand, some women — if they came from the right class — were well educated and fairly independent.</p>
+
+    <p>The tension between these two realities is visible in the life of <strong>Li Qingzhao</strong>, one of the most celebrated poets in Chinese literary history. Li Qingzhao came from an upper-class educated family. She and her first husband shared a love of collecting books and art. After he died, she remarried — but her second husband was abusive, and she divorced him.</p>
+
+    <div class="divider"></div>
+
+    <p>Li Qingzhao wrote about her life in verse. In 1132, she composed a poem about her first husband that captures the depth of personal feeling rarely found in official Song sources:</p>
+
+    <p style="padding-left: 1.5rem; border-left: 2px solid #c4a87a; font-style: italic; color: #4a3f33; margin: 1.5rem 0;">"Fifteen years ago, beneath moonlight and flowers, / I walked with you / We composed flower-viewing poems together. / Tonight the moonlight and flowers are just the same / But how can I ever hold in my arms the same love?"</p>
+
+    <p>Li Qingzhao's life illustrates the contradictions of the Song era for women. She was literate, talented, and financially independent enough to leave an abusive marriage. Yet she lived in a society that was moving — systematically and philosophically — toward greater restrictions on women's autonomy.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Li Qingzhao was able to divorce her second husband, which suggests she had legal and financial options. But the broader trend under the Song was toward greater control of women. How do individual stories like hers complicate the larger narrative?</p>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page-5">
+    <div class="section-num">Part Five</div>
+    <h2>Foot Binding and the Decline of Women's Status</h2>
+
+    <p>If Li Qingzhao's life shows the possibilities still available to elite women, the practice of <strong>foot binding</strong> reveals the larger direction of Song society. Foot binding is one of the clearest markers of the decline of women's social status under the Song dynasty.</p>
+
+    <p>The practice likely began under the Tang dynasty, originally among dancers who bound their feet so they could dance on their toes. Over time, people began to associate beautiful women with small feet, and what had been a performance technique became a social custom imposed on girls from childhood. Feet were wrapped so tightly that the arch of the foot was broken.</p>
+
+    <div class="divider"></div>
+
+    <p>Foot binding persisted for centuries — the practice continued into the early twentieth century. Women were taught to take pride in their tiny feet. A seventeenth-century woman wrote:</p>
+
+    <p style="padding-left: 1.5rem; border-left: 2px solid #c4a87a; font-style: italic; color: #4a3f33; margin: 1.5rem 0;">"They say lotus flowers bloom as she moves her feet, / But invisibly, beneath her skirt. / Her jade toes, tiny and slender, / Imprint her name wherever she steps. / Her pure chiffon skirt swirls in a dance."</p>
+
+    <p>The poem reveals something important: foot binding was not simply a practice imposed from outside. It became embedded in the culture's understanding of beauty and femininity. Women themselves participated in celebrating it — even as the practice caused permanent physical damage and restricted their mobility. Foot binding belongs alongside other cultural practices involving the body — tattooing, piercing, decorative scars — but its scale and duration make it distinctive.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The seventeenth-century poem celebrates foot binding in beautiful language. How does a harmful practice become something people defend and celebrate? What does it take for a society to stop seeing a familiar practice as normal?</p>
+    </div>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Wang Anshi's reforms — direct loans to farmers, cash wages, new exams in law and math — tried to modernize the Song state but were fiercely resisted by the scholar-official class.</li>
+        <li>Song cities like Kaifeng and Hangzhou had populations over a million and supported thriving commercial economies with restaurants, bakeries, and manufacturing.</li>
+        <li>Song art, exemplified by Fan Kuan's mountain landscapes, often rejected urban life even as the cities that supported it boomed.</li>
+        <li>Li Qingzhao's life illustrates the contradictions facing Song women: some elite women were educated and independent, but the broader trend was toward greater male control.</li>
+        <li>Foot binding, which likely began under the Tang and expanded under the Song, persisted until the twentieth century and became deeply embedded in Chinese conceptions of femininity and beauty.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showPage(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + n).classList.add('active');
+    document.querySelectorAll('.progress-segment').forEach((s, i) => {
+      s.classList.toggle('active', i < n);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
