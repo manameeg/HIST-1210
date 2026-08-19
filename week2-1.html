@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2.1: The Indus Valley Civilization — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active {
+    background: #7a5c3a;
+  }
+
+  .page {
+    display: none;
+  }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p {
+    margin-bottom: 1.15rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    font-size: 1.2rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f32;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .takeaway {
+    background: #e8e0d0;
+    border-left: 3px solid #7a5c3a;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .takeaway .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .takeaway p {
+    font-size: 0.95rem;
+    color: #4a3f32;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn.primary {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn.primary:hover {
+    background: #5e4628;
+  }
+
+  .nav-btn.secondary {
+    background: transparent;
+    color: #7a5c3a;
+    border: 1px solid #c4a87a;
+  }
+
+  .nav-btn.secondary:hover {
+    background: #ebe4d6;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .page-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #9a8b78;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 2.1</div>
+    <h1>The Indus Valley Civilization</h1>
+    <div class="subtitle">Cities of brick and bronze in the floodplains of South Asia, c. 2500–1500 BCE</div>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment" id="prog1"></div>
+    <div class="progress-segment" id="prog2"></div>
+    <div class="progress-segment" id="prog3"></div>
+    <div class="progress-segment" id="prog4"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" data-page="1">
+    <div class="section-num">Part One</div>
+    <h2>Discovering the Indus Valley</h2>
+
+    <p>Between roughly 2500 and 1500 BCE, one of the ancient world's most sophisticated urban societies flourished along the Indus River and its tributaries in what is now Pakistan and northwest India. Centered on two major cities — Harappa and Mohenjo-daro — this civilization covered an enormous area, with standardized materials found within a thousand-mile radius.</p>
+
+    <p>Harappa was first discovered in 1872, though its significance was not immediately understood. Mohenjo-daro was identified much later, in 1921. Together, these sites revealed a civilization that scholars call the "Mature phase" of Indus Valley culture — a period of remarkable urban planning and material consistency.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>We often associate "ancient civilization" with Egypt or Mesopotamia. The Indus Valley was contemporary with both — and in some respects more technically advanced. Why do you think it gets less attention in popular history?</p>
+    </div>
+
+    <p>What makes the Indus Valley distinctive is not monumental architecture or royal tombs but the sheer orderliness of daily life. The evidence points to a highly organized, centralized society — though exactly what kind of political system governed it remains one of the great open questions of ancient history.</p>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" disabled>&larr; Back</button>
+      <span class="page-num">1 of 4</span>
+      <button class="nav-btn primary" onclick="goToPage(2)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" data-page="2">
+    <div class="section-num">Part Two</div>
+    <h2>A Civilization of Planning and Trade</h2>
+
+    <p>The cities of the Indus Valley show a level of urban planning that is striking even by modern standards. Homes were typically two stories tall with indoor plumbing and private wells. The bricks used in construction were standardized — the same dimensions appear across sites separated by hundreds of miles. Weights and measures were similarly uniform, suggesting centralized standards enforced over a vast territory.</p>
+
+    <p>The society displayed what scholars call a "conservative tradition." When floods destroyed buildings, homes were rebuilt on the same sites, in the same configurations — suggesting deep attachment to place and continuity rather than opportunistic redesign.</p>
+
+    <p>Trade networks extended well beyond the Indus Valley itself. Harappan seals have been found in Mesopotamia, and some sites — like Lothal in Gujarat — appear to have been developed specifically for trade. The range of commodities was impressive: copper spears, flat bronze axes, and finely crafted objects including the famous bronze "dancing girl" figurine. The society included priests, merchants, nobles, and a wide range of craftspeople — metal workers, sculptors, seal engravers, carpenters, potters, and brick makers.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>Standardized bricks, weights, and city layouts across a thousand-mile radius — but no evidence of a king, a palace, or a standing army. What kind of political authority could produce this level of uniformity without the structures we usually associate with centralized power?</p>
+    </div>
+
+    <p>Among the most intriguing structures is the "Great Bath" at Mohenjo-daro — a large, carefully waterproofed pool that appears to have served a ritual or ceremonial function. Its construction required sophisticated engineering, and its central placement in the city suggests that communal bathing or purification held significant cultural importance. Some scholars see echoes of later Hindu ritual bathing practices in this structure.</p>
+
+    <p>The evidence also points to mathematical sophistication. Proportions in Harappan construction follow a consistent 1:2:4 ratio, indicating systematic approaches to measurement and design.</p>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(1)">&larr; Back</button>
+      <span class="page-num">2 of 4</span>
+      <button class="nav-btn primary" onclick="goToPage(3)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" data-page="3">
+    <div class="section-num">Part Three</div>
+    <h2>Connections and Isolation</h2>
+
+    <p>One of the puzzles of the Indus Valley civilization is how it relates — or fails to relate — to other cultures around it.</p>
+
+    <p><strong>Within India,</strong> the connections are surprisingly thin. Cities mentioned in later Vedic literature cannot be clearly linked to Indus Valley sites. There is also a lack of clear evolutionary development from surrounding villages into the major Indus cities, which makes the civilization's origins difficult to trace through a simple narrative of gradual growth.</p>
+
+    <p><strong>Outside India,</strong> the evidence is more concrete. Harappan artifacts — particularly seals — have been found in Mesopotamia, dating from roughly 2400 to 2300 BCE. This confirms active long-distance trade, though the nature of the relationship (direct contact, intermediaries, or something else) remains debated.</p>
+
+    <div class="divider"></div>
+
+    <h2>The End of the Indus Valley</h2>
+
+    <p>The decline of the Indus Valley civilization was not a single dramatic event but a gradual process, likely driven by environmental factors. Scholars have proposed several contributing causes: over-development of the land, disease, and rainfall shortages. The most widely accepted theory points to a shift in the course of the rivers that the cities depended on — a change that would have undermined agriculture and trade simultaneously.</p>
+
+    <p>What the evidence does <em>not</em> support is a sudden, violent end. This matters because of a once-influential theory that needs to be addressed directly.</p>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(2)">&larr; Back</button>
+      <span class="page-num">3 of 4</span>
+      <button class="nav-btn primary" onclick="goToPage(4)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" data-page="4">
+    <div class="section-num">Part Four</div>
+    <h2>The "Aryan Invasion" Myth</h2>
+
+    <p>For much of the nineteenth and twentieth centuries, a popular theory held that the Indus Valley civilization was destroyed by an invasion of "Aryans" — a supposedly superior warrior people who swept in from Central Asia and conquered the indigenous population. This theory was not simply wrong; it was ideologically motivated. European scholars used it to construct a racial link between themselves and India's ruling classes, positioning the "Aryans" as a civilizing force and the Indus Valley people as their victims.</p>
+
+    <p>The archaeological evidence dismantles this narrative on multiple fronts:</p>
+
+    <p><strong>Timing does not work.</strong> Non-ceramic ware at Indus Valley sites dates to 6000 BCE — thousands of years before the supposed Aryan arrival around 1500 BCE. The civilization was already ancient by the time any migration occurred.</p>
+
+    <p><strong>Radiocarbon dating contradicts the timeline.</strong> Harappan sites date to at least 2500 BCE, which means the civilization had been flourishing for a millennium before the period traditionally assigned to the "Aryan invasion."</p>
+
+    <p><strong>Material culture does not support invasion.</strong> Painted grey ware — sometimes cited as evidence of Aryan presence — is found widely across the region, making it unlikely to have been introduced by a single invading group.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>The Aryan invasion theory was discredited by archaeology, but it persisted for decades because it served political purposes. Can you think of other historical narratives where a convenient story survived long after the evidence turned against it?</p>
+    </div>
+
+    <p>The scholarly consensus today is that there was migration of Indo-Aryan-speaking peoples into the subcontinent — a gradual process of movement and cultural mixing, not a conquest. The distinction matters: "migration" describes people moving and blending with existing populations over generations, while "invasion" implies military destruction of one culture by another. The evidence supports the former, not the latter.</p>
+
+    <div class="divider"></div>
+
+    <div class="takeaway">
+      <div class="label">Key Takeaways</div>
+      <p><strong>The Indus Valley was one of the ancient world's great urban civilizations.</strong> Its cities show remarkable planning, standardization, and trade networks — yet it lacks the palaces, temples, and royal burials we associate with contemporary civilizations in Egypt and Mesopotamia. This forces us to rethink what "civilization" requires.</p>
+      <p><strong>The civilization's decline was environmental, not military.</strong> River shifts, not invaders, ended the Indus Valley's urban phase. The "Aryan invasion" theory was a European construction with racial and political motivations, and the archaeological record does not support it.</p>
+      <p><strong>Migration is not invasion.</strong> Indo-Aryan-speaking peoples did move into the subcontinent, but this was a gradual process of cultural blending — not a conquest. The distinction between these two narratives has real consequences for how we understand South Asian history and identity.</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(3)">&larr; Back</button>
+      <span class="page-num">4 of 4</span>
+      <button class="nav-btn primary" disabled>Complete</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  var totalPages = 4;
+
+  function goToPage(n) {
+    document.querySelector('.page.active').classList.remove('active');
+    document.querySelector('[data-page="' + n + '"]').classList.add('active');
+
+    for (var i = 1; i <= totalPages; i++) {
+      document.getElementById('prog' + i).classList.toggle('active', i <= n);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.getElementById('prog1').classList.add('active');
+</script>
+
+</body>
+</html>
