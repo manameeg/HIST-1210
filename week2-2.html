@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2.2: The Vedic Era, Hinduism &amp; Jainism — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active {
+    background: #7a5c3a;
+  }
+
+  .page {
+    display: none;
+  }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p {
+    margin-bottom: 1.15rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    font-size: 1.2rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f32;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .takeaway {
+    background: #e8e0d0;
+    border-left: 3px solid #7a5c3a;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .takeaway .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .takeaway p {
+    font-size: 0.95rem;
+    color: #4a3f32;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn.primary {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn.primary:hover {
+    background: #5e4628;
+  }
+
+  .nav-btn.secondary {
+    background: transparent;
+    color: #7a5c3a;
+    border: 1px solid #c4a87a;
+  }
+
+  .nav-btn.secondary:hover {
+    background: #ebe4d6;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .page-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #9a8b78;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 2.2</div>
+    <h1>The Vedic Era, Hinduism &amp; Jainism</h1>
+    <div class="subtitle">From sacred hymns to social hierarchies — the religious and philosophical foundations of South Asia, c. 1500–400 BCE</div>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment" id="prog1"></div>
+    <div class="progress-segment" id="prog2"></div>
+    <div class="progress-segment" id="prog3"></div>
+    <div class="progress-segment" id="prog4"></div>
+    <div class="progress-segment" id="prog5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" data-page="1">
+    <div class="section-num">Part One</div>
+    <h2>The Vedic Period: A New Chapter</h2>
+
+    <p>After the decline of the Indus Valley civilization, the subcontinent entered a period shaped by new peoples, new languages, and new sacred texts. The Vedic period — roughly 1500 to 500 BCE — begins with the gradual arrival of Indo-Aryan-speaking peoples and ends with the rise of urban centers and major philosophical schools.</p>
+
+    <p>This era takes its name from the Vedas, a collection of sacred texts that are among the oldest religious literature in the world. There are four Vedas, each serving a different function:</p>
+
+    <p>The <strong>Rigveda</strong> is the oldest — a collection of hymns addressed to various deities. The <strong>Samaveda</strong> contains chants and melodies for ritual performance. The <strong>Yajurveda</strong> provides ritual formulas and instructions for sacrificial ceremonies. And the <strong>Atharvaveda</strong> deals with spells, incantations, and practical knowledge.</p>
+
+    <p>All four Vedas were composed and transmitted orally in Vedic Sanskrit — a more archaic form of the language than the Classical Sanskrit that came later. The oral tradition was not a limitation but a deliberate choice: precise memorization and recitation were themselves acts of religious devotion.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>The Vedas were transmitted orally for centuries before being written down. What does this tell us about how these societies valued memory, precision, and the spoken word? How might an oral tradition shape knowledge differently than a written one?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" disabled>&larr; Back</button>
+      <span class="page-num">1 of 5</span>
+      <button class="nav-btn primary" onclick="goToPage(2)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" data-page="2">
+    <div class="section-num">Part Two</div>
+    <h2>Society, Religion, and Daily Life</h2>
+
+    <p>Vedic religion was polytheistic, centered on gods like Indra (god of storms and war), Agni (god of fire), Varuna (guardian of cosmic order), and Soma (associated with a ritual drink). Worship revolved around rituals and sacrifices called <em>yajnas</em>, performed to maintain <em>ṛta</em> — the cosmic order that held the universe together.</p>
+
+    <p>Vedic society was organized into four <em>varnas</em> — broad social classes that would later harden into the caste system. The Brahmins were priests and ritual specialists. The Kshatriyas were warriors and rulers. The Vaishyas were traders, herders, and farmers. And the Shudras were laborers and servants. In the early Vedic period, these categories may have been more fluid than they later became.</p>
+
+    <p>The economy shifted significantly over the Vedic period. Early Vedic society was pastoral — cattle were the primary measure of wealth, and life was organized around herding. By the later Vedic period, society had become more settled and agrarian, with permanent villages, organized agriculture, and expanding trade networks.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>The varna system began as a way to organize social roles. Over centuries, it hardened into a rigid hierarchy. What conditions might cause a flexible social arrangement to become inflexible? Can you think of parallels in other societies?</p>
+    </div>
+
+    <p>Education took place in <em>gurukulas</em> — the homes of teachers where students lived, studied, and served their guru. The curriculum focused on memorizing sacred texts, performing rituals, and engaging with philosophy. Students followed strict discipline, and the relationship between teacher and student was considered sacred.</p>
+
+    <p>Women's status changed across the Vedic period. In the early period, some women participated in philosophical debates — figures like Gargi and Maitreyi are remembered in the texts as intellectual equals of male scholars. By the later Vedic period, however, women's roles became more restricted, and their participation in public intellectual life diminished.</p>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(1)">&larr; Back</button>
+      <span class="page-num">2 of 5</span>
+      <button class="nav-btn primary" onclick="goToPage(3)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" data-page="3">
+    <div class="section-num">Part Three</div>
+    <h2>From Ritual to Philosophy: The Rise of Hinduism</h2>
+
+    <p>Hinduism did not appear suddenly. It developed over centuries, drawing on multiple sources — and the Indus Valley civilization may be one of them. Archaeological evidence from Indus Valley sites suggests worship of deities resembling later Hindu gods like Shiva, and practices like ritual bathing (recall the Great Bath at Mohenjo-daro) that echo later Hindu traditions.</p>
+
+    <p>The Vedic period added a new layer: a rich tradition of ritual sacrifice, hymns to nature deities, and a priestly class (the Brahmins) who served as intermediaries between humans and the divine. For centuries, Vedic religion was primarily about correct performance of rituals — getting the sacrifices right to maintain cosmic order.</p>
+
+    <p>But by the later Vedic period, a philosophical revolution was underway. The <strong>Upanishads</strong> — composed in the later centuries of the Vedic era — represent a dramatic shift from ritualism to philosophical inquiry. Instead of asking "how do we perform the sacrifice correctly?" the Upanishadic thinkers asked "what is the nature of reality itself?"</p>
+
+    <p>Two concepts became central. <strong>Brahman</strong> — the universal soul or ultimate reality that underlies all existence. And <strong>Atman</strong> — the individual soul, which the Upanishads argue is ultimately identical with Brahman. This idea — that the individual self and the universal reality are one — became a cornerstone of Hindu philosophical thought.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>The shift from the Vedas to the Upanishads is sometimes described as a move from "outer" religion (ritual, sacrifice, correct performance) to "inner" religion (contemplation, self-knowledge, philosophical inquiry). Why might a society that had relied on elaborate rituals for centuries begin to question whether rituals were enough?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(2)">&larr; Back</button>
+      <span class="page-num">3 of 5</span>
+      <button class="nav-btn primary" onclick="goToPage(4)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" data-page="4">
+    <div class="section-num">Part Four</div>
+    <h2>Jainism: A Radical Alternative</h2>
+
+    <p>The later Vedic period was a time of political fragmentation — an era of small kingdoms and republics where old social orders were changing. In this climate of upheaval, people began looking for new spiritual paths, new ways to escape the cycle of birth, death, and rebirth. Jainism and Buddhism both emerged from this moment of questioning.</p>
+
+    <p>Jainism's founder, Vardhamana Mahavira (540–468 BCE), was born into privilege but abandoned his family at age 30 to practice extreme asceticism — including nudity and fasting. At age 43, he achieved enlightenment and became a <strong>jina</strong> (meaning "conqueror"), from which the tradition takes its name. He died at 72 of self-starvation — an act consistent with Jain beliefs about the spiritual value of renunciation.</p>
+
+    <p>Jainism rejected the Vedic emphasis on animal sacrifice. Its most distinctive doctrine is the belief that <em>everything</em> possesses life — not just humans and animals but plants, water, fire, and earth. This led to the principle of <strong>ahimsa</strong> (non-violence), which required extreme care to avoid harming any living being. Ahimsa would later influence figures far beyond Jainism — most notably Mahatma Gandhi, whose mother supported Jain communities.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>Mahavira left his wife and children to pursue enlightenment through extreme self-denial. The Vedic tradition he was reacting against emphasized elaborate rituals and social duty. What does it mean that both systems claimed to offer a path to spiritual truth through radically different methods?</p>
+    </div>
+
+    <p>Jainism developed two major monastic orders: the <strong>Digambaras</strong> (who practiced nudity or wore minimal clothing) and the <strong>Shvetambaras</strong> (who wore white robes). Despite this visible difference, the two sects do not differ in fundamental beliefs — both hold to non-violence, truth, and renunciation as core principles.</p>
+
+    <p>Jainism gained particular strength in Gujarat and Mysore, and received royal patronage under Chandragupta Maurya. Some monks migrated to the Deccan during a drought, spreading the tradition southward. One of Jainism's most enduring contributions to Indian culture is its emphasis on learning and the collection of secular texts — Jain communities became important custodians of knowledge well beyond their own religious tradition.</p>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(3)">&larr; Back</button>
+      <span class="page-num">4 of 5</span>
+      <button class="nav-btn primary" onclick="goToPage(5)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" data-page="5">
+    <div class="section-num">Part Five</div>
+    <h2>Connections Across the Module</h2>
+
+    <p>This week's material covers over a thousand years of religious and social development. It is worth stepping back to see how the pieces connect.</p>
+
+    <p>The Vedic period inherited a subcontinent already shaped by the Indus Valley civilization — and may have absorbed some of its religious practices. Vedic religion added a new layer of ritual, text, and social organization (the varna system). Over time, the emphasis shifted from outward ritual to inward philosophical inquiry, producing the Upanishads and the foundations of Hindu thought.</p>
+
+    <p>Jainism emerged as a direct challenge to the Vedic order — rejecting its sacrifices, its social hierarchies, and its priestly authority. Yet Jainism also shared the Vedic concern with escaping the cycle of rebirth. Both traditions were asking the same fundamental question: how do we achieve liberation? They simply arrived at very different answers.</p>
+
+    <div class="divider"></div>
+
+    <div class="takeaway">
+      <div class="label">Key Takeaways</div>
+      <p><strong>The Vedic period transformed South Asian society.</strong> It introduced sacred texts (the Vedas), a social hierarchy (the varna system), and a ritual-centered religion that would evolve over centuries into the philosophical traditions of Hinduism.</p>
+      <p><strong>Hinduism did not begin at a single moment.</strong> It developed through layers — possible Indus Valley roots, Vedic ritual traditions, and the philosophical revolution of the Upanishads. The shift from ritual to philosophy (from Brahmin-led sacrifice to the concept of Brahman as universal reality) is one of the most significant intellectual transitions in ancient history.</p>
+      <p><strong>Jainism offered a radical alternative.</strong> By rejecting animal sacrifice, asserting that all things possess life, and elevating non-violence (ahimsa) to a supreme principle, Jainism challenged the foundations of Vedic religion — while sharing its concern with liberation from the cycle of rebirth.</p>
+      <p><strong>Social structures shaped and were shaped by religion.</strong> The varna system both reflected and reinforced religious authority. Jainism's rejection of caste hierarchy was inseparable from its rejection of Brahminical ritual. Religion and social order were never separate categories in this period.</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goToPage(4)">&larr; Back</button>
+      <span class="page-num">5 of 5</span>
+      <button class="nav-btn primary" disabled>Complete</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  var totalPages = 5;
+
+  function goToPage(n) {
+    document.querySelector('.page.active').classList.remove('active');
+    document.querySelector('[data-page="' + n + '"]').classList.add('active');
+
+    for (var i = 1; i <= totalPages; i++) {
+      document.getElementById('prog' + i).classList.toggle('active', i <= n);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.getElementById('prog1').classList.add('active');
+</script>
+
+</body>
+</html>
