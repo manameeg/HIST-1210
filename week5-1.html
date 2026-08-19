@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5.1: Islam's Arrival in South Asia — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '?';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #7a5c3a;
+    color: #f5f0e8;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem 1.75rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e8e0d2;
+  }
+
+  .key-takeaways li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #7a5c3a;
+    border-radius: 3px;
+    background: transparent;
+    color: #7a5c3a;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: transparent;
+    color: #7a5c3a;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 5.1</div>
+    <h1>Islam's Arrival in South Asia</h1>
+    <div class="subtitle">From the Prophet Muhammad to the Delhi Sultanate — conquest, loot, and the danger of simple explanations.</div>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="seg1"></div>
+    <div class="progress-segment" id="seg2"></div>
+    <div class="progress-segment" id="seg3"></div>
+    <div class="progress-segment" id="seg4"></div>
+    <div class="progress-segment" id="seg5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <div class="section-num">Part 1</div>
+    <h2>The Rise of Islam</h2>
+    <p>In 610 CE, a forty-year-old trader from Mecca named Muhammad emerged as a prophet. He had experienced a revelation in a cave from the angel Gabriel, and he called on his peers to abandon idolatry and restore the faith of Abraham. He named his faith <em>Islam</em> — meaning "submission" — and declared there was only one true God, Allah. Muhammad placed himself in a line of prophets that included Abraham, Moses, and Jesus.</p>
+    <p>Muhammad's revelations were copied down by his followers in the Quran. (Muhammad himself was illiterate.) By the time of his death in 632, most of the Arabian Peninsula recognized his political and religious leadership.</p>
+
+    <div class="divider"></div>
+    <h2>The Five Pillars</h2>
+    <p>Islam rests on five core requirements. First, the <em>shahada</em>: a profession of faith in the oneness of God and Muhammad's prophethood. Second, prayer (<em>salat</em>) five times per day — at early morning, noon, mid-afternoon, sunset, and evening — facing Mecca. Third, the giving of alms (<em>zakat</em>) to the poor. Fourth, dawn-to-dusk fasting during Ramadan, the ninth month of the Islamic year. And fifth, the <em>hajj</em>: a pilgrimage to Mecca at least once in a lifetime.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>We have studied Hinduism, Buddhism, and Jainism so far in this course. How do Islam's five requirements compare to the practices of those earlier traditions? Which elements feel familiar, and which feel genuinely new?</p>
+    </div>
+
+    <p>What began as a movement to unite hostile Arab groups soon gained extraordinary momentum. Within a century of Muhammad's death, Arab Muslims had conquered Egypt, all of North Africa, and had even crossed the Mediterranean to conquer southern Spain. It was in this larger context of rapid Arab expansion that Islam first arrived in South Asia.</p>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" disabled>← Back</button>
+      <button class="nav-btn" onclick="showPage(2)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <div class="section-num">Part 2</div>
+    <h2>A Warning Against Simple Explanations</h2>
+    <p>Before we go further, a warning: we need to guard against <em>religious essentialization</em> — the assumption that religious belief is highly exclusive, and that religious identity explains all action.</p>
+    <p>Even though the conflicts between Islamic invaders and South Asian rulers were very often described in religious terms — as battles between the righteous and the infidels — for the vast majority of South Asians, Islamic religious practices were not antithetical to established Hindu practices. In fact, there was a great deal of mixing at the popular level, as we will see in Module 5.2.</p>
+    <p>We also need to be careful about viewing these medieval wars of conquest as <em>religious</em> wars. There is no denying that the invaders used the language of religious conquest. Many of them, and especially the Islamic scholars who recorded their deeds for posterity, rationalized their conquests in terms of spreading the "true faith." But does Islam really explain why various Arab, Turkish, Afghan, and Central Asian powers decided to attack what is now north India?</p>
+    <p>The answer is no. Islamic powers invaded the Indo-Gangetic region for the same reason others had been invading it for millennia: it was a wealthy, prosperous region that brought riches to anyone who could rule it. These conquerors used religious language to justify their conquests, but the real motivation was the same as it had always been. "India" was a fabled land of riches, and anyone who could carve off a piece of it was bound to get rich. To call these "Islamic Conquests" is to misconstrue the real motivation.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Think about other conquests you have studied — the Mauryas, the Guptas, Alexander. Did those conquerors also use ideology or religion to justify what were ultimately economic and territorial ambitions? What does that pattern tell us about how we should read the sources?</p>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <button class="nav-btn" onclick="showPage(3)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <div class="section-num">Part 3</div>
+    <h2>The Arab Conquest of Sind</h2>
+    <p>The history of Islam in South Asia starts long before the first great Muslim states in north India. Ever since 711 CE, a small part of what is now southern Pakistan — the area of Sind — had been conquered by Arab Muslims. Between 700 and 713, Arabs captured Makhran, then Sind, then Multan.</p>
+    <p>What was unusual about this Arab presence was not the conquest itself, but how <em>contained</em> it was. Powerful South Asian states like the Chalukyas and Rashtrakutas kept the Arabs confined to a relatively small area. And for the most part, Arab rule in Sind was no different from any other South Asian state: the rulers demanded taxes and tribute from the inhabitants but otherwise left people alone. Arab rule continued in Sind for hundreds of years.</p>
+
+    <div class="divider"></div>
+    <h2>Mahmud of Ghazni: Raider, Not Conqueror</h2>
+    <p>This pattern changed dramatically around the year 1000, when the Turkish Sultan of Ghazni — a town in central Afghanistan — decided to try his luck raiding South Asia across the Khyber Pass. Mahmud of Ghazni was the son of Alptigin, a Turk with Central Asian origins. He inherited his father's small army and became the first Muslim king to have a major impact on the subcontinent.</p>
+    <p>Between 1000 and 1025, Mahmud swept into India seventeen times during the dry season, making these predatory raids into something like an annual holiday for him and his Afghan and Turkish forces. He was interested in loot, not residence — he raided India for riches but never tried to stay.</p>
+    <p>As a Muslim, his looting took on a particular flavor. Along with generally pillaging cities, he attacked Hindu temples because that was where the highest concentration of riches could be found. Of course, attacking temples was nothing new: in their wars against each other, Hindu rulers had often attacked rival temples for exactly the same reason. In fact, Indians literally coined the term — the English word "loot" is borrowed from the Hindi <em>lutna</em>, meaning to rob or plunder.</p>
+    <p>But Mahmud went beyond looting to <em>destroying</em>. Because Muslims take the Old Testament injunction against images and idols seriously, Mahmud destroyed statues of Hindu gods wherever he found them. The most infamous incident came during his last raid in 1025, when he swept south into Gujarat to attack the fabulously wealthy temple to Shiva at Somnath on the coast of the Arabian Sea. A reported 50,000 Indians, including hundreds of Brahman priests, died defending the temple. Mahmud is said to have personally smashed the revered image of Shiva before heading home with an estimated 6.5 tons of gold.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Mahmud of Ghazni was just as happy to attack and loot Muslim states as Hindu ones — the areas of the Indus valley controlled by Arab Muslims since the 8th century got exactly the same treatment. What does this tell us about whether his raids were truly motivated by religion?</p>
+    </div>
+
+    <p>Nevertheless, in Indian history — especially Hindu Indian history — Mahmud has become a symbol of barbaric fanaticism, much like Attila the Hun or Genghis Khan are for Europeans. But the fact that he attacked Muslims and Hindus alike suggests he was really little more than a particularly audacious and brutal bully who knew where the loot was, and got it.</p>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <button class="nav-btn" onclick="showPage(4)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <div class="section-num">Part 4</div>
+    <h2>From Raiding to Ruling: The Delhi Sultanate</h2>
+    <p>If Mahmud of Ghazni came to raid, the next wave of invaders came to <em>stay</em>. Muhammad Ghuri (born 1173, died 1206), also from Afghanistan, entered India in the early twelfth century with the explicit goal of capturing territory, not simply plundering it.</p>
+    <p>The result was the Delhi Sultanate (1206–1526), the first major Muslim state in South Asia. Why Delhi? Because it offered access to the Yamuna River, a gateway to eastern India and Bengal, and a route northwest to Afghanistan. The year 1206 is considered a "watershed" in South Asian history.</p>
+    <p>The first Delhi Sultan was General Qutb-ud-din Aibak, a former slave who had served under Muhammad Ghuri. He was succeeded by his son-in-law, Iltutmish, as the second sultan.</p>
+
+    <div class="divider"></div>
+    <h2>The Sultanate Dynasties</h2>
+    <p>The Delhi Sultanate passed through several ruling dynasties over its three centuries. The <strong>Khalji dynasty</strong> (1290–1320) represents the high point of the Sultanate's power. Its premier ruler, Ala-al Din (r. 1296–1316), was an aggressive military campaigner who attacked the Yadava kingdom in the Deccan, raided Gujarat and the temple at Somnath (again), and conquered forts and kingdoms in Rajasthan to secure his western flank.</p>
+    <p>After the Khaljis came the <strong>Tughluqs</strong> (1320–1412), under whom the empire began to crack. The Bahmani dynasty in the Deccan declared independence. In 1334, the Pandyan kingdom at Madurai broke away. Warangal declared independence. And in 1336, the kingdom of Vijayanagar declared independence — a state we will return to later in the course.</p>
+    <p>Two final dynasties rounded out the Sultanate's decline: the <strong>Sayyids</strong> (1414–1451), who claimed descent from the Prophet Muhammad, and the <strong>Lodis</strong> (1451–1526), who were pure Afghans and marked the eclipse of Turkish influence in the ruling class. The Lodi dynasty would ultimately fall to a new invader — the Mughals — in 1526.</p>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <button class="nav-btn" onclick="showPage(5)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page5">
+    <div class="section-num">Part 5</div>
+    <h2>"Conversion by the Plow"</h2>
+
+    <p>If Islam in South Asia did not spread by the sword, how <em>did</em> it spread? This is one of the most important questions in South Asian history, and for a long time scholars got the answer wrong. The most common explanations — forced conversion, political patronage, social liberation — all sound reasonable, but none of them hold up when tested against the evidence.</p>
+
+    <p>The historian Richard Eaton proposed a different thesis, one that has reshaped how scholars understand the spread of Islam in the subcontinent. He called it <strong>"conversion by the plow."</strong></p>
+
+    <p><strong>Conversion by the plow</strong> is the thesis that Islam spread in South Asia not through military force or political pressure, but through the slow expansion of agricultural settlement into frontier regions — specifically Bengal and Punjab — where people often had no organized religion prior to Islam. As farmers cleared forests and brought new land under cultivation, they came into contact with Muslim holy men, traders, and settlers. Conversion happened gradually, at the level of everyday economic life, not through conquest or royal decree.</p>
+
+    <p>The geographic evidence is what makes this thesis so compelling. The areas where Islam gained the most converts were not Delhi, not the military centers, not the seats of Sultanate power. They were frontier agricultural regions — far from the capital, far from the armies, far from the court. These were places where illiterate people, living on the edge of cultivation, were gradually integrated into an expanding Islamic world. Many of them had no organized religion before Islam arrived with the plow.</p>
+
+    <div class="divider"></div>
+    <h2>Testing the Alternatives</h2>
+
+    <p>To understand why conversion by the plow matters, it helps to see how the competing explanations fail:</p>
+
+    <p><strong>Did conquering people lead to conversion by force?</strong> No. No major Muslim ruler in South Asian history ever seriously tried to convert large numbers of people to Islam. Even the most zealous rulers were practical enough to know that mass forced conversion would be politically disastrous.</p>
+
+    <p><strong>Did people convert for political patronage?</strong> No. While some individuals may have sought favor, this does not explain the broader pattern of conversion, which happened most in areas far from the centers of political power — exactly where patronage would have been weakest.</p>
+
+    <p><strong>Did people convert to become socially liberated?</strong> No. As we will see in Module 5.2, many converts continued to follow the caste rules of their previous communities even after converting. Social liberation was not the automatic result of joining Islam.</p>
+
+    <p>Each of these explanations assumes that conversion was driven by pressure from above — by rulers, by armies, by the promise of political reward. Conversion by the plow overturns all of them. It argues that Islam spread from below, through the ordinary process of people clearing land, growing food, and building communities on the agricultural frontier.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The "conversion by the plow" thesis turns our usual assumptions upside down — it suggests Islam spread not through the sword but through farming. What does this tell us about the relationship between religion and everyday economic life?</p>
+    </div>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Islam emerged in 610 CE under Muhammad and spread rapidly across the Middle East, North Africa, and into South Asia within a century.</li>
+        <li>The medieval "Islamic conquests" of India were primarily motivated by wealth and territory, not religious zeal — Mahmud of Ghazni attacked Muslims and Hindus alike.</li>
+        <li>Arabs ruled Sind from 711 CE but were contained by powerful South Asian states and governed much like any other regional power.</li>
+        <li>The Delhi Sultanate (1206–1526) was the first major Muslim state in South Asia, passing through multiple dynasties from the founding slave-generals to the Afghan Lodis.</li>
+        <li>"Conversion by the plow" is the thesis that Islam spread in South Asia through the expansion of agricultural settlement into frontier regions — not through military conquest, political patronage, or social liberation.</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <button class="nav-btn" disabled>Complete ✓</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + n).classList.add('active');
+  for (let i = 1; i <= 5; i++) {
+    document.getElementById('seg' + i).classList.toggle('active', i <= n);
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
