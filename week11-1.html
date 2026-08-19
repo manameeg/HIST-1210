@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 11.1: The Early Mughals — Babur and Humayun — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 1.1rem;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4a3f33;
+  }
+
+  .think-about-it {
+    background: #e8e0cf;
+    border-left: 3px solid #c4a87a;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .think-about-it::before {
+    content: '🤔';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 1.1rem;
+  }
+
+  .think-about-it { position: relative; }
+
+  .think-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .think-about-it p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4a3f33;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .key-takeaways li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.6rem 1.4rem;
+    border: 1px solid #c4a87a;
+    background: transparent;
+    color: #7a5c3a;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: transparent;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #a89880;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 11.1</div>
+    <h1>The Early Mughals: Babur and Humayun</h1>
+    <p class="subtitle">From Central Asian ambition to the founding of a dynasty — and the fifteen-year exile that nearly ended it.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="seg1"></div>
+    <div class="progress-segment" id="seg2"></div>
+    <div class="progress-segment" id="seg3"></div>
+    <div class="progress-segment" id="seg4"></div>
+    <div class="progress-segment" id="seg5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <div class="section-num">Part 1</div>
+    <h2>The World Before the Mughals</h2>
+
+    <p>By the mid-fourteenth century, the Delhi Sultanate — which had dominated much of northern India for over a century — was fragmenting. In its place rose a patchwork of regional kingdoms, each competing for territory, revenue, and legitimacy. Islamic rulers in the subcontinent depended heavily on the religious establishment for political backing, while at the local level, Hindu rulers remained essential for the collection of revenue. This layered arrangement — Islamic political authority atop existing structures of local governance — would shape the Mughal system that followed.</p>
+
+    <p>One innovation of this period deserves special attention: the advent of paper. With paper came the possibility of a far more elaborate bureaucracy, and South Asian administration bloomed in ways that would have been impossible in an era of palm-leaf records alone. The Mughals would inherit and intensify this bureaucratic infrastructure.</p>
+
+    <p>The Mughal Empire itself would eventually encompass some 100 to 150 million inhabitants spread across 3.2 million square miles. The Mughals were fundamentally concerned with war — that is, with expansion — and their ability to intrude upon and centralize the lives of their subjects is what gave the empire its cohesion. But the empire began with a single man marching out of Afghanistan.</p>
+
+    <div class="callout">
+      <div class="callout-label">Key Context</div>
+      <p>The word "Mughal" is a Persian rendering of "Mongol." The dynasty is also known as the Timurids, because its founder traced his lineage to both Genghis Khan and Timur (Tamerlane). This Central Asian heritage shaped the empire's military culture, court language, and political ambitions throughout its history.</p>
+    </div>
+
+    <div class="nav-container">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">Page 1 of 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <div class="section-num">Part 2</div>
+    <h2>Babur: The Founder (1526–1530)</h2>
+
+    <p>Babur was a Chaghatai Turk whose capital was at Kabul. He traced his lineage to both Genghis Khan and Timur, and the language of his court was Turki. From his base in Afghanistan, Babur turned his ambitions toward the rich plains of northern India.</p>
+
+    <p>In 1526, Babur marched on Delhi and met Ibrahim Lodi's forces at the Battle of Panipat, near the city. Despite commanding a smaller army, Babur won a decisive victory. Ibrahim Lodi had failed to make effective use of gunpowder and firearms — a technological gap that proved fatal. Babur then sent his son Humayun ahead to the Lodi capital of Agra, and by about 1528 had defeated the Rajput kings as well.</p>
+
+    <p>Babur's reign was remarkably brief. He died in December 1530, just four years after his victory at Panipat. But in that short time he had assembled a kingdom stretching from his Central Asian territories through Kabul and the Punjab, across Delhi, and into parts of Bihar and Gwalior. He left behind not only a territory but a claim — a dynasty that traced itself to the great conquerors of Central Asia and considered northern India its rightful domain.</p>
+
+    <div class="think-about-it">
+      <div class="think-label">Think About It</div>
+      <p>Babur's victory at Panipat is often described as a triumph of military technology. What does it suggest about the relationship between innovation and political power in this period? How does the role of gunpowder here compare to what you have seen in other parts of Asia?</p>
+    </div>
+
+    <div class="nav-container">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">Page 2 of 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <div class="section-num">Part 3</div>
+    <h2>Humayun: The Superstitious Emperor</h2>
+
+    <p>Humayun inherited his father's kingdom in 1530 but proved a far more uneven ruler. He was exceedingly superstitious: he rearranged the departments of his government according to astrology, kept a large carpet embroidered with the zodiac, and even meted out unfair punishments depending on what day of the week it was.</p>
+
+    <p>As a builder, Humayun was ambitious but rarely finished what he started. In 1533, he laid the foundation stone for a new Delhi — what is today called Purana Qila ("Old Fort") — but the project never progressed very far.</p>
+
+    <p>Humayun faced two major enemies. The first was Sultan Bahadur of Gujarat, whom Humayun managed to sack — though Bahadur was restored, only to be sacked and killed by the Portuguese. The second and far more dangerous enemy was Sher Khan of Bihar, an Afghan warlord.</p>
+
+    <p>Sher Khan attacked the Mughals in 1539. At first, the two sides struck a deal: Humayun's army would advance while Sher Khan's forces symbolically retreated, allowing both sides to save face. But Sher Khan double-crossed Humayun and launched a surprise attack. Humayun escaped only by floating across a river on an inflated animal skin, held afloat by a man named Nizam. In gratitude, Humayun reportedly promised Nizam that he would one day sit on the throne of Delhi.</p>
+
+    <p>On May 17, 1540, the two armies clashed again at Kanauj. Humayun was decisively defeated. He retreated all the way to Lahore, and Sher Khan took the title of Sher Shah, ruling northern India in the Mughals' place.</p>
+
+    <div class="callout">
+      <div class="callout-label">Key Context</div>
+      <p>Sher Shah Sur, though he ruled for only about five years, left a lasting administrative legacy. When Humayun eventually returned, he reorganized his government along the lines that Sher Shah had established — a telling sign that even a defeated dynasty could learn from its conqueror.</p>
+    </div>
+
+    <div class="nav-container">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">Page 3 of 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <div class="section-num">Part 4</div>
+    <h2>Fifteen Years in Exile</h2>
+
+    <p>Humayun's years in exile — from 1540 to 1555 — read more like an adventure story than a chapter of political history. In 1541 and 1542, he went to Sind to prepare a strike against Sher Shah. While there, he married Hamida. On October 15, 1542, the fifteen-year-old Hamida gave birth to a son: Akbar, the future emperor who would transform the Mughal state.</p>
+
+    <p>By 1543, Humayun and his small entourage had retreated still further, all the way to Persia. Shah Tahmasp of Iran received Humayun at his court — an event recorded by Mughal court painters — and provided him with troops and support. In 1545, Humayun used these resources to retake Kandahar and then Kabul, where he was reunited with the young Akbar.</p>
+
+    <p>The return was not without brutality. Around 1553, Humayun had his own brother Kamran blinded to eliminate him as a rival. Meanwhile, back in Delhi, Sher Shah had died and the throne had passed to his successor, Islam Shah Sur. The Sur dynasty was weakening.</p>
+
+    <p>In 1555, Humayun returned to northern India and retook the throne. This time, he reorganized his government along the administrative lines that Sher Shah had established — less superstitious, more systematic. But his second reign lasted only months.</p>
+
+    <div class="think-about-it">
+      <div class="think-label">Think About It</div>
+      <p>Humayun's exile took him from Sind to Persia and back. What does the fact that a Mughal emperor sought refuge at the Persian court tell us about the political and cultural connections between South Asia and the wider Islamic world in this period?</p>
+    </div>
+
+    <div class="nav-container">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">Page 4 of 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page5">
+    <div class="section-num">Part 5</div>
+    <h2>The Fall and the Future</h2>
+
+    <p>On January 24, 1556 — a Friday — Humayun died in one of history's more unusual royal deaths: he fell down the steps of his library. He was just beginning to stabilize his restored kingdom. Akbar, only twelve years old, now took over.</p>
+
+    <p>Humayun's reign is often treated as an interlude — a parenthesis between Babur's conquest and Akbar's transformation of the empire. And there is some truth to that reading. Humayun lost the empire his father had won, spent fifteen years as a refugee, and ruled again for less than a year before his accidental death.</p>
+
+    <p>But Humayun's story also reveals important truths about the Mughal project. The dynasty's survival was never guaranteed. It depended on shifting alliances — with Persian rulers, with local supporters, with military commanders whose loyalty had to be constantly earned. The Mughals' Central Asian heritage gave them prestige but not automatic authority in South Asia. That authority had to be built, lost, rebuilt, and ultimately reimagined by Humayun's son Akbar.</p>
+
+    <p>Humayun's tomb, built by his widow Hamida after his death, still stands in Delhi. It is considered one of the architectural precursors to the Taj Mahal — a fitting monument to a ruler whose greatest legacy may have been the son who succeeded him.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>The Mughal Empire emerged from Central Asian military traditions, with Babur tracing his lineage to both Genghis Khan and Timur.</li>
+        <li>Babur's victory at Panipat (1526) was enabled by superior use of gunpowder against Ibrahim Lodi's larger forces.</li>
+        <li>Humayun lost the empire to Sher Khan Sur and spent fifteen years in exile, retreating as far as the Persian court.</li>
+        <li>Humayun's return in 1555 restored Mughal rule, but he adopted the administrative reforms of his former enemy Sher Shah.</li>
+        <li>The Mughals' authority in South Asia was not automatic — it was built through military conquest, political alliances, and constant adaptation.</li>
+      </ul>
+    </div>
+
+    <div class="nav-container">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">Page 5 of 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showPage(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + n).classList.add('active');
+    document.querySelectorAll('.progress-segment').forEach((s, i) => {
+      s.classList.toggle('active', i < n);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
