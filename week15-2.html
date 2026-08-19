@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 15.2: Trade, Islands, and the Spread of Islam — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Crimson Pro', Georgia, serif; background: #f5f0e8; color: #2c2416; line-height: 1.85; font-size: 18px; }
+  .container { max-width: 640px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .header { margin-bottom: 2.5rem; }
+  .course-tag { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #7a5c3a; margin-bottom: 0.75rem; }
+  h1 { font-family: 'Crimson Pro', serif; font-size: 2.4rem; font-weight: 700; line-height: 1.15; color: #2c2416; margin-bottom: 0.75rem; }
+  .subtitle { font-size: 1.05rem; color: #6b5d4f; font-style: italic; line-height: 1.6; }
+  .divider { width: 60px; height: 2px; background: #c4a87a; margin: 2rem 0; }
+  .progress-container { display: flex; gap: 6px; margin-bottom: 2rem; }
+  .progress-segment { flex: 1; height: 3px; border-radius: 2px; background: #d4cab8; transition: background 0.3s; }
+  .progress-segment.active { background: #7a5c3a; }
+  .page { display: none; }
+  .page.active { display: block; animation: fadeIn 0.35s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .section-num { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c4a87a; margin-bottom: 0.4rem; }
+  h2 { font-family: 'Crimson Pro', serif; font-size: 1.7rem; font-weight: 600; color: #2c2416; margin-bottom: 1.25rem; line-height: 1.25; }
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+  .callout { background: #ebe4d6; padding: 1.5rem 1.75rem; margin: 1.75rem 0; border-radius: 4px; position: relative; }
+  .callout::before { content: '💡'; position: absolute; top: -10px; left: 16px; font-size: 1.1rem; }
+  .callout-label { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7a5c3a; margin-bottom: 0.5rem; }
+  .callout p { font-size: 0.95rem; color: #4a3f33; line-height: 1.7; }
+  .key-takeaways { background: #2c2416; color: #f5f0e8; padding: 2rem; border-radius: 4px; margin-top: 2rem; }
+  .key-takeaways h3 { font-family: 'Nunito Sans', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c4a87a; margin-bottom: 1rem; }
+  .key-takeaways ul { list-style: none; padding: 0; }
+  .key-takeaways li { padding: 0.5rem 0; border-bottom: 1px solid rgba(196, 168, 122, 0.2); font-size: 0.95rem; line-height: 1.6; }
+  .key-takeaways li:last-child { border-bottom: none; }
+  .key-takeaways li::before { content: '→ '; color: #c4a87a; }
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #d4cab8; }
+  .nav-btn { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.6rem 1.5rem; border: 1px solid #7a5c3a; background: transparent; color: #7a5c3a; border-radius: 3px; cursor: pointer; transition: all 0.2s; }
+  .nav-btn:hover { background: #7a5c3a; color: #f5f0e8; }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-btn:disabled:hover { background: transparent; color: #7a5c3a; }
+  .page-indicator { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 600; color: #a0927e; letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="course-tag">HIST 1210 · Week 15.2</div>
+    <h1>Trade, Islands, and the Spread of Islam</h1>
+    <p class="subtitle">How maritime trade connected Southeast Asia to the world, how island empires rose and fell on Java, and how Islam arrived and adapted to one of the most diverse regions on earth.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="prog-1"></div>
+    <div class="progress-segment" id="prog-2"></div>
+    <div class="progress-segment" id="prog-3"></div>
+    <div class="progress-segment" id="prog-4"></div>
+    <div class="progress-segment" id="prog-5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="section-num">Part One</div>
+    <h2>Trade as the Central Theme</h2>
+
+    <p>If there is one thread that ties the entire history of Southeast Asia together, it is trade. The region's position between India and China — combined with its control of critical sea lanes like the Strait of Malacca — made it a hub for the exchange of goods, technologies, religions, and ideas across the ancient and medieval world.</p>
+
+    <p>The evidence for this goes back centuries before the common era. The Han Dynasty historian Ban Gu described how Chinese ships left port "to trade for brilliant pearls, glass, strange gems and other exotic products, giving in exchange gold and silk." In 70 CE, the Roman geographer Pliny the Elder reported that Rome's trade with India, Arabia, and China was costing the empire millions of gold coins per year. Roman coins have been found across Asia — tangible evidence of a trade network that linked the Mediterranean world to Southeast Asia.</p>
+
+    <p>India served as the spice hub for the world, trading with the Middle East, Europe, Southeast Asia, and the Far East. Pepper and cinnamon came from India. Cloves and nutmeg came from the Moluccas — the "Spice Islands" of eastern Indonesia. Sandalwood came from both India and Southeast Asia. Silk and ceramics flowed from China. Even peacocks traveled from India to European gardens. But trade carried more than goods: it also carried technology, religion, music, and language.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Recall from Week 4 that the Silk Road connected China to the Mediterranean overland. Here we see a parallel maritime network connecting the same civilizations by sea. In Week 14, we saw how Ming China turned to the sea when Silk Road trade declined after Timur's destruction of Central Asian cities. Trade routes by land and sea were not alternatives — they were complementary systems, each used when the other was disrupted.</p>
+    </div>
+
+    <p>Shipping routes connected Asia to itself and the world beyond. Sea routes and Silk Road were each used when the other was not an option. Trade also responded to technology: in the twelfth century CE, Chinese shipbuilding and navigational instruments improved significantly. At the same time, Chinese porcelain reached new levels of quality and became a major export — the same Ming porcelain in white and cobalt blue that we discussed in Week 14.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="section-num">Part Two</div>
+    <h2>The Island States: Java and Its Empires (8th–15th centuries CE)</h2>
+
+    <p>The island states of Southeast Asia — primarily in modern Indonesia, Malaysia, and the Philippines — have likely been populated since prehistoric times. They are culturally less impacted by China than the mainland states, though India's influence is strong. They are known above all for spice, more dependent on maritime trade, more influenced by Islam, and — eventually — more affected by European colonial powers.</p>
+
+    <p>The island of Java offers the clearest example of how empires rose and fell in maritime Southeast Asia. In the early eighth century CE, the kingdom of Sailendra emerged on Java. It grew rich from rice agriculture and became a major trade center. Sailendra was a Buddhist kingdom, and it is best known for building Borobudur — one of the largest and most extraordinary Buddhist monuments in the world, and a structure that rivals anything built during the same period in India or China.</p>
+
+    <p>By the ninth century CE, Sailendra declined and was followed by the kingdom of Mataram, whose rulers turned to Hinduism rather than Buddhism. They built the temple at Prambanan, a Hindu counterpart to Borobudur. The kingdom peaked in the eleventh century CE under Raja Airlangga, a ruler who was fair to both the working class and the aristocracy. Airlangga created new water systems, deepened shipping channels, and promoted local Javanese culture. He believed he was a reincarnation of the Hindu god Vishnu. In 1045 CE, he retired from rule to a life of prayer and reflection.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Java shifted from a Buddhist kingdom (Sailendra, Borobudur) to a Hindu one (Mataram, Prambanan) within a century. Compare this to India itself, where Buddhism and Hinduism coexisted and competed for centuries (Week 3). What does it mean that Southeast Asian rulers could shift between these religions relatively easily?</p>
+    </div>
+
+    <p>From the tenth to the fifteenth century CE, Java remained a mix of Hindu and Javanese culture. The highpoint of this era was the state of Majapahit, founded in 1293 CE. Majapahit's rule extended across Indonesia and the Malay Peninsula, making it the most powerful maritime state in the region — and the primary competitor that Ming China's Zheng He fleets confronted in the early fifteenth century CE (Week 14). Islam was introduced to Java during the thirteenth century CE and gradually grew. By the sixteenth century CE, the new Muslim state of Mataram had emerged, exemplifying the ongoing interplay of trade and religion that defined island Southeast Asia.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="section-num">Part Three</div>
+    <h2>The Mainland States: Vietnam (3rd century BCE–1788 CE)</h2>
+
+    <p>The mainland states of Southeast Asia — Burma, Siam (Thailand), Cambodia, Laos, and Vietnam — were culturally affected by both India and China. India offered Buddhism, Hinduism, dance, music, literature, art, and the great epics of the Ramayana and Mahabharata. China offered political models, administrative systems, and — in Vietnam's case — direct rule. These mainland states both accepted, rejected, and modified outside influences. They warred against each other. And they developed large urban centers as empires arose.</p>
+
+    <p>Vietnam offers the clearest example of Chinese influence on the Southeast Asian mainland. Early Vietnam was ruled by successive Chinese dynasties: the Qin (third century BCE), the Han (206 BCE–220 CE), and the Tang (618–907 CE). Recall from Week 4 that the Han and Tang were among the most powerful and expansive dynasties in Chinese history. Vietnam was, for long stretches, a province of the Chinese empire — absorbing Chinese administrative methods, writing, and Confucian values in the process.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Vietnam was directly ruled by China for centuries, yet it developed a fiercely independent identity. Compare this to Korea (Weeks 6 and 13.2), which was never fully absorbed into China but modeled its entire Chosŏn state on Chinese principles. What is the difference between being ruled by a civilization and choosing to emulate one?</p>
+    </div>
+
+    <p>Following the periods of Chinese rule, Vietnam's first major independent dynasty was the Le Dynasty (1428–1788 CE). The Le created advances in administration, literature, and legal codes — all based on Chinese models. Art also flourished, with wood carvings becoming especially refined. However, the Le generally ruled in name only. From 1527 to 1801 CE, real power was shared between two rival families: the Trinh in the north and the Nguyen in the south. The Nguyen steadily gained in importance, reaching the Mekong River by the late seventeenth century CE and encompassing all of Cochin China by 1757 CE.</p>
+
+    <p>Vietnam's trajectory illustrates a broader pattern we have seen throughout this course: states that borrow institutions from more powerful neighbors often outlast the systems they borrow from. The Le Dynasty adopted Chinese models but adapted them to Vietnamese conditions — just as Chosŏn Korea adopted Chinese Confucianism but applied it in distinctly Korean ways.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="section-num">Part Four</div>
+    <h2>The Spread of Islam in Southeast Asia (7th–16th centuries CE)</h2>
+
+    <p>Islam first made contact with Southeast Asia in the seventh and eighth centuries CE, carried by Indian and Arab seamen along the same maritime trade routes that had brought Buddhism and Hinduism centuries before. Recall from Week 5 that Islam had arrived in South Asia through a combination of military conquest (the Delhi Sultanate) and trade. In Southeast Asia, the pattern was almost entirely trade-driven.</p>
+
+    <p>Muslim polities began to develop in the region between the thirteenth and fifteenth centuries CE. Islam spread primarily to coastal areas — Malaya, Indonesia, and parts of the Philippines — where maritime trade was strongest. Inland countries remained more Buddhist: Burma, Siam, Cambodia, and Laos. The geography of Southeast Asia itself helps explain this pattern: coastal communities were plugged into Indian Ocean trade networks where Muslim merchants were dominant, while inland communities remained more connected to overland routes where Buddhist and Hindu traditions held sway.</p>
+
+    <p>What makes Islam in Southeast Asia distinctive is how thoroughly it was adapted to local conditions. There was no single Islamic tradition in the region. Islam existed alongside local religions, Hinduism (which survived on Bali, where it remains dominant today), and later Christianity (brought by European colonizers). The practice of purdah — the seclusion of women — was largely rejected. Women remained prominent in trade missions and diplomacy, and they were, as the lecture puts it, "largely as free as they can be in the early modern period."</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>In Week 5, we saw Islam arriving in South Asia through military conquest — the raids of Mahmud of Ghazni, the Delhi Sultanate. In Southeast Asia, Islam spread through trade, not conquest. How did the method of arrival shape the kind of Islam that took root in each region? Why was Southeast Asian Islam more flexible about women's roles?</p>
+    </div>
+
+    <p>Indian seamen spread the religion along trade routes, while clerics carried it into the hinterland. Political, commercial, and military elites were typically the first to convert, and they encouraged their followers to do the same. Early Islam in Southeast Asia made particular use of the Sufi tradition — a mystical branch of Islam that emphasized personal spiritual experience over strict legalism. Sufism fit well with older local religious practices, easing the transition for communities that already valued spiritual experience and ritual.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page-5">
+    <div class="section-num">Part Five</div>
+    <h2>Southeast Asia in the World: Connections and Comparisons</h2>
+
+    <p>Southeast Asia's story — as traced across these two modules — is fundamentally a story about connection. This region was never an isolated backwater. It was the hinge between the Indian and Chinese worlds, the place where religions mixed, trade routes converged, and cultural influences were absorbed, adapted, and transformed.</p>
+
+    <p>Consider how many of the themes from this course converge here. Buddhism arrived from India (Week 3) and traveled through Southeast Asia to reach China (Week 4), Korea (Week 6), and Japan (Week 6 and 13.1). The Silk Road and maritime trade routes that we traced in Week 4 ran through this region. The Mongol Empire (Week 10) largely bypassed Southeast Asia, but Ming China's Zheng He fleets (Week 14) projected power directly into it. Islam, which we first encountered arriving in South Asia through conquest (Week 5), arrived here through trade — and took a very different form as a result.</p>
+
+    <p>The island states show us empires built on trade and spice rather than land and grain — a different model of power than anything we have seen in China, India, or Japan. The mainland states show us societies caught between two great civilizational forces — India and China — yet maintaining their independence. And throughout the region, women held more public and commercial power than in most other Asian societies, a pattern that persisted even as Hinduism, Buddhism, Confucianism, and Islam all brought patriarchal norms with them.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>This course has traced Asian civilizations from the Indus Valley (Week 2) to Ming China (Week 14). Southeast Asia is the last major region we study — and it is the one that connects all the others. What does it mean to end the course here, at the crossroads?</p>
+    </div>
+
+    <p>Southeast Asia reminds us that the history of Asia is not the history of a few great empires operating in isolation. It is the history of connections — of trade, migration, religion, and cultural exchange flowing across borders and oceans. The spices that drew traders from Rome, the Buddhism that traveled from India to Japan, the porcelain that Ming China exported across the known world — all of these routes passed through Southeast Asia. To understand Asia, you have to understand the world between.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Trade is the central theme of Southeast Asian history — the region connected India, China, the Middle East, and eventually Europe through maritime and overland routes.</li>
+        <li>The island kingdom of Sailendra (8th century CE) built Borobudur, one of the world's great Buddhist monuments; the Hindu kingdom of Mataram followed, building Prambanan.</li>
+        <li>Majapahit (founded 1293 CE) became the most powerful maritime state in the region before Islam and European powers reshaped the archipelago.</li>
+        <li>Vietnam was directly ruled by Chinese dynasties (Qin, Han, Tang) before establishing the independent Le Dynasty (1428–1788 CE), which adopted Chinese models while developing a distinct Vietnamese identity.</li>
+        <li>Islam arrived through trade (7th–8th centuries CE) and spread along coastal areas; it was adapted to local cultures, coexisted with older religions, and largely rejected the practice of purdah.</li>
+        <li>Sufi Islam fit well with existing Southeast Asian spiritual practices, easing conversion; elites converted first and encouraged followers.</li>
+        <li>Southeast Asia is the crossroads where the themes of this entire course — Buddhism, Hinduism, Islam, Confucianism, the Silk Road, maritime trade, and the Mongol aftermath — converge.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + n).classList.add('active');
+  for (let i = 1; i <= 5; i++) {
+    const seg = document.getElementById('prog-' + i);
+    if (i <= n) seg.classList.add('active');
+    else seg.classList.remove('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
