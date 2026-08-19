@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 6.1: Early Korea — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '?';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #7a5c3a;
+    color: #f5f0e8;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+  }
+
+  .takeaways-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .takeaways li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .takeaways li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: none;
+    border: 1.5px solid #7a5c3a;
+    color: #7a5c3a;
+    padding: 0.6rem 1.4rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: none;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #7a5c3a;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="course-tag">HIST 1210 — Week 6.1</div>
+    <h1>Early Korea: Silla and Koryŏ</h1>
+    <p class="subtitle">From bone ranks to Mongol alliances — how Korea built, borrowed, and adapted across a thousand years.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <div class="section-num">Part One</div>
+    <h2>An East Asian World</h2>
+
+    <p>During the Tang dynasty in China (618–907 CE), new countries emerged across East Asia. The early histories of Korea and Japan are impossible to understand without seeing them as part of a larger East Asian community — one bound together by shared ideas, shared religion, and shared aristocratic culture.</p>
+
+    <p>Across China, Korea, and Japan, elites often had more in common with each other than with the peasants beneath them. Tang Chinese poetry was widely read and admired across the region. Buddhist texts traveled in Chinese translation, carrying Chinese cultural influence wherever they went. The aristocratic cultures of all three societies overlapped in ways that make studying them in isolation misleading.</p>
+
+    <p>India and Southeast Asia were much less part of this particular cultural sphere. East Asia's international aristocratic culture was its own distinct world — and Korea was one of its earliest and most active participants.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>What does it mean to say that elites across different countries had more in common with each other than with ordinary people in their own societies? Can you think of modern parallels?</p>
+    </div>
+
+    <p>The Silla dynasty (57 BCE – 935 CE) emerged in the second century CE as a distinct state in southeastern Korea. It was one of several competing kingdoms on the peninsula — the Kaya kingdom to the south, and Paekche (POCK-chay) to the west. In 514 CE, Kim Wonjong proclaimed himself king of Silla and began expanding, conquering the Kaya kingdom and extending Silla's reach southward.</p>
+
+    <p>In 535 CE, Wonjong made Buddhism the official religion of Silla. This was a strategic move as much as a spiritual one — it strengthened ties to Tang China and increased Silla's influence over Japan. Buddhist temples were built across the kingdom, and kings tried to rule as "Buddhist kings," using the religion as a tool of state legitimacy. This alliance with China through Buddhism was a key reason Silla, rather than its rivals, became the dominant power on the peninsula. After unification around 935, Korean leaders also began adopting Chinese Confucian ideas to run the state, though Buddhism never faded completely. Korean monks continued traveling to China for Buddhist sutras.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Previous</button>
+      <span class="page-indicator">1 of 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <div class="section-num">Part Two</div>
+    <h2>Bone Ranks, Warriors, and Queens</h2>
+
+    <p>Wonjong created a distinctive social hierarchy called the "bone rank" system. Bone ranks functioned like European bloodlines or the idea of "noble blood" — perhaps even like Indian ideas of caste. Your rank determined everything visible about your life: your clothes, your carriages, your housing. Wonjong created titles to formalize these ranks, establishing a small aristocratic class at the top of Silla society. Below them were commoners, landowners, merchants, tenant farmers, and slaves.</p>
+
+    <p>Unlike China, Silla developed a strong warrior culture. Elite fighters called <em>Hwarang</em> — meaning "Flower Youths" — cultivated both military skills and a heroic public image. Around 583 CE, a banner system was implemented using flags with different colors and decorations, helping centralize the military under royal authority.</p>
+
+    <p>Also unlike China, women rulers were more common in Korea. When a Silla king died in 632 CE without a male heir, his daughter Tongman became Queen Sŏndŏk and ruled for fifteen years (r. 632–647). Sŏndŏk strengthened ties with Tang dynasty China, befriending Emperor Taizong. She is credited with laying the groundwork for a unified Silla and even built an observatory for studying planets and stars — because Confucian theory held that good governance was reflected in the heavens. Unusual patterns like a comet were signs that something was wrong.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The bone rank system, European bloodlines, and Indian caste all organize society by birth. What makes these systems similar? What might make them different from each other?</p>
+    </div>
+
+    <p>Silla rulers competed with two other regional powers — Koguryŏ in the northwest and Paekche in the southwest. By the seventh century, Silla had largely defeated both, unifying most of the Korean peninsula under a single dynasty.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Previous</button>
+      <span class="page-indicator">2 of 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <div class="section-num">Part Three</div>
+    <h2>Buddhism as Cultural Glue</h2>
+
+    <p>Buddhism bound together China, Korea, and Japan in ways that went far beyond personal faith. When Sui China required Buddhist pagodas to be built, all three Korean kingdoms requested relics for their own states. Korean monks traveled to China to study Buddhism, and then carried what they learned onward — a monk named Hyegwan went to China and then to Japan around 625 CE, spreading Buddhism along the way.</p>
+
+    <p>Buddhism came to Korea in a distinctly Chinese "flavor." Buddhist texts arrived in Chinese translation, and Chinese translation brought other Chinese influences with it. Tang-style dress and the Tang calendar were both adopted in Korea. A Korean monk named Chajang traveled to China around 636 CE and returned in 643 CE. By 649, the Silla king had implemented changes based on Chajang's accounts of Chinese practices.</p>
+
+    <p>What makes Silla's cultural borrowing interesting is how it blended traditions rather than simply copying. Around 602 CE, the Silla kingdom adopted a secular code that combined Confucian, Buddhist, and possibly indigenous Korean ideas into five precepts:</p>
+
+    <p>1. Serve one's lord with loyalty — obviously Confucian. 2. Serve one's parents with filial piety — again, Confucian. 3. Interact with friends in good faith. 4. Do not retreat from battle — possibly a Korean warrior tradition, unrelated to either Confucianism or Buddhism. 5. Exercise discretion in killing living things — this sounds Buddhist, but modified, since Buddhists traditionally prohibit killing entirely.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Five Precepts mix Confucian, Buddhist, and possibly Korean warrior ideas. What does this tell us about how cultures borrow from each other — do they adopt systems wholesale, or pick and choose?</p>
+    </div>
+
+    <p>Silla's reach extended beyond East Asia as well. Muslim traders reached Silla via the Silk Road, leaving accounts that spread Korea's fame into the Islamic world.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Previous</button>
+      <span class="page-indicator">3 of 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <div class="section-num">Part Four</div>
+    <h2>The Fall of Silla and the Rise of Koryŏ</h2>
+
+    <p>By the ninth century, Silla's power began to weaken. Disputes over succession, corrupt officials, and increased rents and taxes drove popular uprisings. Critically, Silla rulers had never fully crushed the old Korean aristocracy, and these powerful families helped fuel the revolts.</p>
+
+    <p>In 935, a rebel leader named Wang Kŏn — a wealthy farmer — accepted the surrender of the last Silla king, Gyeongsun (r. 927–935). Wang Kŏn proclaimed himself king of a new state: Koryŏ. This kingdom would last for 450 years and give us the name "Korea."</p>
+
+    <p>Wang Kŏn used many Chinese ideas and institutions where they were applicable to Korea. He built a new capital, Kaesŏng, on the same plan as Tang China's Chang'an. Much of the government was organized along Chinese lines, including an examination system to appoint officials. But Koryŏ was not simply a copy of China. The Wang family shared power with the old bone-rank aristocratic families, and some families became especially powerful because they could supply wives to the kings. The Kims married three daughters to a king; the Yi family married into the royal line; the Ch'oe family eventually became rulers in their own right for a time.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Wang Kŏn modeled his capital on Chang'an and adopted Chinese exams — but kept the bone-rank aristocracy in power. What does selective borrowing tell us about how new states balance foreign models with local realities?</p>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Previous</button>
+      <span class="page-indicator">4 of 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page5">
+    <div class="section-num">Part Five</div>
+    <h2>The Mongols at the Door</h2>
+
+    <p>In the thirteenth century, Koryŏ faced a new and devastating threat: the Mongols. In 1231, Koreans killed a Mongol ambassador, and the Mongols launched a full-scale attack. The Koreans held out with extraordinary determination. As one Mongol commander reportedly said: "Since my youth I have followed the army, and I am accustomed to seeing the cities of the world fought over and defended, but I have never seen anyone attacked like this and refusing to surrender to the end."</p>
+
+    <p>For the next two decades, the Mongols continued to attack Korea. The Ch'oe family, who held real power, could neither defend Korea from the Mongols nor make peace with them. Eventually, nobles joined together and assassinated the Ch'oe leader. The next in line, Prince Wonjong of the Wang family, surrendered to the Mongols. In return, the Mongols supported Wonjong against his rivals. By 1273, Korean resistance had ended.</p>
+
+    <p>For a century, the Wang royal line ruled Korea in cooperation with the Mongols. King Wonjong and his descendants married into the Yuan dynasty. They took Mongol names, wore their hair long in Mongol style, and used some Mongol language. By 1280, real power was in Mongol hands.</p>
+
+    <p>But peace with the Mongols brought benefits as well. Korean traders could export books and porcelain to China, and they imported Indian cotton and Chinese gunpowder. Korea was enriched intellectually by visiting China. And when the Yuan dynasty faced revolts, Korea remained a staunch ally.</p>
+
+    <div class="takeaways">
+      <div class="takeaways-label">Key Takeaways</div>
+      <ul>
+        <li>Korea's early history is inseparable from its place in a larger East Asian cultural world shaped by Tang China and Buddhism.</li>
+        <li>The Silla dynasty created a distinctive society blending Confucian, Buddhist, and indigenous Korean traditions — visible in everything from the Five Precepts to Queen Sŏndŏk's observatory.</li>
+        <li>The bone rank system persisted across dynasties, shaping Korean politics even as Chinese-style institutions were adopted.</li>
+        <li>Koryŏ borrowed selectively from China — adopting exams and urban planning while keeping aristocratic power structures intact.</li>
+        <li>Korea's century under Mongol influence brought devastation but also trade, cultural exchange, and integration into a vast Eurasian network.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Previous</button>
+      <span class="page-indicator">5 of 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showPage(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + n).classList.add('active');
+    const segs = document.querySelectorAll('.progress-segment');
+    segs.forEach((s, i) => {
+      s.classList.toggle('active', i < n);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
