@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 13.2: Later Korea — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 1.1rem;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    line-height: 1.7;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(196, 168, 122, 0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .key-takeaways li:last-child { border-bottom: none; }
+
+  .key-takeaways li::before {
+    content: '→ ';
+    color: #c4a87a;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #7a5c3a;
+    background: transparent;
+    color: #7a5c3a;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: transparent;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #a0927e;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="course-tag">HIST 1210 · Week 13.2</div>
+    <h1>Later Korea</h1>
+    <p class="subtitle">The founding of the Chosŏn dynasty in 1392 CE, the invention of hangul, and the rise of a Confucian social order that would endure for over five centuries.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="prog-1"></div>
+    <div class="progress-segment" id="prog-2"></div>
+    <div class="progress-segment" id="prog-3"></div>
+    <div class="progress-segment" id="prog-4"></div>
+    <div class="progress-segment" id="prog-5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="section-num">Part One</div>
+    <h2>General Yi and the Birth of Chosŏn (1388–1392 CE)</h2>
+
+    <p>In Week 6, we traced the early history of Korea — from the Three Kingdoms period through the Silla unification and the Koryŏ dynasty that followed. We also saw how Korea's relationship with China shaped its political culture, from adopting Buddhism and Confucianism to navigating the tributary system. This week picks up in the late fourteenth century CE, when Korea's alliance with Mongol China suddenly became a liability.</p>
+
+    <p>By 1388 CE, the Mongol Yuan dynasty — which we studied in Week 10 — had collapsed, and the Ming dynasty (founded in 1368 CE) now held power in China. The Korean king either did not understand or did not care about this shift. Angry that Ming troops had occupied a small corner of the Korean peninsula, he ordered his most capable general, Yi Songgye, to attack China.</p>
+
+    <p>Yi Songgye had been a military man his whole life. He had fought Japanese pirates along the coast and Chinese raiders along the land frontier. He knew exactly what an attack on Ming China would mean: defeat. So he marched his army to the Yalu River — the border with China — and stopped.</p>
+
+    <p>Then he did four things that changed Korean history. He turned around and seized the capital. In 1390 CE, he burned all land registries, paving the way for sweeping land reform. Within four years, in 1392 CE, he declared himself ruler. And he gave his new state a name: Chosŏn — meaning "fresh dawn" — an ancient Chinese name for Korea.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>General Yi was ordered to attack China, and instead he overthrew his own king. How does a military commander justify that kind of decision? Compare this to the Ashikaga Takauji situation in Japan (Week 13.1), where a general sent to depose an emperor switched sides — twice.</p>
+    </div>
+
+    <p>General Yi is also known as King T'aejo (r. 1392–1398 CE) — a title meaning "Great Founder" or "Grand Progenitor." It is the same title, in a different transliteration, that Ming China used for its own founder Zhu Yuanzhang ("Taizu"). The Chosŏn dynasty — also called the Yi dynasty — would last until 1910 CE, an extraordinary run of 518 years. Yi felt he ruled as the people's choice. He had the support of Confucian scholars and the credibility of his military career.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="section-num">Part Two</div>
+    <h2>Reforming the State (1390s CE)</h2>
+
+    <p>King T'aejo moved quickly to reshape the Korean state along Confucian principles. Recall from Week 4 that Confucianism — which originated in China during the sixth and fifth centuries BCE — emphasized social harmony, respect for hierarchy, education, and virtuous governance. T'aejo made these ideals the foundation of the new Chosŏn order.</p>
+
+    <p>His land reforms broke up the old estates of the Koryŏ dynasty, distributing some of the land to his own supporters. He eliminated private armies, consolidating military power under the crown. Both moves struck directly at the power base of the old Koryŏ aristocracy.</p>
+
+    <p>The Chosŏn rulers established close ties with Ming China, and they demonstrated this relationship in three important ways. First, they adopted the Ming calendar — a largely symbolic gesture, but one that signaled alignment with the Chinese imperial order. Second, Chosŏn ambassadors visited the Ming court at least twice a year, maintaining a regular diplomatic presence. Third, T'aejo adopted the Chinese examination system, and unlike rulers before him, he genuinely tried to use it to place talented men in positions of responsibility rather than simply rewarding allies.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Korea adopted the Ming calendar, sent regular ambassadors, and used the Chinese examination system. Does this represent genuine admiration, strategic alignment, or something else? Compare this to how Delhi Sultanate rulers in India (Week 5) navigated their relationship with the broader Islamic world — borrowing institutions while adapting them to local conditions.</p>
+    </div>
+
+    <p>T'aejo also moved his capital from Kaesong to Hanyang — modern-day Seoul. The new site was centrally located, near the sea, and more convenient for the people. It was a practical decision, but also a symbolic break with the Koryŏ past — a fresh start for a "fresh dawn."</p>
+
+    <p>T'aejo's successor, King Taejong, continued the work of building a new kind of Korean state — one that would increasingly look to China as its model while developing distinctive innovations of its own.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="section-num">Part Three</div>
+    <h2>King Taejong and the Print Revolution (1403 CE)</h2>
+
+    <p>King Taejong was a strong supporter of publishing. Korea had long relied on China for books, but China was far away, and the Chinese method of printing — carving entire pages onto single wooden blocks — was fragile. If a block cracked or was scratched, the entire page was ruined.</p>
+
+    <p>Taejong supported the development of moveable type made of copper. In 1403 CE, Korean craftsmen built the first practical moveable type machine — a full fifty years before Johannes Gutenberg developed his famous printing press in Europe around 1450 CE. This was not simply an earlier version of the same idea. Korean moveable type was a distinct technological achievement, and it would prove particularly well suited to the new simplified script that Korea was about to develop.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Korea developed practical moveable type half a century before Gutenberg. Why do you think Gutenberg's invention is so much more widely known? Think back to Week 1 and our discussion of how the way we frame "Asia" and "the West" shapes which achievements get remembered — and by whom.</p>
+    </div>
+
+    <p>This innovation did not emerge in isolation. Recall from Week 4 that China had developed woodblock printing during the Tang dynasty (618–907 CE) and that the technology had spread across East Asia. Korea was building on centuries of Chinese printing tradition, but improving it in a fundamental way — replacing fragile, single-use woodblocks with durable, reusable copper type. It was a leap from a technology that reproduced texts to one that could produce them flexibly and efficiently.</p>
+
+    <p>Taejong died in 1419 CE, leaving behind a kingdom that was increasingly literate, increasingly connected to Chinese intellectual traditions, and increasingly confident in its own capacity for innovation. His successor would take that confidence to extraordinary heights.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="section-num">Part Four</div>
+    <h2>King Sejong and the Golden Age (1418–1450 CE)</h2>
+
+    <p>In 1418 CE, the twenty-two-year-old King Sejong took the throne. He had studied the Chinese classics and was a passionate promoter of education of all kinds. His reign (1418–1450 CE) is remembered as the golden age of Chosŏn Korea — a period of intellectual and scientific achievement with few parallels in the region.</p>
+
+    <p>In 1420 CE, Sejong created the Chiphyŏnjŏn — the "Hall of Worthies" — a royal research institute dedicated to scholarly investigation. He also established a center for advanced Confucian studies and in 1431 CE ordered scholars to capture the lives of exemplary individuals in words and pictures, publishing a book of virtuous examples for the people.</p>
+
+    <p>Sejong's greatest achievement, however, was the creation of a new writing system. Up to his time, Koreans used Chinese characters or adapted Chinese characters to write Korean phonetically — a cumbersome system that Sejong believed was holding back education for ordinary people. In 1443 CE, he appointed scholars to develop a new script. Working in the Hall of Worthies, they created hangul — a combination of alphabet and syllabary that Sejong personally tested and approved in 1446 CE. Hangul is considered among the simplest and most rational writing systems in the world.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Sejong created hangul because he believed the Chinese writing system was preventing ordinary Koreans from becoming educated. Compare this to what was happening in Japan around the same time — where the Heian writing system (Page 2 of Week 13.1) had blended Chinese characters with Japanese syllables centuries earlier. Both cultures adapted Chinese writing, but in very different ways and for very different reasons.</p>
+    </div>
+
+    <p>The Hall of Worthies produced far more than a writing system. Its scholars compiled agricultural texts to improve farming practices. They created medical texts cataloguing a thousand diagnoses, ten thousand cures, and fifteen hundred acupuncture techniques. In the 1430s CE, Korean scientists built new astronomical instruments to track the planets. They also constructed a water clock — whose design had traveled a remarkable path along the Silk Road. The original design came from an Arabic book written in Syria in 1206 CE, moved to Kublai Khan's court in China (the same Yuan dynasty court we studied in Week 10), and then to Korea. It was a striking example of how technology, knowledge, and ideas moved across civilizations over centuries.</p>
+
+    <p>Sejong died in 1450 CE, but his legacy — especially hangul — defined Korean culture for generations to come.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page-5">
+    <div class="section-num">Part Five</div>
+    <h2>Confucian Society and Legacy (1400s CE onward)</h2>
+
+    <p>Chosŏn Korea was deeply shaped by Confucian values — more so, in some ways, than China itself. Korean scholars studied the Chinese classics, supported a neo-Confucian ideology, and looked to ancient China as the model for their own society. In the words of the lecture, Korea tried to be "more Chinese than the Chinese." Legal codes reflected this commitment: a 1390 CE law, for example, required Korean officials to perform ancestral sacrifices each season.</p>
+
+    <p>Chosŏn Confucianism valued men over women, encouraged domestic rituals, and emphasized respect for ancestors. Men were discouraged from moving into their wives' homes — a practice that had been more common in the earlier Koryŏ period in Korea and during the Heian period in Japan (as we saw in Week 13.1). The examination system, conducted in written Chinese, was open only to men, and ancestry was scrutinized before anyone could sit for the exams.</p>
+
+    <p>Korean society was organized into rigid hierarchies. At the top were the yangban — originally landowners who became a hereditary, educated gentry elite, comprising only about ten percent of the population. Below them were the chungin, a middle class of government bureaucrats and traders. At the bottom were the yangmin, ordinary commoners. The yangban remained a closed hereditary group, and social mobility was extremely limited.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Chosŏn Korea adopted Confucian principles so thoroughly that it arguably surpassed China in the rigidity of its social hierarchy. Compare the yangban system to the caste-like structures of Mughal India (Weeks 11–12) or the daimyo-samurai hierarchy in Japan (Week 13.1). What happens when societies borrow ideologies from other cultures and apply them even more strictly than the culture that created them?</p>
+    </div>
+
+    <p>Women's rights declined significantly under the Chosŏn order. Women lost their rights of inheritance. After 1402 CE, women were forbidden from riding horses. Primogeniture — inheritance by the eldest son — became the norm, and secondary sons born to concubines lost their rights as well. This pattern of declining women's status mirrors what we saw in Japan after 1185 CE, when the shift from court culture to warrior culture shut women out of public life and literary production.</p>
+
+    <p>Sejong's eldest son, Munjong, succeeded him and ruled for only three years (1450–1452 CE), but he was known for his interest in history. Korean historians followed the Chinese practice of recording daily events, which were later compiled into histories. This tradition of meticulous record-keeping — another Confucian inheritance — would help preserve the story of the Chosŏn dynasty across the centuries.</p>
+
+    <p>Despite the rigidity of its social order, the Chosŏn state proved remarkably durable. Korea remained strong and peaceful until 1910 CE — an extraordinary stretch of 518 years of stability in a region that saw empires rise and fall with regularity. To put this in perspective: the Chosŏn dynasty lasted longer than the entire Mughal Empire, longer than the Yuan and Ming dynasties combined, and longer than any shogunate in Japanese history.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>General Yi Songgye founded the Chosŏn dynasty in 1392 CE after refusing to attack Ming China, overthrowing his own king, and enacting sweeping land reforms.</li>
+        <li>The Chosŏn state modeled itself closely on Ming China — adopting its calendar, examination system, and diplomatic rituals — while developing its own innovations.</li>
+        <li>Korean craftsmen built the first practical moveable type machine in 1403 CE, fifty years before Gutenberg, building on centuries of Chinese printing tradition.</li>
+        <li>King Sejong's creation of hangul (1443–1446 CE) gave Korea one of the world's most rational writing systems and aimed to make literacy accessible beyond the elite.</li>
+        <li>The Hall of Worthies (est. 1420 CE) produced advances in agriculture, medicine, astronomy, and timekeeping — including a water clock whose design traveled the Silk Road from Syria (1206 CE) to China to Korea.</li>
+        <li>Chosŏn Confucianism created a rigid social hierarchy — yangban, chungin, yangmin — and significantly curtailed women's rights after 1402 CE.</li>
+        <li>The Chosŏn dynasty lasted 518 years (1392–1910 CE), one of the longest-enduring dynasties in East Asian history.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + n).classList.add('active');
+  for (let i = 1; i <= 5; i++) {
+    const seg = document.getElementById('prog-' + i);
+    if (i <= n) seg.classList.add('active');
+    else seg.classList.remove('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
