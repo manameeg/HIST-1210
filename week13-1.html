@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 13.1: Later Japan — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 1.1rem;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    line-height: 1.7;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(196, 168, 122, 0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .key-takeaways li:last-child { border-bottom: none; }
+
+  .key-takeaways li::before {
+    content: '→ ';
+    color: #c4a87a;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #7a5c3a;
+    background: transparent;
+    color: #7a5c3a;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: transparent;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #a0927e;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="course-tag">HIST 1210 · Week 13.1</div>
+    <h1>Later Japan</h1>
+    <p class="subtitle">From the golden age of Heian court culture through the rise of the samurai, the flowering of Zen Buddhism, and the decline of central authority, c. 800–1573.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="prog-1"></div>
+    <div class="progress-segment" id="prog-2"></div>
+    <div class="progress-segment" id="prog-3"></div>
+    <div class="progress-segment" id="prog-4"></div>
+    <div class="progress-segment" id="prog-5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="section-num">Part One</div>
+    <h2>The Heian Golden Age (794–1185)</h2>
+
+    <p>In Week 6, we traced Japan's early development — the arrival of Buddhism in the sixth century CE, the Taika reforms of 645 CE that tried to centralize the state along Chinese lines, and the Nara period (710–784 CE) when Buddhist temples grew so powerful they threatened to overshadow the court itself. This week, we pick up the story in the 790s CE, when the Japanese court made a decisive break with Nara.</p>
+
+    <p>After a decade of indecision, the court relocated in 795 CE to a new capital they called Heian-kyo — "capital of peace and tranquility" — the city we know today as Kyoto. Built on a grid pattern with the imperial palace in the northern section, it would serve as the center of Japanese political and cultural life for nearly four centuries, from 794 to 1185 CE. To the northeast of the city stood Mount Hiei — a direction considered inauspicious in Japanese belief. Rather than leave the city exposed, the court built a Buddhist temple on the mountain to protect it.</p>
+
+    <p>The move to Heian-kyo was closely tied to one powerful family: the Fujiwara. The Fujiwara had led the Taika reforms back in 645 CE, opposed the growing influence of the Buddhist temples at Nara, and actively favored the relocation. Once established at Heian-kyo, they became the dominant political force in Japan through a remarkably effective strategy: marriage.</p>
+
+    <p>The Fujiwara provided most of the wives for the imperial family. They arranged for emperors to marry young — often around the age of twelve — produce a son, and then retire. Because the reigning emperor was almost always a child or adolescent, a Fujiwara regent wielded the real power behind the throne. It was, as the system's critics might have noted, sneaky — but it worked for generations.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Fujiwara never overthrew the emperor — they controlled the throne by controlling who sat on it. How does this compare to other systems of indirect rule you have encountered in this course, such as the way the Delhi Sultanate or the Mongols governed conquered peoples?</p>
+    </div>
+
+    <p>Heian society was deeply stratified. By the eleventh century CE, Japan's population of roughly five million consisted overwhelmingly of poor farmers. Others worked as merchants, craft workers, and servants. The Heian aristocracy made up just one percent of the population, but they lived in extraordinary luxury at Kyoto — the center of social, artistic, and intellectual life. Their wealth flowed from country estates, run by managers, that pumped money to the city elites. Heian court life was awash in silk, porcelain, lacquer, fine instruments, and mother-of-pearl.</p>
+
+    <p>Yet beneath the luxury ran a current of Buddhist melancholy. Recall from Week 3 the core Buddhist teaching that desire is the root of suffering. Heian culture was touched by a persistent sadness — rooted in the idea that life is an illusion held together by desire. This tension between material beauty and spiritual impermanence gave Heian art and literature its distinctive emotional quality.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="section-num">Part Two</div>
+    <h2>Heian Culture and Literature (c. 1000–1100 CE)</h2>
+
+    <p>By the eleventh century CE, Japan had developed a new writing system that blended Chinese characters — used for nouns and verbs — with simpler symbols representing Japanese syllables for grammar. This hybrid script opened up new possibilities for literary expression, and Heian women seized them.</p>
+
+    <p>Women at the Heian court were encouraged to use the new writing system, and they produced an extraordinary body of literature: diaries, travelogues, and novels. Women enjoyed more freedom during this period than at most other points in Japanese history, and the literary culture of the Heian court was dominated by female voices.</p>
+
+    <p>One of these voices belonged to Sei Shonagon, a court lady and writer whose memoir, <em>The Pillow Book</em> (c. 1030 CE), captured the attitudes of the Heian aristocracy with wit and more than a little snobbery. Her famous observation — that nothing could be worse than allowing the driver of one's ox-carriage to be badly dressed — reveals the intense attention to appearance, rank, and social performance that defined court life.</p>
+
+    <p>The outstanding writer of the age, however, was Murasaki Shikibu. Murasaki — a pen name — was born into a branch of the Fujiwara family and was exceptionally well educated. In 1005 CE, she became a companion to one of the daughters of Fujiwara no Michinaga, a powerful noble who represented the highpoint of Fujiwara influence, married to the emperor. Drawing on her experience at court, Murasaki wrote <em>The Tale of Genji</em> — based on the life and world of Michinaga himself.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p><em>The Tale of Genji</em> is often called the world's first novel. It was the first major work written in Japanese script, and it is celebrated for its psychological depth and character development. What does it tell us that the most celebrated literary achievement of Heian Japan was written by a woman — and that women dominated the literary culture of this period?</p>
+    </div>
+
+    <p>Murasaki retired after completing the novel, but <em>The Tale of Genji</em> endured as one of the foundational works of Japanese literature. It stands as evidence not only of the sophistication of Heian court culture, but also of the remarkable space that existed for talented women within it — a space that, as we will see, would not survive the transition to warrior rule after 1185 CE.</p>
+
+    <p>By this point in the Heian period, however, the system was already under strain. The child-emperor-and-regent arrangement was not sustainable. Maintaining large private estates deprived the central government of revenue. And by focusing their attention on the capital, the Fujiwara and the court had ignored the countryside — where new, powerful clans were emerging and exploiting the weakness at the center.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="section-num">Part Three</div>
+    <h2>The Rise of the Samurai and the Kamakura Era (1185–1333)</h2>
+
+    <p>In the twelfth century CE, two major clans rose to challenge the old Heian order: the Taira and the Minamoto. Their rivalry erupted into civil war, devastating much of the capital around 1159–1160 CE. Both clans surrounded themselves with samurai — a word meaning "those who serve" — warriors retained by country lords known as daimyo. The Taira emerged victorious. Their leader, Taira Kiyomori, moved his headquarters to Kyoto, married his daughter to the heir to the throne, and settled into the old Fujiwara pattern of ruling from behind the scenes. In 1180 CE, he saw his infant grandson take the throne.</p>
+
+    <p>But the Minamoto were not finished. Regrouping at their eastern base of Kamakura — about thirty miles south of modern Tokyo — they struck back in 1185 CE. Two brothers led the charge: Yoritomo and Yoshitsune. The Taira fled westward, and the final battle took place at sea on 24 April 1185 CE. The Taira forces were completely destroyed.</p>
+
+    <p>What followed was a bitter family quarrel. Yoritomo refused to give his brother Yoshitsune credit for the victory. The brothers turned on each other. Yoshitsune fled, and to demonstrate that he bore no hostility toward his brother, he committed ritual suicide — seppuku. This was the first recorded instance of this practice, though it would later become a defining element of samurai culture. In Japanese memory, Yoshitsune is remembered for his nobility and loyalty, while Yoritomo is remembered as morally flawed but politically successful.</p>
+
+    <p>In 1192 CE, Yoritomo adopted the title <em>Sei-i tai-shogun</em> — "great general who suppresses outlanders" — shortened to shogun. A shogun was, in theory, the emperor's military deputy; in practice, from the twelfth century to the nineteenth century, the shogun was the actual ruler of Japan. Yoritomo organized a headquarters called a <em>bakufu</em> — a term meaning "tent government," implying he was permanently on campaign on behalf of the emperor. He did not move to a new capital but operated from Kamakura while calling the old Heian-kyo by a new name: Kyoto. He made allies by befriending other daimyo — the great feudal landholders whose military estates were run by stewards and defended by private armies of samurai. Japan had entered the age of feudalism.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Yoshitsune's story sets up a recurring tension in Japanese culture: the noble failure versus the successful pragmatist. Why might a culture celebrate the one who loses with honor rather than the one who wins? Think about how this compares to the Mughal emperors we studied in Weeks 11–12 — where political success and moral reputation did not always go together.</p>
+    </div>
+
+    <p>Yoritomo died in 1199 CE. His successors proved weak, and his widow's clan — the Hojo — eventually seized power. The Hojo behaved like shoguns without ever formally becoming shogun, ruling as regents for the regents. They were supporters of Buddhism, and the Kamakura period saw an extraordinary diversity of Buddhist thought in Japan.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="section-num">Part Four</div>
+    <h2>Five Schools of Buddhism in Kamakura Japan</h2>
+
+    <p>In Week 3, we studied Buddhism's origins in India — the Buddha's teachings on suffering, desire, and the path to enlightenment — and in Week 4, we traced how Buddhism traveled along the Silk Road to China, where it was transformed by contact with Daoism and Confucianism. By the Kamakura period (1185–1333 CE), Buddhism in Japan had developed into five major schools, each offering a different path to understanding.</p>
+
+    <p><strong>Tendai Buddhism</strong>, named after a holy mountain in China, was the dominant school of the time. Its Japanese center was Mount Hiei, northeast of Kyoto — the same mountain where a temple had been built to protect the capital when Heian-kyo was founded back in 795 CE. Tendai was based on the Lotus Sutra and stressed salvation through strict discipline and meditation.</p>
+
+    <p><strong>Shingon</strong>, the "True Word" school, was also influential. It emphasized the transmission of secret teachings from master to disciple — a more esoteric path than Tendai's textual and disciplinary rigor.</p>
+
+    <p><strong>Pure Land Buddhism</strong> emerged in the twelfth century CE with a radically different message. You did not need to be male, study texts, or become a monk. You needed only to take a vow of devotion to Amitabha, the Buddha of Infinite Light, and call on his name. In return, you would be reborn in the Western Paradise — a beautiful, peaceful land where everyone received their every wish. The Pure Land master Shinran went further, arguing that the school might be even better suited for evil men than good ones, since evil men had to rely completely on Amitabha's mercy. He wrote: "if even a good man can be reborn in the Pure Land, how much more the wicked man!" Shinran also believed monks could marry — as he himself did. He was eventually exiled from the capital for his radical beliefs, but the school lived on in a less extreme form.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Shinran's argument that evil men had a better claim on Amitabha's mercy than good men is one of the most striking theological claims in Buddhist history. How does this logic compare to ideas about grace, mercy, and salvation in the Islamic tradition we studied in Week 5, where submission to God's will — rather than personal merit — was the path to paradise?</p>
+    </div>
+
+    <p><strong>The Nichiren sect</strong> was founded in the thirteenth century CE by the teacher Nichiren (1222–1282 CE), a devotee of the Lotus Sutra who was sharply critical of both Tendai and Pure Land for degrading its meaning. He believed all people possessed a Buddha-type nature and that enlightenment was possible in this life. In 1260 CE, he made a dramatic prediction: the Mongols would invade Japan as punishment for the nation's spiritual failings. When the Mongols attacked in 1274 CE — with 30,000 troops and 700 ships sent by Kublai Khan (whom we studied in Week 10) — Nichiren gained a much larger following. He was arrested, charged with insulting the Hojo regents, and exiled, but he encouraged his followers to carry on. Nichiren practice survives to this day.</p>
+
+    <p><strong>Zen Buddhism</strong> emerged late in the Kamakura period and appealed especially to the military aristocracy. Zen — meaning "meditation" (from the Sanskrit <em>dhyana</em>, the Chinese <em>chan</em>) — had begun in sixth-century China among Buddhist monks influenced by Daoist ideas of spiritual development. Recall from Week 4 that Daoism emphasized harmony with the natural world and suspicion of rigid rules. Zen masters taught that enlightenment came from within, not from scriptures or rituals. Students were urged to go beyond logic and reason, grappling with riddles such as "What is the sound of one hand clapping?" Zen also preached physical control — sitting motionless for hours to free oneself from worldly distractions — as preparation for a sudden, nonverbal flash of understanding of truth beyond surface realities. Samurai adopted Zen practice to sharpen their warrior skills and their ability to endure pain, and from Kamakura times onward, Zen discipline became linked with bushido — the Way of the Warrior.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page-5">
+    <div class="section-num">Part Five</div>
+    <h2>Mongols, Zen Arts, and the Decline of the Shoguns (1274–1573)</h2>
+
+    <p>In Week 10, we studied the Mongol Empire's expansion across Asia — from Genghis Khan's conquests in the early 1200s CE to Kublai Khan's Yuan dynasty in China (1271–1368 CE). Japan did not escape the Mongols' attention. Kublai Khan launched attacks in 1274 CE and again in 1281 CE. Both times, the Kamakura shogunate fought back, and both times storms — which the Japanese called <em>kamikaze</em>, meaning "divine wind" — helped destroy the Mongol fleets. But who had summoned the divine wind? The Buddhist monk Nichiren claimed credit. Others pointed to Hachiman, the Shinto god of war, or to the Shinto goddess Amaterasu — an ancestor of the emperor.</p>
+
+    <p>Victory, however, created a crisis. In previous Japanese civil wars, the winning side had divided the loser's wealth among their soldiers and elites. Against the Mongols, there was no such booty to distribute. The daimyo and samurai who had fought, and their families who had sacrificed, expected rewards that could not be delivered. The Hojo regents gave away some land, but it was not enough. Dissatisfaction spread among the warrior class.</p>
+
+    <p>In 1333 CE, the energetic Emperor Godaigo attempted to recover the throne's lost authority. The Hojo sent a general named Ashikaga Takauji to force Godaigo from power, but Takauji switched sides, using his army to defend Kyoto on the emperor's behalf. After a three-year power struggle, however, Takauji changed his mind again. He declared himself shogun and sent Godaigo into exile in the mountains south of Nara. In 1335 CE, a Zen master named Muso Soseki advised Godaigo to reach out to China — the first such effort in five hundred years.</p>
+
+    <p>The Ashikaga shoguns who followed also wrote to China, calling themselves "kings" and addressing the Chinese emperor as "Son of Heaven" — without mentioning the Japanese emperor at all. This opened a new boom in trade between the two countries. Japan exported fans, scrolls, and fine swords; it imported silk, porcelain, books, paintings, and copper coins. This trade also made it easier for Japanese and Chinese Zen temples to stay in contact, and Chinese practices of meditation, concentration, and discipline deeply influenced Japanese art and culture.</p>
+
+    <p>Zen temples adopted a simple, minimalist style, and the rich and powerful began building in this way rather than the fancier Heian style. Zen monks cultivated gardens of striking minimalism — a rock, a tree, raked gravel — and practiced the art of bonsai, which required a lifetime of patience. Tea drinking and tea ceremonies also grew in popularity during this period. In the early thirteenth century CE, the Zen master Yeisei Myoan brought tea seeds from China and planted a garden next to his temple. He promoted tea as the secret of long life and encouraged the practice of serving it to guests. Within two hundred years, Japan had developed elaborate tea ceremonies — among the most characteristic expressions of Zen Buddhism — in which a host prepared fine tea in simple, elegant ceramic bowls and served it in a small room free of distractions. The goal was to enjoy the total experience — simplicity, beauty, and a few close friends, with no distractions.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Zen influenced everything from tea to sword fighting to garden design. What underlying principle connects these seemingly different practices? And how does Zen's emphasis on simplicity and discipline contrast with the luxury and ornamentation of Heian court culture from Page 1?</p>
+    </div>
+
+    <p>Zen painting emphasized speed and spontaneity, with artists creating works in a few bold brushstrokes. Zen swordsmanship developed blows faster than the eye could see. Both appeared effortless but required years of practice. Zen also inspired a new form of drama called <em>noh</em> ("ability"), which became popular with the samurai class. Performed on a bare stage with masks, silk robes, and slow-motion movement, noh plays often had supernatural themes. They created tension so intense that even the smallest gesture — a curl of a finger, a nod of the head — carried powerful meaning.</p>
+
+    <p>In the warrior society that replaced the Heian court, women's status declined sharply. Samurai fortresses and Zen temples had no place for women. The daimyo aristocracy in the countryside offered nothing like the opportunities that talented women had enjoyed at the urban Heian court. Women had dominated Heian literature in the eleventh century CE, but they produced no comparable works during the Kamakura (1185–1333 CE) and Ashikaga periods.</p>
+
+    <p>The Ashikaga shoguns were enthusiastic patrons of Zen arts but poor rulers. In 1467 CE, a civil war — the Onin War — erupted and lasted nearly a decade, destroying much of Kyoto. When it ended, real power rested with the daimyo, whose castles served as both palaces and fortresses. They had become regional warlords with no loyalty to the shoguns, fighting each other constantly in what became known as the Warring States period. When the Ashikaga shogunate finally collapsed in 1573 CE, no one noticed — there was simply too much turmoil.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>The Fujiwara dominated Heian Japan (794–1185 CE) through marriage politics and regency, not military force — a system of indirect rule that lasted nearly four centuries.</li>
+        <li>Heian court culture produced extraordinary literature — much of it by women, including Sei Shonagon's <em>Pillow Book</em> (c. 1030 CE) and Murasaki Shikibu's <em>Tale of Genji</em> (c. 1005 CE).</li>
+        <li>The Taira-Minamoto civil war (1159–1185 CE) ended the Heian period and launched the age of the samurai, the shogunate, and feudalism under the Kamakura era (1185–1333 CE).</li>
+        <li>Five Buddhist schools — Tendai, Shingon, Pure Land, Nichiren, and Zen — competed for followers, with Zen's emphasis on discipline appealing especially to the warrior class and shaping bushido.</li>
+        <li>Kublai Khan's Mongol invasions (1274 and 1281 CE) were repelled with the help of <em>kamikaze</em> storms, but the lack of war booty created an economic crisis that weakened the shogunate from within.</li>
+        <li>Zen Buddhism shaped Japanese art, architecture, tea culture (from the 1200s CE onward), <em>noh</em> drama, and martial practice during the Ashikaga period.</li>
+        <li>The Ashikaga shogunate collapsed into the Warring States period (from 1467 CE), with real power shifting to regional daimyo warlords until the end of the shogunate in 1573 CE.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + n).classList.add('active');
+  for (let i = 1; i <= 5; i++) {
+    const seg = document.getElementById('prog-' + i);
+    if (i <= n) seg.classList.add('active');
+    else seg.classList.remove('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
