@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 10.1: The Mongol Empire — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    font-size: 1.1rem;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    margin-bottom: 0;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem 1.75rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .key-takeaways li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: none;
+    border: 1.5px solid #7a5c3a;
+    color: #7a5c3a;
+    padding: 0.6rem 1.4rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: none;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #a89880;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="course-tag">HIST 1210 — Asia to 1500</div>
+    <h1>The Mongol Empire</h1>
+    <p class="subtitle">From the steppe to the largest contiguous land empire in history — how one family's rise reshaped Asia.</p>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment active"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <div class="section-num">Part 1</div>
+    <h2>The Mongolian Steppe and the Rise of Temujin</h2>
+
+    <p>Around 1100 CE, the ancestors of Genghis Khan led a small tribe on the Mongolian steppe. They were one of several pastoral nomadic groups in the region — horse riders who raised livestock, lived in felt yurts, and drank fermented mare's milk. Their religious leaders, called shamans, were believed to connect with the gods and the dead while in a trance.</p>
+
+    <p>These steppe tribes were organized around a principle that set them apart from the settled empires to their south: tribal membership was voluntary. You could leave one tribe and join another at any time. Leadership was equally conditional — a chief led only as long as people chose to follow him. Charisma, military skill, and the ability to provide for your followers were what kept a leader in power, not birthright alone.</p>
+
+    <p>Into this world, around 1162, a boy named Temujin was born. His early life was shaped by violence and abandonment. His father was killed by the neighboring Tatars, and the Mongol clan nearly broke apart. His mother, Ho'elun, held the family together — Mongol women were known for their strength and leadership. Temujin grew up mastering the skills that mattered on the steppe: horse riding, archery, wrestling, and hunting.</p>
+
+    <p>As a teenager, Temujin took charge. He gathered a small group of "blood brothers" — loyal companions who raided local tribes with him, gradually increasing his family's wealth with his mother's help. By the 1180s, he had built a large enough following that his people made him a "khan," or chief. He took the additional name "Genghis," meaning "ocean" or "boundless." Genghis Khan: Universal Ruler.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>In a system where tribal membership is voluntary and leadership is conditional, what does a leader actually need to do to stay in power? How is this different from the Chinese emperors we studied in earlier weeks, who claimed the Mandate of Heaven?</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <div class="section-num">Part 2</div>
+    <h2>Consolidating Power and Building an Army</h2>
+
+    <p>Genghis Khan's rise was not a story of inspiration — it was a story of methodical, often brutal, consolidation. He began by eliminating anyone who had abandoned or wronged his family. He killed eleven male members of his own clan who had deserted him after his father's death. He then attacked and destroyed the Merkits, the tribe that had kidnapped his wife. Next, he made an alliance with Jin China (the Jurchen dynasty that controlled northern China) to jointly attack the Tatars — the tribe that had killed his father. Finally, he defeated the Naimans, the last rival tribe in western Mongolia.</p>
+
+    <p>By around 1206, every significant tribe on the Mongolian steppe was either destroyed, absorbed, or allied with Genghis Khan. He had turned a fragmented landscape of competing nomads into a unified fighting force.</p>
+
+    <p>What made this force so effective was its military organization. Khan appointed trusted friends as his personal bodyguards and selected proven men to lead an army of roughly 100,000 soldiers. The army was broken into decimal units: groups of 10, 100, and 1,000. Discipline was absolute. If anyone tried to desert, his unit would kill him. If an entire unit failed in battle, the whole unit could be executed.</p>
+
+    <p>The Mongol soldiers themselves were formidable. They rode small, hardy horses and could drink horse milk and blood on campaign when food ran short. Their primary weapon was the compound bow — a powerful recurve design with an arch above and below the grip — which fired iron-tipped arrows with devastating accuracy from horseback.</p>
+
+    <p>Khan also made a decision that would outlast his conquests. Among the peoples he defeated were the Uighurs, who possessed a written alphabet. Khan ordered Uighur scholars to use their alphabet to write the Mongol language, creating a written legal code. His decrees became law "for all people who live in felt tents."</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The decimal military system (units of 10, 100, and 1,000) broke up old tribal loyalties by mixing soldiers from different tribes into the same units. Why would Genghis Khan want to do this? What problem does it solve?</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <div class="section-num">Part 3</div>
+    <h2>Conquest: China and the West</h2>
+
+    <p>Around the twelfth and thirteenth centuries, an environmental shift was underway on the Central Asian steppe. The climate was getting colder and drier. Mongol pastures were declining, and new grazing land was needed. Genghis Khan may have seen an attack on China as a way to open up new pastures — but China also offered something the steppe could not: the riches of settled society.</p>
+
+    <p>In 1211, Khan launched his first attack on the Jin dynasty of northern China. It failed. He regrouped, seeking help from the Khitans — a people the Jin had previously defeated, and who had their own reasons for revenge. In 1212, the combined Mongol-Khitan force besieged the Jin capital of Zhongdu (modern Beijing). The Chinese surrendered, and Khan's troops looted the city. It was the first major Mongol success within the Great Wall.</p>
+
+    <p>In 1218, Khan turned west. His son Jochi was sent to suppress the Naimans, who had surrendered in 1204 but later rebelled. Jochi pursued them all the way into Central Asia, where the Mongols encountered Khwarazm, a powerful Muslim kingdom. Khan offered to divide the world with the Khwarazm shah, and the shah agreed. But then a local Khwarazm official slaughtered a Mongol trading caravan — a provocation Khan would not forgive.</p>
+
+    <p>Khan personally led a punishing expedition against Khwarazm. His forces conquered the great Central Asian cities of Otrar, Samarkand, and Bukhara. The slaughter was enormous. Almost everyone was killed except women (taken as slaves), children, and craftspeople. The message was deliberate: do not resist.</p>
+
+    <p>By 1221, Khan had marched to the banks of the Indus River. He spent time in modern-day Afghanistan studying the region, but he was unable to establish stable governments in these conquered lands. In 1227, Genghis Khan died — either from an accident or illness. He left behind the largest contiguous land empire the world had ever seen, and no clear plan for how to govern it.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Mongols slaughtered populations that resisted but spared craftspeople. What does this tell you about Mongol priorities? Were they purely destructive, or was there a logic to the violence?</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <div class="section-num">Part 4</div>
+    <h2>Successors and the Fragmentation of Empire</h2>
+
+    <p>In 1229, two years after Genghis Khan's death, a Great Assembly of Mongol leaders confirmed his third son, Ogodei, as his successor. Khan's son Jochi became ruler of the Golden Horde — the Mongol territories stretching across western Asia and southern Russia. The empire was beginning to split along family lines.</p>
+
+    <p>Ogodei continued the work of conquest. In 1231–1232, he raided southwestern China, "softening up" the region for a full invasion. By 1233–1234, his forces conquered the Jin dynasty, taking the capital of Kaifeng with heavy loss of life and property. The Mongols' initial plan was to turn northern China into a vast Mongol pasture — literally tearing down cities and farms to make grazing land. But a local official convinced the Mongols that taxing the Chinese would be far more profitable than destroying them. It was a pivotal moment: the Mongols began, reluctantly, to learn how to govern.</p>
+
+    <p>Genghis Khan's fourth son, Tolui, had a son named Kublai. Kublai Khan would eventually conquer southern China and, in 1260, be elected great khan of the Mongols. But by that time, the unified Mongol empire was itself fracturing into regional khanates — the Golden Horde in the west, the Chagatai Khanate in Central Asia, the Ilkhanate in Persia, and Kublai's own Yuan dynasty in China. The empire Genghis Khan had built through personal authority and military terror was too vast for any single successor to hold together.</p>
+
+    <p>And yet, the Mongols were not simply destroyers. A story from Ogodei's reign illustrates a different side of Mongol rule. Under Mongol law, it was illegal to bathe or wash in running water. One day, a Mongol guard caught a poor Muslim bathing in a stream. The man was brought before Ogodei for judgment. Ogodei, sympathetic to someone who did not understand the law, quietly told the man to claim he had dropped a coin in the river and was searching for it. Ogodei then secretly sent a servant to throw a coin into the stream. At the trial the next day, the Muslim told the story, guards found the coin, and the man was released — with ten extra coins for his trouble.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Ogodei story shows a ruler bending his own legal system to show mercy. Does this change how you think about the Mongols? Can an empire be both brutal in conquest and flexible in governance?</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page5">
+    <div class="section-num">Part 5</div>
+    <h2>The Mongol Empire in Context</h2>
+
+    <p>By the mid-thirteenth century, the Mongol Empire stretched from Korea to Eastern Europe — the largest contiguous land empire in human history. It had been built in a single generation through a combination of military innovation, environmental pressure, and the personal ambition of one man.</p>
+
+    <p>Several features of the Mongol system help explain its rapid expansion. The decimal army structure broke old tribal loyalties and created a disciplined, interchangeable fighting force. The policy of total destruction for cities that resisted — and mercy for those that surrendered — created powerful incentives for submission. And the adoption of a written legal code gave the empire a framework that could, in theory, outlast any individual ruler.</p>
+
+    <p>But the empire's greatest strength was also its weakness. It had been built around personal loyalty to Genghis Khan and his family. Once that family fractured into competing branches, the empire fractured with it. By the 1260s, the unified empire was already a memory. What replaced it were four regional khanates, each adapting Mongol rule to local conditions in very different ways. In the next module, we will follow the most ambitious of these experiments: Kublai Khan's attempt to rule China as the Yuan dynasty.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Mongol tribal society was built on voluntary membership and conditional leadership — very different from the hereditary dynasties of China.</li>
+        <li>Genghis Khan (born Temujin, c. 1162–1227) unified the Mongolian steppe through a combination of personal loyalty, strategic alliances, and the elimination of rivals.</li>
+        <li>The decimal military system (units of 10, 100, and 1,000) created discipline and broke up old tribal identities.</li>
+        <li>Key conquests: Jin China (1211–1212, fall of Zhongdu), Khwarazm (1218–1221, destruction of Samarkand and Bukhara).</li>
+        <li>After Khan's death in 1227, the empire was divided among his sons and grandsons, fragmenting into four regional khanates by the 1260s.</li>
+        <li>A local official's argument that taxation was more profitable than destruction marked a turning point in how the Mongols approached governance.</li>
+      </ul>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + n).classList.add('active');
+  const segs = document.querySelectorAll('.progress-segment');
+  segs.forEach((s, i) => {
+    if (i < n) s.classList.add('active');
+    else s.classList.remove('active');
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
