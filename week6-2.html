@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 6.2: Early Japan — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '?';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #7a5c3a;
+    color: #f5f0e8;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+  }
+
+  .takeaways-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .takeaways li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .takeaways li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: none;
+    border: 1.5px solid #7a5c3a;
+    color: #7a5c3a;
+    padding: 0.6rem 1.4rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: none;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #7a5c3a;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="course-tag">HIST 1210 — Week 6.2</div>
+    <h1>Early Japan: Borrowing, Building, Becoming</h1>
+    <p class="subtitle">How Japan absorbed Chinese and Korean influences — and transformed them into something distinctly its own.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <div class="section-num">Part One</div>
+    <h2>Between Two Powers</h2>
+
+    <p>Sui China and Tang China both threatened Korea. Japan could be next. Rather than wait, Japan responded by increasing its relations with China. From 607 CE onward, Japan sent five embassies to the Sui and Tang courts — not as a cowering subordinate, but as a power asserting its own authority.</p>
+
+    <p>The tone was set early. One Japanese envoy to the Sui court carried a message addressed from "the Son of Heaven in the place where the sun rises" to "the Son of Heaven in the place where the sun sets." The Chinese emperor was reportedly not pleased. But the phrasing tells us something important: Japan saw itself as China's equal, not its student.</p>
+
+    <p>Religion arrived through Korea. In 552 CE, the king of Korea's Paekche kingdom sent a Buddha statue to Japan, along with monks to explain what Buddhism was about. Japan's clans were interested but worried. Japan already had an older religion — Shinto, meaning "the way of the gods" (from <em>shin</em>, spirit, and <em>to</em>, way, the latter borrowed from Daoism). Would the Shinto gods be upset by this new Buddha "god"?</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Japan sent embassies to China but addressed the Chinese emperor as an equal. What does this diplomatic language tell us about how smaller states navigate relationships with more powerful neighbors?</p>
+    </div>
+
+    <p>Japan's solution was to adopt some aspects of Buddhism without abandoning Shinto entirely.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Previous</button>
+      <span class="page-indicator">1 of 4</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <div class="section-num">Part Two</div>
+    <h2>Prince Shōtoku and the Transformation of Japan</h2>
+
+    <p>In 592 CE, a woman named Suiko was made Empress of Japan (r. 592–628). Her uncle, the leader of the Soga clan, had arranged for the assassination of the current monarch and placed Suiko on the throne. But worried about the balance of power, he appointed a co-ruler: Prince Shōtoku Taishi (574–622).</p>
+
+    <p>Shōtoku was a student of both Confucianism and Buddhism, and he used both to transform Japan. In 604 CE, he issued a seventeen-article constitution that reshaped the foundations of Japanese governance. The first article emphasized cooperation: "When those above are harmonious and those below are friendly... what is there which cannot be accomplished?" The second urged reverence for the "three treasures" — the Buddha, the teachings of Buddhism, and the community of monks. Other articles stressed that officials should follow standards of conduct and not oppress the common people.</p>
+
+    <p>Most importantly, the constitution made clear that there was only one ruler. Shōtoku's deeper project was to transform Japan from a collection of competing clans into a centralized state on the continental model. He adopted the Chinese term <em>huangdi</em> — in Japanese, <em>kōtei</em>, meaning "emperor" — to elevate the ruler's status above all rivals.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Shōtoku used Confucian and Buddhist ideas to argue for centralized imperial power. How is this similar to — or different from — the way Silla's King Wonjong used Buddhism in Korea?</p>
+    </div>
+
+    <p>The reforms continued after Shōtoku. In 645 CE, aristocrats allied with the court introduced the Taika — meaning "great transformation" — reforms, which gave more power to the emperor. The reforms declared: "From this time forward the sale of land is not allowed." Only the emperor could own land and collect revenue. Nobles lost these rights. The push toward a centralized state accelerated, possibly driven by fear of a Chinese invasion.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Previous</button>
+      <span class="page-indicator">2 of 4</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <div class="section-num">Part Three</div>
+    <h2>Chinese Influence — On Japan's Terms</h2>
+
+    <p>The reforms established Chinese-style civil service examinations in Japan — but they were less extensive than China's. Nobles refused the idea of competing with commoners for government positions. The highest jobs continued going to nobles, and many collected salaries while doing no actual work. Japan borrowed the system's form but kept its aristocratic content.</p>
+
+    <p>Shōtoku also demonstrated his loyalty to Buddhism by building a temple on the Yamato Plain of central Japan — a five-story high structure that became the oldest wooden building in the world. Its ruins are still visible today.</p>
+
+    <p>After Shōtoku, four major developments reshaped Japan. First, the country got a new name. The older name was Wa; by the late seventh century, a new name — Nihon, meaning "origin of the sun" — came into use.</p>
+
+    <p>Second, in 710 CE, Japan's court moved to Nara, near the great temple. Unlike many Asian capitals, Nara had no fortified wall — an indication that the city and its people feared no attack. Its streets were laid out on a north-south, east-west grid. Chinese-style architecture and Buddhist temples dominated the landscape. Incense filled the air, and the sound of monks chanting carried through the streets.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Japan adopted Chinese civil service exams but kept aristocrats in top positions. Korea adopted exams but shared power with bone-rank families. What pattern do you see in how East Asian states borrowed from China?</p>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Previous</button>
+      <span class="page-indicator">3 of 4</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <div class="section-num">Part Four</div>
+    <h2>Writing, Power, and the End of Nara</h2>
+
+    <p>The third major development was writing. Japan adopted its writing system from China — but Japanese and Chinese are fundamentally different in structure and grammar. How did the Japanese make it work? Two ways. Many educated Japanese simply learned Chinese and used it as their own, which made sense since Confucian, Buddhist, and other key texts were already written in Chinese. Others used Chinese characters for their sounds rather than their meanings, creating a way to write Japanese phonetically.</p>
+
+    <p>Fourth, emperors and aristocrats competed to embellish Nara with ever grander temples and monuments. The Nara period (710–784) was a golden age of Buddhist art and architecture. But the growing temples attracted powerful monks who became threatening political institutions in their own right.</p>
+
+    <p>The crisis came just before 784, when Empress Kōken became romantically involved with a monk. Court families feared the kingdom would fall into the hands of a "commoner monk" — someone outside the aristocratic families who controlled Japanese politics. Their solution was drastic: they moved the entire capital away from Nara, ending an era.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Previous</button>
+      <span class="page-indicator">4 of 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page5">
+    <div class="section-num">Part Five</div>
+    <h2>When the Borrowed Military Broke Down: The Rise of the Samurai</h2>
+
+    <p>The move from Nara was not the only crisis caused by a borrowed Chinese system failing in Japanese conditions. Japan had also adopted a Chinese-style military — a conscription system that drafted ordinary peasants into infantry regiments, just as Tang China did. But by the middle of the eighth century, that system was breaking down too.</p>
+
+    <p>The problem was simple: Japan no longer faced the threats the military had been built to handle. The conscript armies had been designed in the late seventh century to deal with internal challenges and the growing power of Tang China. But by the mid-700s, the political climate had changed. The interior provinces — the vast majority of the country — mostly needed small, mobile squads to chase bandits, not large infantry units. Meanwhile, officials were misusing their conscripts, borrowing them as free labor for personal projects.</p>
+
+    <p>In 792, the court took a dramatic step: it abolished the conscript regiments everywhere except the frontiers. Instead, the government increasingly relied on privately trained, privately equipped elites to handle military tasks. In essence, the court moved from a conscripted, publicly trained military to one composed of professional mercenaries.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Japan borrowed China's exam system, its Buddhist institutions, and its military model — and all three broke down differently in Japanese conditions. What does this pattern tell us about the limits of borrowing another society's systems?</p>
+    </div>
+
+    <p>This shift created new opportunities. Military skill became an attractive path to personal advancement for provincial elites and lower-ranking aristocrats. At the same time, powerful noble houses at court began competing with each other for wealth and influence, and they discovered that controlling military resources — recruiting men with warrior skills into their household service — was an invaluable tool for protecting their status. State needs and personal ambitions intersected: the greater the opportunities for men with fighting skills, the more seriously they committed themselves to the profession of arms.</p>
+
+    <p>The result was the gradual emergence of an order of professional fighting men — in both the countryside and the capital — that came to be known as the samurai. By the middle of the ninth century, these fighters had begun to form themselves into privately organized martial bands. By the tenth century, private military networks of substantial scale had appeared across the provinces. The court, having dismantled the old conscript system, had no way to call up troops when it needed them — so it began co-opting these private warrior organizations instead, transferring the responsibility for mustering and organizing military forces to warrior leaders.</p>
+
+    <p>The samurai, then, were not rebels or conquerors. They emerged because the Japanese state needed them — because a borrowed Chinese military system failed in Japanese conditions, and professional warriors filled the gap. They began as servants of the court, not its enemies. But the power they accumulated by filling that gap would eventually reshape Japan entirely.</p>
+
+    <div class="takeaways">
+      <div class="takeaways-label">Key Takeaways</div>
+      <ul>
+        <li>Japan engaged with China and Korea not as a passive borrower but as a state asserting its own authority — adopting what served its purposes and rejecting or modifying what did not.</li>
+        <li>Prince Shōtoku used Confucian and Buddhist ideas to centralize power under the emperor and transform Japan from a collection of competing clans into a unified state.</li>
+        <li>The Taika reforms, Chinese-style exams, and the move to Nara all followed the Chinese model — but aristocratic power structures persisted underneath.</li>
+        <li>Japan's Chinese-style conscription military broke down by the mid-eighth century because Japanese conditions no longer matched the threats it was designed for.</li>
+        <li>The samurai emerged not through revolution but because the court's shift to private military contractors created a class of professional warriors who gradually accumulated power.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Previous</button>
+      <span class="page-indicator">5 of 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showPage(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + n).classList.add('active');
+    const segs = document.querySelectorAll('.progress-segment');
+    segs.forEach((s, i) => {
+      s.classList.toggle('active', i < n);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
