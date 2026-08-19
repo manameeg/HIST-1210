@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 15.1: The Foundations of Southeast Asia — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Crimson Pro', Georgia, serif; background: #f5f0e8; color: #2c2416; line-height: 1.85; font-size: 18px; }
+  .container { max-width: 640px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .header { margin-bottom: 2.5rem; }
+  .course-tag { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #7a5c3a; margin-bottom: 0.75rem; }
+  h1 { font-family: 'Crimson Pro', serif; font-size: 2.4rem; font-weight: 700; line-height: 1.15; color: #2c2416; margin-bottom: 0.75rem; }
+  .subtitle { font-size: 1.05rem; color: #6b5d4f; font-style: italic; line-height: 1.6; }
+  .divider { width: 60px; height: 2px; background: #c4a87a; margin: 2rem 0; }
+  .progress-container { display: flex; gap: 6px; margin-bottom: 2rem; }
+  .progress-segment { flex: 1; height: 3px; border-radius: 2px; background: #d4cab8; transition: background 0.3s; }
+  .progress-segment.active { background: #7a5c3a; }
+  .page { display: none; }
+  .page.active { display: block; animation: fadeIn 0.35s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .section-num { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c4a87a; margin-bottom: 0.4rem; }
+  h2 { font-family: 'Crimson Pro', serif; font-size: 1.7rem; font-weight: 600; color: #2c2416; margin-bottom: 1.25rem; line-height: 1.25; }
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+  .callout { background: #ebe4d6; padding: 1.5rem 1.75rem; margin: 1.75rem 0; border-radius: 4px; position: relative; }
+  .callout::before { content: '💡'; position: absolute; top: -10px; left: 16px; font-size: 1.1rem; }
+  .callout-label { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7a5c3a; margin-bottom: 0.5rem; }
+  .callout p { font-size: 0.95rem; color: #4a3f33; line-height: 1.7; }
+  .key-takeaways { background: #2c2416; color: #f5f0e8; padding: 2rem; border-radius: 4px; margin-top: 2rem; }
+  .key-takeaways h3 { font-family: 'Nunito Sans', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c4a87a; margin-bottom: 1rem; }
+  .key-takeaways ul { list-style: none; padding: 0; }
+  .key-takeaways li { padding: 0.5rem 0; border-bottom: 1px solid rgba(196, 168, 122, 0.2); font-size: 0.95rem; line-height: 1.6; }
+  .key-takeaways li:last-child { border-bottom: none; }
+  .key-takeaways li::before { content: '→ '; color: #c4a87a; }
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #d4cab8; }
+  .nav-btn { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.6rem 1.5rem; border: 1px solid #7a5c3a; background: transparent; color: #7a5c3a; border-radius: 3px; cursor: pointer; transition: all 0.2s; }
+  .nav-btn:hover { background: #7a5c3a; color: #f5f0e8; }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-btn:disabled:hover { background: transparent; color: #7a5c3a; }
+  .page-indicator { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 600; color: #a0927e; letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="course-tag">HIST 1210 · Week 15.1</div>
+    <h1>The Foundations of Southeast Asia</h1>
+    <p class="subtitle">The land between India and China — how geography, migration, and cultural exchange shaped one of the most diverse regions in the world, from prehistoric times to c. 1300 CE.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="prog-1"></div>
+    <div class="progress-segment" id="prog-2"></div>
+    <div class="progress-segment" id="prog-3"></div>
+    <div class="progress-segment" id="prog-4"></div>
+    <div class="progress-segment" id="prog-5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="section-num">Part One</div>
+    <h2>The World Between: Geography of Southeast Asia</h2>
+
+    <p>Throughout this course, we have studied the great civilizations of Asia — India, China, Japan, Korea — largely on their own terms. This week, we turn to the region that sits between them: Southeast Asia. Understanding Southeast Asia is essential to understanding how Asian civilizations connected to each other, because this is the region through which goods, religions, technologies, and people moved between the Indian and Chinese worlds.</p>
+
+    <p>Southeast Asia today includes Burma (Myanmar since 1987), Thailand (Siam until 1932), Laos, Cambodia, Vietnam, Malaysia, Singapore, Indonesia, and the Philippines. The region is shaped by a few key geographic features that have defined its history.</p>
+
+    <p>First, the monsoon. Seasonal winds drove both sea trade and agriculture across the region. Ships timed their voyages to the monsoon cycle — the same winds that carried traders from India and Arabia to Southeast Asian ports. On land, harnessing monsoon water made year-round agriculture possible. Second, the rivers. Southeast Asia is a series of peninsulas, and people settled along the rivers that run through them: the Irrawaddy in Burma, the Chao Praya in Siam, the Red River in Vietnam, and the Mekong in Cambodia and Vietnam. River valleys supported the largest and richest states. Third, the archipelagos. Indonesia and the Philippines are vast chains of mostly volcanic islands. High temperatures, good rainfall, and rich volcanic soil made the islands extraordinarily fertile.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>In Week 1, we discussed how the concept of "Asia" itself is a Western construction. Southeast Asia complicates that further — it doesn't belong neatly to Indian or Chinese civilization, yet it was profoundly shaped by both. How does geography explain why this region became a crossroads rather than an empire?</p>
+    </div>
+
+    <p>The Malay Peninsula occupies a special position. It has no major rivers, but its western side faces the Strait of Malacca — one of the most important shipping lanes in the world, then and now. Recall from Week 14 that this was where Ming China established military depots to support Zheng He's treasure fleets in the early 1400s CE. The strait's importance to global trade stretches back far earlier than the Ming.</p>
+
+    <p>The region's natural resources were extraordinary: banana, breadfruit, taro, yam, squash, beans, and a dazzling variety of fruits were all native to Southeast Asia. The lecture calls it an environmental "Garden of Eden" — and it was this abundance, combined with the region's strategic position between India and China, that made Southeast Asia a magnet for trade throughout its history.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="section-num">Part Two</div>
+    <h2>Prehistoric Southeast Asia (c. 8000 BCE–1000 BCE)</h2>
+
+    <p>The earliest evidence of settled life in Southeast Asia comes from northern Vietnam, where a late Neolithic culture dating to around 8000 BCE left behind stone tools suggesting agriculture and fixed settlements. Other sites in northern Thailand have yielded materials from around 4500 BCE, including food remains, animal bones, bronze tools, weapons, and a large cemetery.</p>
+
+    <p>Southeast Asia was not simply a recipient of innovations from its larger neighbors. Several foods and animals that became staples across Asia originated here. Rice was likely native to the region — a swamp plant that grew around the Bay of Bengal or in the river valleys of the Indo-Chinese peninsula. Pigs and chickens were both native to Southeast Asia and were domesticated there first, then spread to India and China. Early agriculture focused on root crops like yam and taro, which are still grown today. Fishing was likely practiced from the earliest times.</p>
+
+    <p>Around 1000 BCE, the development of irrigation techniques transformed the region. With reliable water supplies, rice became the dominant crop — a shift that would reshape Southeast Asian economies and societies for millennia. Millet, which had arrived from China, was grown in the drier uplands where rice could not thrive.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>We often think of India and China as the sources of innovation that shaped the rest of Asia. But pigs, chickens, and possibly rice itself all moved from Southeast Asia to those larger civilizations. How does this change the way we think about the direction of cultural influence?</p>
+    </div>
+
+    <p>Exact information about prehistoric Southeast Asia is difficult to establish, because the warm, wet climate causes organic materials to decay rapidly — nothing lasts more than about a thousand years. There is no concrete evidence regarding gender roles in these earliest communities, but matriarchy was probably the norm until warfare and patriarchal systems arrived later. Women were likely the pioneer farmers, while men hunted.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="section-num">Part Three</div>
+    <h2>Peoples, Migrations, and Cultural Influences</h2>
+
+    <p>Most of the people of Southeast Asia likely came originally from China, with later additions from Tibet and India. These newcomers intermingled with existing local populations over centuries. The Philippines, Indonesia, and the Malay Peninsula were all settled by Malay people, who share a common cultural and linguistic background. The Malay were likely displaced southward by later waves of migration from southern China. Burma, Thailand, Vietnam, Laos, and Cambodia are the sites of this later Chinese-influenced settlement. The process had no fixed dates and likely involved some movement in both directions — from Southeast Asia to southern China as well.</p>
+
+    <p>There is an important line of ethnic demarcation running through the region: between the Philippines and Indonesia on one side, and Pacific Australia on the other. Southeast Asia, culturally speaking, ends at the Moluccas — the famous "Spice Islands" that would later draw European colonial powers to the region.</p>
+
+    <p>The cultural influences that shaped Southeast Asia came primarily from two directions: India and China. Recall from Week 3 that Buddhism originated in India in the sixth century BCE and spread along trade routes to reach East Asia. Hinduism, meanwhile, provided Southeast Asia with shared stories — the great epics of the Ramayana and the Mahabharata — as well as the Sanskrit language. Buddhism provided monks, temples, and a shared faith that connected Southeast Asia to both India and China. These imported traditions operated alongside local animist practices rather than replacing them.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Southeast Asia received Buddhism, Hinduism, Sanskrit, and writing systems from India, and political models from China. Yet the region remained "fiercely independent" rather than becoming a province of either civilization. What allowed Southeast Asian societies to absorb outside influences without losing their autonomy?</p>
+    </div>
+
+    <p>Writing systems arrived in Southeast Asia from India around the second century BCE. Northern Vietnam, because of its close proximity to China, kept Chinese script influence instead. This north-south divide — Vietnam looking toward China, the rest of mainland and maritime Southeast Asia looking toward India — would shape the region's cultural geography for centuries.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="section-num">Part Four</div>
+    <h2>The First Empires (c. 1st century BCE–1300 CE)</h2>
+
+    <p>The first empires in Southeast Asia appeared between the first century BCE and the first century CE. These were not isolated developments — they emerged in the context of growing trade between India, China, and the maritime world between them. By the second century CE, empires had developed along the Strait of Malacca, where ships crossed the strait to trade rather than merely passing through it.</p>
+
+    <p>River valleys supported the biggest and richest states. Between roughly 200 BCE and 500 CE, the Funan and Linyi kingdoms flourished in central and southern Vietnam. Chinese records — our main source for this period — tell us that Funan was the most prosperous of these early states. The Champa kingdom emerged around 500 CE, replacing Funan and controlling the Vietnamese river systems. Khmer states (in modern Cambodia) also thrived at this time, coming to dominate the region by the seventh and eighth centuries CE. Indianized kingdoms existed in Burma from the third century CE onward, fueled by Mahayana Buddhism. Temples were built throughout the region during this era.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Notice how many of these early Southeast Asian states are known to us primarily through Chinese records. What does this tell us about the relationship between record-keeping, power, and historical memory? Compare this to the way we know about early Korean kingdoms (Week 6) largely through Chinese sources as well.</p>
+    </div>
+
+    <p>By around 1300 CE, the regional picture was shifting. The Khmer regime at Angkor — one of the greatest monumental cities of the medieval world — went into decline. Petty wars between Hindu and Buddhist factions created openings for Islam, which had been arriving along trade routes. Muslim regimes began replacing Hindu ones in parts of the archipelago. Europeans would eventually arrive, but they would not make a significant impact until about 1650 CE — well beyond the scope of this course. Despite centuries of cultural influence from India and China, Southeast Asian states remained fiercely independent throughout this period. The Mongol disruptions of the thirteenth century (Week 10) largely bypassed the region, which further reinforced its autonomy.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page-5">
+    <div class="section-num">Part Five</div>
+    <h2>Labor, Society, and Women in Southeast Asia</h2>
+
+    <p>The empires of Southeast Asia faced a persistent challenge: controlling labor. Unlike China or India, where dense populations provided a steady labor force, Southeast Asian states often struggled to command enough workers to build monuments, farm rice, and maintain armies. Two systems addressed this problem.</p>
+
+    <p>The first was corvée labor — a system of unpaid, forced work that was intermittent in nature, lasting only a certain number of days per year. Free people owed corvée labor to their rulers, much as peasants in feudal Europe owed labor to their lords. The second was slavery. Slavery in Southeast Asia was not plantation-based in the way it would later develop in the Americas. Codes existed to explain the "rights" of slaves, who could be enslaved to a temple, a king, or a private household. In some Southeast Asian populations, up to thirty percent of people were enslaved.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Slavery in Southeast Asia operated under legal codes and could involve enslavement to a temple — a very different institution from the chattel slavery that would later develop in the Atlantic world. What does it mean for our understanding of "slavery" when the institution takes such different forms across cultures? Compare this to the corvée labor and tribute systems we encountered in Mongol-ruled China (Week 10).</p>
+    </div>
+
+    <p>One of the most distinctive features of Southeast Asian society was the relative prominence of women. Women often held power in Southeast Asian kingdoms. They were active in trade missions and diplomacy. While patriarchal norms arrived alongside Hinduism, Buddhism, Confucianism, and later Islam, Southeast Asian women generally retained more freedom and public visibility than their counterparts in India, China, Japan, or Korea during the same period. Recall from Week 13 how women's status declined sharply in both Japan (after the shift to samurai culture in 1185 CE) and Korea (under Chosŏn Confucianism after 1392 CE). Southeast Asia followed a different trajectory — one where women's roles in commerce, agriculture, and even governance persisted across centuries.</p>
+
+    <p>This relative openness would also shape how Islam was received in the region, as we will see in the next module.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Southeast Asia sits between India and China — its geography as a crossroads of trade and culture defined its history.</li>
+        <li>The monsoon, river valleys, and volcanic island soils created an agricultural "Garden of Eden" where rice, pigs, and chickens were domesticated before spreading to India and China.</li>
+        <li>Most Southeast Asian peoples migrated from China, with later Indian and Tibetan influences; the Malay people settled the Philippines, Indonesia, and the Malay Peninsula.</li>
+        <li>India provided Buddhism, Hinduism, the Sanskrit language, and writing systems (from c. 2nd century BCE); China influenced Vietnam most directly through script and political models.</li>
+        <li>Early empires — Funan (c. 200 BCE–500 CE), Champa (c. 500 CE), and the Khmer (7th–8th centuries CE onward) — grew along river valleys and trade routes.</li>
+        <li>After 1300 CE, the Khmer declined, Hindu-Buddhist conflicts created openings for Islam, and the regional order began to shift.</li>
+        <li>Corvée labor and slavery (up to 30% of some populations) were common, and women held more public and commercial power than in most other Asian societies.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + n).classList.add('active');
+  for (let i = 1; i <= 5; i++) {
+    const seg = document.getElementById('prog-' + i);
+    if (i <= n) seg.classList.add('active');
+    else seg.classList.remove('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
