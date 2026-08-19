@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 3.2: The Maurya and Gupta Empires — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active {
+    background: #7a5c3a;
+  }
+
+  .page { display: none; }
+  .page.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9a8b78;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+
+  .callout {
+    background: #ebe4d6;
+    border-left: 3px solid #c4a87a;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .callout .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: #4a3d2f;
+  }
+
+  .key-term {
+    font-weight: 600;
+    color: #5e4628;
+  }
+
+  .takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 1.75rem 1.75rem;
+    border-radius: 6px;
+    margin: 2rem 0;
+  }
+
+  .takeaways .label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .takeaways li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .takeaways li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn.primary {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn.primary:hover {
+    background: #5e4628;
+  }
+
+  .nav-btn.secondary {
+    background: transparent;
+    color: #7a5c3a;
+    border: 1px solid #c4a87a;
+  }
+
+  .nav-btn.secondary:hover {
+    background: #ebe4d6;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .page-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #9a8b78;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="course-tag">HIST 1210 · Week 3.2</div>
+    <h1>The Maurya and Gupta Empires</h1>
+    <div class="subtitle">From the first unification of the subcontinent to the "golden age" of classical Indian culture, c. 322 BCE – 550 CE</div>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment" id="prog1"></div>
+    <div class="progress-segment" id="prog2"></div>
+    <div class="progress-segment" id="prog3"></div>
+    <div class="progress-segment" id="prog4"></div>
+    <div class="progress-segment" id="prog5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" data-page="1">
+    <div class="section-num">Part One</div>
+    <h2>The Stage Is Set</h2>
+
+    <p>The centuries surrounding the rise of Buddhism were a period of sweeping transformation across the Indian subcontinent. Indo-Aryan nomads who had once migrated across the plains were now settling down and claiming territory. Territory required leaders. Leaders required administrative systems. And administrative systems required identities — ways to distinguish who ruled what, and why.</p>
+
+    <p>This was the <span class="key-term">second great urbanization</span> of South Asian history. Urban centers enlarged, driven in part by trade routes connecting Buddhist monasteries. Artisans clustered together, forming new subcastes. Shudras who had been cultivators moved up in the social hierarchy as tribal peoples — later classified as untouchables — were brought in to fill the roles beneath them.</p>
+
+    <p>Language was shifting, too. <span class="key-term">Sanskrit</span>, the classical literary and ritual language, was giving way to <span class="key-term">Prakrit</span> — its spoken, vernacular cousin — and to regional languages. The Buddha himself taught in <em>Magadhi</em>, a Prakrit dialect, not in Sanskrit. This was a deliberate choice: the new teachings were meant to be accessible, not locked behind a priestly language.</p>
+
+    <p>Great literary works were being compiled during this era. The <span class="key-term"><em>Mahabharata</em></span>, one of the longest epics in world literature, was likely assembled between 300 BCE and 300 CE. The <span class="key-term"><em>Bhagavad Gita</em></span> — a philosophical dialogue embedded within the <em>Mahabharata</em> — was compiled around 200 BCE. Even the <em>Kama Sutra</em>, often misunderstood as merely a manual of physical pleasure, dates to this same broad period and reflects the sophistication of urban social life.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>The Buddha chose to teach in Magadhi rather than Sanskrit. What does a religious leader's choice of language tell us about who they are trying to reach — and who they are choosing not to defer to?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" disabled>← Previous</button>
+      <span class="page-num">1 of 5</span>
+      <button class="nav-btn primary" onclick="goTo(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" data-page="2">
+    <div class="section-num">Part Two</div>
+    <h2>The Mauryan Empire (322–185 BCE)</h2>
+
+    <p>In 321 BCE, <span class="key-term">Chandragupta Maurya</span> seized the throne by overthrowing the kingdom of Magadha. Over a reign of 23 years, he built something the subcontinent had never seen: an empire that stretched from Afghanistan in the west to the edges of the Vindhya mountain range in the south.</p>
+
+    <p>In 305 BCE, Chandragupta engaged with the remnants of Alexander the Great's army still lingering in the region. He was victorious, and secured peace through a marriage alliance — a pragmatic move that linked South Asian and Hellenistic power.</p>
+
+    <p>Chandragupta's grandson, <span class="key-term">Ashoka</span> (r. 268–232 BCE), would become the most consequential ruler in the dynasty — and arguably in all of ancient Indian history. Under Ashoka, the Mauryan Empire achieved something unprecedented: for the first time, most of the Indian subcontinent was under the authority of a single ruler.</p>
+
+    <div class="divider"></div>
+
+    <h2>Ashoka's Achievements</h2>
+
+    <p>Ashoka was not simply a conqueror. He was a builder of systems. He established an <span class="key-term">imperial bureaucracy</span> that would serve as a model for later Indian states. He created an agrarian tax base to fund governance. He built roads that facilitated trade, communication, and the knitting together of disparate regional groups. He maintained a network of spies and informants. And he founded a massive military: 9,000 elephants, 30,000 cavalry, and 600,000 infantry — all paid for by the new tax system.</p>
+
+    <p>Yet Ashoka is remembered less for his military power than for his turn away from it. He became a patron of <span class="key-term">ahimsa</span> — non-violence — encouraging the principle toward both people and animals. He reduced animal slaughter and promoted visiting temples instead of hunting, which had traditionally been the sport of kings.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>Ashoka built one of the largest armies in the ancient world — then promoted non-violence. Can an emperor genuinely embrace ahimsa while maintaining a standing army of over 600,000? What does this tension tell us about the relationship between ideals and governance?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goTo(1)">← Previous</button>
+      <span class="page-num">2 of 5</span>
+      <button class="nav-btn primary" onclick="goTo(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" data-page="3">
+    <div class="section-num">Part Three</div>
+    <h2>The Pillars and Inscriptions of Ashoka</h2>
+
+    <p>Ashoka's most distinctive legacy is physical: stone <span class="key-term">pillars</span> erected across the subcontinent, inscribed with his policies and moral exhortations. But these pillars raise as many questions as they answer. While they were placed across a vast territory, it is unlikely that Ashoka actually controlled all of the areas marked by their presence.</p>
+
+    <p>The inscriptions themselves are striking for what they include — and what they leave out. There is no mention of the army, no discussion of revenue collection, no administrative directives. Instead, Ashoka used the concept of <span class="key-term">dhamma</span> (the Pali form of the Sanskrit <em>dharma</em>, meaning morality, piety, virtue, and social order) to promote social responsibility. The tone is paternal: "All men are my children," one inscription reads, "and just as I desire for my children that they should obtain welfare and happiness both in this world and the next, the same do I desire for all men."</p>
+
+    <p>The inscriptions were written in <span class="key-term">Brahmi script</span>, which was not deciphered until 1837, by the British scholar James Prinsep. Atop one famous pillar stand four lions — a motif borrowed from Persia and the <span class="key-term">Achaemenid Empire</span> (6th century BCE, led by Darius, known for its tolerance, later overthrown by Alexander). This lion capital was later adopted as a national symbol of modern India and appears on Indian currency.</p>
+
+    <div class="divider"></div>
+
+    <h2>The Fall of the Mauryas</h2>
+
+    <p>Within just 50 years of Ashoka's death in 232 BCE, the empire was fatally weakened. The causes were multiple and mutually reinforcing: Ashoka's pro-Buddhist sympathies provoked a revolt by Brahmans who felt sidelined. His non-violence policy may have weakened the military's readiness. Subsequent rulers were simply less capable leaders. The strained economy could no longer support both the military and the bureaucracy. There was no unifying sense of being a "nation." And disputes over succession fractured what remained. By 185 BCE, the Mauryan Empire had ceased to exist.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>Ashoka's pillars say nothing about taxes, armies, or administration — only about morality and social harmony. Is this a sign of genuine idealism, or a deliberate strategy to project a certain kind of authority? What does a ruler gain by presenting power as benevolence?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goTo(2)">← Previous</button>
+      <span class="page-num">3 of 5</span>
+      <button class="nav-btn primary" onclick="goTo(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" data-page="4">
+    <div class="section-num">Part Four</div>
+    <h2>The Gupta Empire (320–550 CE)</h2>
+
+    <p>After centuries of fragmentation, a new dynasty reunified much of northern India. The <span class="key-term">Gupta Empire</span> (320–550 CE) is often called the "golden age" of classical Indian culture — a period of artistic, literary, and intellectual achievement. By the 3rd century CE, most foreigners in the region had become "Indianized," absorbing local customs, languages, and religious practices.</p>
+
+    <p>The Guptas introduced new practices of <span class="key-term">royal titling</span> that had not existed under Ashoka. Chandragupta I took the title <em>maharajadhiraja</em> — "great king of kings" — and coins were minted to commemorate his coronation in 319/320 CE. His successor, <span class="key-term">Samudragupta</span> (r. 335–376), expanded the kingdom east and west to Assam and Punjab, south into the Deccan, and took tribute from the Sakas, Iran, Ceylon, and Southeast Asia.</p>
+
+    <p><span class="key-term">Chandragupta II</span> (r. 376–415) is considered the greatest of the Gupta rulers. The historian A.L. Basham called his reign "the high watermark of ancient Indian culture." During this period, the Chinese Buddhist monk <span class="key-term">Fa-hsien</span> visited India, searching for authentic copies of Buddhist literature — a reminder that Buddhism, though declining in its homeland, was thriving abroad.</p>
+
+    <div class="divider"></div>
+
+    <h2>Art, Trade, and Religion Under the Guptas</h2>
+
+    <p>The Guptas and their successors sponsored some of the most extraordinary artistic achievements in Indian history. The <span class="key-term">Ajanta caves</span> in Maharashtra, discovered in 1819, contain frescoes depicting the Buddha's life spanning roughly 200 BCE to 650 CE. The <span class="key-term">Ellora caves</span>, mostly Hindu but with some Buddhist and Jain elements (5th–13th century), include a temple carved from a single mass of rock — 164 feet long and 109 feet wide, its central hall supported by 16 square columns.</p>
+
+    <p>Trade flourished: spices from Southeast Asia, horses from Central Asia and Arabia. Excess wealth was donated to religious endowments. Buddhist monasteries grew wealthy, even palatial — the Ajanta murals themselves are evidence of this prosperity. Buddhist scholars used this institutional stability to sharpen their theology in competition with Brahmans, who were also receiving royal grants and beginning their first experiments in temple building.</p>
+
+    <p>Hinduism itself was evolving. The older Vedic form was giving way to something more sophisticated: a move toward monotheism centered on either <span class="key-term">Vishnu</span> or <span class="key-term">Shiva</span>, and a shift toward <span class="key-term">bhakti</span> — personal devotion — over sacrifice. Brahmans were rewriting texts, weaving folk stories into religious epics, and carving myths in stone.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>Buddhist monasteries grew "wealthy, even palatial" under the Guptas. How does a religion founded on renouncing desire sustain itself when its institutions accumulate wealth? Is there an inherent tension, or is institutional prosperity compatible with spiritual ideals?</p>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goTo(3)">← Previous</button>
+      <span class="page-num">4 of 5</span>
+      <button class="nav-btn primary" onclick="goTo(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" data-page="5">
+    <div class="section-num">Part Five</div>
+    <h2>Caste, Power, and the Unraveling of Empire</h2>
+
+    <p>Under the Guptas, the <span class="key-term">caste system solidified</span>. Knowledge was increasingly restricted to Brahmans. Shudras gained some stature as land clearing became a necessity, but <span class="key-term">untouchables</span> fell further — relegated to scavenging, cremation-ground work, and leather working. Ideas of ritual pollution grew stronger. The Chinese traveler <span class="key-term">Hsuan Tsang</span> observed the intensity of purity practices: people washed before eating, never reused dishes, destroyed wooden and stone vessels after a single use, and polished metal ones after every meal.</p>
+
+    <p>Politically, the Gupta system carried the seeds of its own fragmentation. Local officials were given the right to keep part of the revenue they collected, effectively becoming lesser kings. Royal grants of land as patronage further decentralized power. Central authority eroded as provincial governors began calling themselves kings in their own right.</p>
+
+    <div class="divider"></div>
+
+    <h2>India Beyond India</h2>
+
+    <p>By the 5th century, Indian culture was "widely known" across <span class="key-term">Southeast Asia</span>. Early contact dates back to 300 BCE, with significant growth between 100 BCE and 100 CE. The key distinction is that Southeast Asia became <em>Indianized rather than Indian</em> — local elites adopted and adapted elements of Indian religion, art, language, and governance, blending them with indigenous traditions. The Chams, Javanese, and Khmers all became "highly Indianized." The earliest written records from Borneo date to the 4th–5th century, and the first major Indianized kingdom emerged at <span class="key-term">Srivijaya</span> in eastern Sumatra.</p>
+
+    <div class="divider"></div>
+
+    <h2>Why Dynasties Fail</h2>
+
+    <p>The pattern that ended the Mauryas repeated itself across centuries of Indian history. The recurring causes of dynastic collapse are worth naming explicitly: imperial overextension, too many military campaigns, external invasion, decentralized power, and internal dissension. These five factors — sometimes in combination, sometimes sequentially — account for the fall of dynasty after dynasty across the ancient and classical world.</p>
+
+    <div class="callout">
+      <div class="label">Think About It</div>
+      <p>Southeast Asia became "Indianized rather than Indian." What is the difference? Think about a modern example where one culture adopts elements of another without becoming that culture. What determines whether cultural exchange produces blending or erasure?</p>
+    </div>
+
+    <div class="takeaways">
+      <div class="label">Key Takeaways</div>
+      <ul>
+        <li>The Mauryan Empire, under Ashoka, unified most of the subcontinent for the first time — and left a legacy of bureaucratic and moral governance inscribed on stone pillars.</li>
+        <li>The Gupta Empire presided over a "golden age" of art, literature, and trade, but decentralized its own power through revenue grants and local patronage.</li>
+        <li>Buddhism, Hinduism, and Brahmanical authority competed and evolved alongside each other throughout both empires.</li>
+        <li>The caste system solidified under the Guptas, with untouchables pushed further to the margins and purity practices intensifying.</li>
+        <li>Indian culture spread to Southeast Asia through adaptation, not conquest — producing Indianized societies, not Indian colonies.</li>
+        <li>Dynastic failure follows a recurring pattern: overextension, military drain, invasion, decentralization, and internal conflict.</li>
+      </ul>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn secondary" onclick="goTo(4)">← Previous</button>
+      <span class="page-num">5 of 5</span>
+      <button class="nav-btn primary" disabled>Complete ✓</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const pages = document.querySelectorAll('.page');
+  const totalPages = pages.length;
+
+  function goTo(n) {
+    pages.forEach(p => p.classList.remove('active'));
+    document.querySelector(`[data-page="${n}"]`).classList.add('active');
+    for (let i = 1; i <= totalPages; i++) {
+      document.getElementById('prog' + i).classList.toggle('active', i <= n);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  goTo(1);
+</script>
+
+</body>
+</html>
