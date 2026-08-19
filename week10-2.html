@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 10.2: The Yuan Dynasty — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: #f5f0e8;
+    color: #2c2416;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .header { margin-bottom: 2.5rem; }
+
+  .course-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2c2416;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b5d4f;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a87a;
+    margin: 2rem 0;
+  }
+
+  .progress-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-segment {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: #d4cab8;
+    transition: background 0.3s;
+  }
+
+  .progress-segment.active { background: #7a5c3a; }
+
+  .page { display: none; }
+
+  .page.active {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c2416;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: #ebe4d6;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .callout::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    font-size: 1.1rem;
+  }
+
+  .callout-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: #4a3f33;
+    margin-bottom: 0;
+  }
+
+  .key-takeaways {
+    background: #2c2416;
+    color: #f5f0e8;
+    padding: 2rem 1.75rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .key-takeaways h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c4a87a;
+    margin-bottom: 1rem;
+  }
+
+  .key-takeaways ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-takeaways li {
+    padding: 0.5rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .key-takeaways li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #c4a87a;
+  }
+
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d4cab8;
+  }
+
+  .nav-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: none;
+    border: 1.5px solid #7a5c3a;
+    color: #7a5c3a;
+    padding: 0.6rem 1.4rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: #7a5c3a;
+    color: #f5f0e8;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn:disabled:hover {
+    background: none;
+    color: #7a5c3a;
+  }
+
+  .page-indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #a89880;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="course-tag">HIST 1210 — Asia to 1500</div>
+    <h1>The Yuan Dynasty</h1>
+    <p class="subtitle">When the Mongols tried to become Chinese emperors — and why China never fully accepted them.</p>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-segment active"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+    <div class="progress-segment"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <div class="section-num">Part 1</div>
+    <h2>Kublai Khan and the Conquest of Southern China</h2>
+
+    <p>In 1260, Kublai Khan was elected great khan of the Mongols. By this point, the Mongol empire had fractured into roughly four parts, and Kublai concentrated his energy on being emperor of China rather than ruler of the entire Mongol world. He needed a name for his dynasty. He consulted a Chinese scholar named Liu Bingzhong, an expert in "the three teachings" — Confucianism, Daoism, and Buddhism. Bingzhong suggested "Yuan," meaning "origin" or "primary." Khan liked it.</p>
+
+    <p>In the 1250s, Kublai built two capital cities. The first was Shangdu ("Upper Capital"), located in the mountains north of modern Beijing, used during the hot summer months. The second was Dadu ("Great Capital"), near modern Beijing, also known as Khanbaliq — "Khan's City." The palace complex was nearly a mile square and contained hundreds of buildings: grand halls, temples, offices, residences, and homes for wives and concubines. Kublai extended the Grand Canal to bring goods from southern China to his northern capital, and built additional canals to supply the city with water.</p>
+
+    <p>But Kublai's empire was incomplete without the south. The Southern Song dynasty still controlled the richest, most populous half of China. In 1268, Kublai's Mongol commander complained that his troops were facing stiff resistance — Mongol cavalry, trained on open steppe, struggled in a landscape of mountains, rivers, forts, and stockades. Kublai sent Chinese forces to reinforce his army. By 1273, the key cities of Xiangyang and Fancheng on the Han River fell. In 1275, with a 200,000-strong army, Kublai's forces pushed down the Yangzi River. The threat was simple: resist, and the entire town would be slaughtered. The Southern Song surrendered in February 1276. Minor skirmishes continued for a few years, but by about 1279, the last Song heir was dead. For the first time, all of China was under foreign rule.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Kublai Khan consulted a Chinese scholar to name his dynasty and built his capital near Beijing rather than on the Mongolian steppe. What does this tell you about how he wanted to be seen — as a Mongol conqueror or a Chinese emperor?</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <div class="section-num">Part 2</div>
+    <h2>Governing a Conquered People: The Four-Tier System</h2>
+
+    <p>Kublai Khan had strong opinions about how to govern China, and those opinions created a society divided by ethnicity and geography. He distrusted the Chinese scholar-official class — the very people who had run the Song bureaucracy — because they tended to look down on the Mongols. His response was sweeping: he abolished the civil service examination system that had been the foundation of Chinese governance for centuries.</p>
+
+    <p>In place of the exam system, Kublai divided all of China into four ranked groups. At the top were Mongol warriors, who controlled the Bureau of Military Affairs. Second were Central and West Asian peoples — Turks, Muslims, and others — who were appointed to departments of taxation, trade, and finance, operating separately from the old Chinese bureaucracy. Third were the "People of Han," residents of northern China including Khitans, Jurchen, and some Koreans. They had been at the center of previous wars and now paid another price: they were forced to build an extension to the Grand Canal. At the bottom were the Nanren — the southerners. They were among the last to surrender, and the Mongols treated them accordingly. Southerners were banned from carrying weapons, excluded from civil and military positions, and largely ignored by the government.</p>
+
+    <p>This four-tier system created two major problems. First, the scholar-official class was furious. The exam system was gone, good jobs were closed to them, and they resented Mongol officials who often did not speak Chinese well — or at all. Second, common people were angry about high taxes and forced labor. China felt, as one account put it, like "an occupied country."</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Compare this four-tier ethnic hierarchy to the Song dynasty's exam-based meritocracy that you studied last week. What is gained and what is lost when a government sorts people by ethnicity rather than by demonstrated ability?</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <div class="section-num">Part 3</div>
+    <h2>Culture, Religion, and Resistance</h2>
+
+    <p>Shut out of government, the Chinese scholar-official class channeled their energy into art. Bamboo paintings became enormously popular during the Yuan period — a medium that was distinctly Chinese, carrying no trace of Mongol influence. Common people, meanwhile, flocked to Chinese opera. The operas were rarely subtle about their message: they tended to celebrate the pre-Mongol periods of Chinese history, reminding audiences of a time before foreign occupation.</p>
+
+    <p>On matters of religion, however, Kublai Khan was remarkably open-minded. He welcomed Buddhists, Daoists, Muslims, Jews, and Christians to his court. To Khan, these were all just "one face of God." This religious tolerance was consistent with broader Mongol practice — the empire had always been pragmatic about faith, preferring to absorb useful elements from conquered cultures rather than impose a single belief system.</p>
+
+    <p>But tolerance at the top did not translate into contentment below. The Mongols kept themselves apart from the Chinese population. Intermarriage was discouraged. Mongols monopolized the best government positions. The fundamental structure of Yuan rule was clear: this was a Mongol empire that happened to be located in China, not a Chinese dynasty that happened to be run by Mongols. For the millions of Chinese living under it, the distinction mattered.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The scholar-officials turned to bamboo painting; common people turned to opera celebrating pre-Mongol China. Both are forms of cultural resistance without open rebellion. Why might this kind of resistance be more sustainable — and possibly more dangerous to the regime — than armed revolt?</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <div class="section-num">Part 4</div>
+    <h2>Beyond China: Korea, Japan, and Southeast Asia</h2>
+
+    <p>Kublai Khan did not limit his ambitions to China. He extended Mongol power — or tried to — across East and Southeast Asia, with mixed results.</p>
+
+    <p>Korea came first. In 1259, Kublai signed a treaty with the Korean king, who recognized Khan as his superior. For the next thirty-five years, Koreans sent tribute to Dadu. Khan even married a Korean princess. The relationship was complex: Khan was both protective of Korean interests and extremely demanding of Korean resources and loyalty.</p>
+
+    <p>Japan was a different story. In 1268, Khan sent a diplomatic mission to Japan to establish contact. The Japanese ruler was offended — Khan's letter had called Japan a "small state." Three more Yuan missions followed, and all four failed. Khan, worried that Japan might form an alliance with the Southern Song, turned to force. In 1274, he sent 30,000 troops and nearly 700 ships. The invasion had early success, but then 13,000 soldiers died in a devastating storm. Undeterred, Khan assembled an even larger force in 1281: 125,000 soldiers and sailors. The Japanese resisted fiercely, and once again, a massive storm destroyed the fleet. Khan gave up on Japan.</p>
+
+    <p>Southeast Asia fared no better for the Mongols. In 1273, Khan sent representatives to Burma. The Burmese king — who reportedly boasted of commanding 36 million soldiers, keeping 3,000 concubines, and consuming 300 dishes of curry a day — executed the Yuan guests. Khan tried to subdue Burma by force but never succeeded. An attempted invasion of Java (modern Indonesia) also failed. The Mongol military machine, built for the open steppe, could not adapt to every landscape or every enemy.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The Mongols conquered China, the largest and most sophisticated empire in Asia, but failed to take Japan, Burma, and Java. What does this pattern suggest about the limits of Mongol military power?</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page5">
+    <div class="section-num">Part 5</div>
+    <h2>Decline and Collapse of the Yuan</h2>
+
+    <p>Kublai Khan died in 1294. His decades of military campaigns had drained the treasury. Nine successors followed him, but few were distinguished. One cancelled all further military adventures and made peace with the Turks and Central Asians. Another brought back the civil service exam system — an acknowledgment that governing China without Chinese administrators was not sustainable. But these reforms came too late to save the dynasty.</p>
+
+    <p>The fundamental problem remained: the Mongols kept themselves apart. They discouraged intermarriage with the Chinese. They monopolized the best government positions. They never became Chinese, and the Chinese never accepted them as legitimate rulers.</p>
+
+    <p>By the 1350s, the Yuan dynasty was near collapse. Bad administration, famine, and popular unrest fed on each other. People turned to millenarian religious movements like the White Lotus Sect, which taught that the Buddha would return to deliver the faithful. The sect inspired armed rebellions that would eventually drive the Mongols from central China entirely, clearing the way for a new, natively Chinese dynasty: the Ming.</p>
+
+    <p>One detail from the lecture notes is worth pausing on. When the Mongols shut the southerners out of government, the southerners put their energy into commerce. New market towns sprang up, including Jingdezhen — which would eventually become the porcelain capital of the world. The Yuan dynasty's ethnic hierarchy, designed to keep the Chinese down, inadvertently pushed them toward the commercial economy that would define the next several centuries of Chinese history.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Kublai Khan (elected great khan in 1260) named his dynasty "Yuan" ("origin") and built his capital at Dadu (modern Beijing) in the 1250s.</li>
+        <li>The Southern Song surrendered in February 1276; the last Song heir died around 1279, placing all of China under foreign rule for the first time.</li>
+        <li>The four-tier ethnic hierarchy placed Mongols at the top, Central/West Asians second, northern Chinese third, and southerners at the bottom — abolishing the exam system and shutting Chinese scholars out of government.</li>
+        <li>Cultural resistance took the form of bamboo painting among scholars and Chinese opera among common people, both celebrating pre-Mongol identity.</li>
+        <li>Kublai Khan was religiously tolerant but politically exclusionary — welcoming all faiths while keeping Mongols apart from and above the Chinese population.</li>
+        <li>Military overreach beyond China failed: Japan (storms in 1274 and 1281), Burma (1273+), and Java all resisted successfully.</li>
+        <li>By the 1350s, bad administration, famine, and the White Lotus rebellions brought down the Yuan, making way for the Ming dynasty.</li>
+      </ul>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + n).classList.add('active');
+  const segs = document.querySelectorAll('.progress-segment');
+  segs.forEach((s, i) => {
+    if (i < n) s.classList.add('active');
+    else s.classList.remove('active');
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
