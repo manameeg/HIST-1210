@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 16.1: The Indian Ocean and the Early Modern World — HIST 1210</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Crimson Pro', Georgia, serif; background: #f5f0e8; color: #2c2416; line-height: 1.85; font-size: 18px; }
+  .container { max-width: 640px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .header { margin-bottom: 2.5rem; }
+  .course-tag { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #7a5c3a; margin-bottom: 0.75rem; }
+  h1 { font-family: 'Crimson Pro', serif; font-size: 2.4rem; font-weight: 700; line-height: 1.15; color: #2c2416; margin-bottom: 0.75rem; }
+  .subtitle { font-size: 1.05rem; color: #6b5d4f; font-style: italic; line-height: 1.6; }
+  .divider { width: 60px; height: 2px; background: #c4a87a; margin: 2rem 0; }
+  .progress-container { display: flex; gap: 6px; margin-bottom: 2rem; }
+  .progress-segment { flex: 1; height: 3px; border-radius: 2px; background: #d4cab8; transition: background 0.3s; }
+  .progress-segment.active { background: #7a5c3a; }
+  .page { display: none; }
+  .page.active { display: block; animation: fadeIn 0.35s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .section-num { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c4a87a; margin-bottom: 0.4rem; }
+  h2 { font-family: 'Crimson Pro', serif; font-size: 1.7rem; font-weight: 600; color: #2c2416; margin-bottom: 1.25rem; line-height: 1.25; }
+  p { margin-bottom: 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+  .callout { background: #ebe4d6; padding: 1.5rem 1.75rem; margin: 1.75rem 0; border-radius: 4px; position: relative; }
+  .callout::before { content: '💡'; position: absolute; top: -10px; left: 16px; font-size: 1.1rem; }
+  .callout-label { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7a5c3a; margin-bottom: 0.5rem; }
+  .callout p { font-size: 0.95rem; color: #4a3f33; line-height: 1.7; }
+  .key-takeaways { background: #2c2416; color: #f5f0e8; padding: 2rem; border-radius: 4px; margin-top: 2rem; }
+  .key-takeaways h3 { font-family: 'Nunito Sans', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c4a87a; margin-bottom: 1rem; }
+  .key-takeaways ul { list-style: none; padding: 0; }
+  .key-takeaways li { padding: 0.5rem 0; border-bottom: 1px solid rgba(196, 168, 122, 0.2); font-size: 0.95rem; line-height: 1.6; }
+  .key-takeaways li:last-child { border-bottom: none; }
+  .key-takeaways li::before { content: '→ '; color: #c4a87a; }
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #d4cab8; }
+  .nav-btn { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.6rem 1.5rem; border: 1px solid #7a5c3a; background: transparent; color: #7a5c3a; border-radius: 3px; cursor: pointer; transition: all 0.2s; }
+  .nav-btn:hover { background: #7a5c3a; color: #f5f0e8; }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-btn:disabled:hover { background: transparent; color: #7a5c3a; }
+  .page-indicator { font-family: 'Nunito Sans', sans-serif; font-size: 0.7rem; font-weight: 600; color: #a0927e; letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="course-tag">HIST 1210 · Week 16.1</div>
+    <h1>The Indian Ocean and the Early Modern World</h1>
+    <p class="subtitle">The ocean that connected civilizations, the moment the world's sea passages linked together, and the question this entire course has been building toward: what happened when Asia met the wider world?</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="progress-container">
+    <div class="progress-segment active" id="prog-1"></div>
+    <div class="progress-segment" id="prog-2"></div>
+    <div class="progress-segment" id="prog-3"></div>
+    <div class="progress-segment" id="prog-4"></div>
+    <div class="progress-segment" id="prog-5"></div>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="section-num">Part One</div>
+    <h2>What Is the Indian Ocean?</h2>
+
+    <p>This is the final module of HIST 1210. We began in Week 1 by asking a deceptively simple question: what is "Asia"? We learned that the concept of Asia is a Western construction — a label imposed from the outside that groups together civilizations with vastly different histories, languages, religions, and political systems. Now, in our final week, we ask a parallel question: what is the "Indian Ocean"? The answer is just as complicated — and just as revealing about how we organize the past.</p>
+
+    <p>The Indian Ocean is "Indian" because India sits at the heart of the region. As the historian Michael Pearson puts it, "in many important matters India was the fulcrum of the ocean around which all other areas swung." India and China — the two civilizations we have studied most extensively this semester — were not just continental powers. They were ocean powers too, and the Indian Ocean was the water that connected them to each other, to Southeast Asia (Week 15), to the Islamic world (Week 5), to East Africa, and eventually to Europe.</p>
+
+    <p>Yet there is an irony at the center of India's relationship to this ocean: trade for India was, as Pearson notes, "optional rather than necessary." India was rich enough and large enough to survive without maritime trade. The same was true of Ming China, as we saw in Week 14 — Zheng He's treasure fleets were dismantled not because China lacked the capability to dominate the seas, but because the Confucian scholar-officials decided it wasn't worth the cost. The great Asian civilizations could choose whether to engage with the ocean. Smaller states — in Southeast Asia, along the East African coast, in the Arabian Peninsula — could not.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The term "Indian Ocean" may give too much emphasis to India. The scholar Frank Broeze has suggested calling it "the Asian Seas" instead. Why does naming matter? Think back to Week 1 and the Lewis and Wigen reading on the "myth of continents." How does the name we give to a body of water — or a landmass — shape the stories we tell about it?</p>
+    </div>
+
+    <p>And the Indian Ocean is "ocean" because oceans connect people across them. This is a key insight for understanding everything we have studied this semester. The Indian Ocean was not a barrier — it was a highway. People on its rims traded, migrated, fought, and shared religions across it for thousands of years. The ocean includes not just the water itself, but the cities and regions far inland that depended on it — the "greater" Indian Ocean that stretches from East Africa to the South China Sea, from the Persian Gulf to the Strait of Malacca. One way to think about this entire course is through three words: migration, commerce, and conquest. Those three forces — the movement of peoples, the exchange of goods, and the struggle for power — have driven every story we have told, from the Indus Valley (Week 2) to Southeast Asia (Week 15). The Indian Ocean is the space where all three converge.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" disabled>← Back</button>
+      <span class="page-indicator">1 / 5</span>
+      <button class="nav-btn" onclick="showPage(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="section-num">Part Two</div>
+    <h2>The Ocean's Geography: Deep Structures</h2>
+
+    <p>The Indian Ocean covers 68,536,000 square kilometers. Its geographic limits stretch from the Cape of Good Hope in the west to the Malaysian Peninsula in the east, and from Cape Leeuwin in Australia to the south. It includes the Red Sea, the Arabian Sea, the Persian Gulf, and the Bay of Bengal — bodies of water that have appeared throughout this course as the routes along which Buddhism, Hinduism, Islam, trade goods, and military forces traveled.</p>
+
+    <p>Its shores range from desert to lush mountains. In Kerala, on India's southwest coast, the shore gives way to swamps and then to the ghats — steep mountain ranges that wall off the interior. Unlike Southeast Asia, where clusters of islands dominate the geography (Week 15), the Indian Ocean has relatively few and scattered islands. Only the Palk Strait between India and Sri Lanka comes close to the island-dense waters of the Indonesian archipelago.</p>
+
+    <p>What the Indian Ocean does have is choke points — narrow passages where shipping can be controlled, taxed, or blocked. These choke points have shaped the history of trade and empire for millennia. The Strait of Malacca, which we encountered in Week 14 (Zheng He) and Week 15 (Southeast Asian trade), is just eight nautical miles wide, with only two and a half miles of usable channel. The Strait of Hormuz, at the entrance to the Persian Gulf, is twenty-one nautical miles wide. The Bab al-Mandeb, at the entrance to the Red Sea, is twelve kilometers wide. The Suez Canal is wide enough for a single ship. Whoever controlled these passages controlled the flow of goods between civilizations.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Choke points appear throughout this course: the Strait of Malacca in Week 15, the Khyber Pass through which invaders entered India in Weeks 5 and 11, the Silk Road passes through Central Asia in Week 4. Why do narrow passages matter so much to history? What is the relationship between geography, trade, and power?</p>
+    </div>
+
+    <p>The ocean's winds were equally important. The monsoon — which we first encountered in the context of South Asian agriculture (Week 2) and Southeast Asian trade (Week 15) — dictated the rhythm of Indian Ocean commerce. Ships sailed with the monsoon in one direction and waited months for the winds to reverse before sailing back. This meant that traders often spent long periods in foreign ports, creating the cosmopolitan, multiethnic trading cities that characterized the Indian Ocean world. Further south, the Roaring Forties and Screaming Fifties — powerful western winds between 40 and 50 degrees latitude in the southern hemisphere — allowed sailing ships to move from west to east, from the Cape of Good Hope to Australia, Southeast Asia, or South Asia. Sea levels, currents, and tides all affected ports, and experienced sailors learned to "read" these forces to navigate safely.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(1)">← Back</button>
+      <span class="page-indicator">2 / 5</span>
+      <button class="nav-btn" onclick="showPage(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="section-num">Part Three</div>
+    <h2>Periodization: How We Divide Up the Past</h2>
+
+    <p>One of the most important — and most invisible — decisions historians make is periodization: how we divide up the past into chunks. The periods we choose shape the stories we tell. They determine what counts as a "beginning" and an "ending," and they embed assumptions about what matters.</p>
+
+    <p>The old periodization of Indian Ocean history divided it into four eras: before Islam; Islam's arrival to 1500 CE (when Europeans arrived); early Europeans (to 1800 CE); and 1800 CE to the present. Notice what this framework does: it treats the arrival of Europeans in 1500 CE as the most important dividing line in the history of an ocean that had connected Asian, African, and Middle Eastern civilizations for thousands of years. It turns the Indian Ocean into a stage that was waiting for European actors to arrive.</p>
+
+    <p>This is what scholars call the "unchanging East" — the idea that Asian civilizations were static and only became historically interesting when Europeans showed up. We challenged this idea in Week 1, and we have been challenging it all semester. The Maurya and Gupta empires (Week 3), the Tang and Song dynasties (Weeks 4 and 9), the Khmer at Angkor (Week 15), the Mughals (Weeks 11–12), the Ming treasure fleets (Week 14) — none of these were "unchanging." They were dynamic, innovative, and often more powerful and sophisticated than anything happening in Europe at the same time.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>The historian Michael Pearson proposes a simpler periodization: everything up to 1800 CE, and everything after 1800 CE. He argues that European influence on the Indian Ocean world was marginal until industrialization gave Europe overwhelming military and economic power in the nineteenth century. If Pearson is right, then the arrival of the Portuguese in 1498 CE was far less important than traditional histories suggest. What do you think? Does the date 1500 CE deserve the weight it carries?</p>
+    </div>
+
+    <p>Pearson's new periodization — everything before 1800 CE, everything after — reflects a growing consensus among historians that the "early modern" period (roughly 1500–1800 CE) was not defined by European dominance of Asia. Europeans were present, but they were one set of players among many. The Mughal Empire, the Ottoman Empire, Tokugawa Japan, and Qing China were all larger, richer, and more powerful than any European state until well into the eighteenth century. The old periodization made Europe the main character. The new one puts it in context.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(2)">← Back</button>
+      <span class="page-indicator">3 / 5</span>
+      <button class="nav-btn" onclick="showPage(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="section-num">Part Four</div>
+    <h2>The Global Sea Passages: When the Oceans Connected</h2>
+
+    <p>Something extraordinary happened in the fifteenth and sixteenth centuries CE: the world's great oceans, which had operated as separate systems for millennia, became linked. This is the hinge moment of world history — and the story of how it happened brings together nearly everything we have studied in this course.</p>
+
+    <p>The first link was made by Zheng He (Week 14). Between 1405 and 1433 CE, his treasure fleets — the largest the world had ever seen — connected the Chinese and Indian Oceans, sailing from Nanjing through Southeast Asia to India, Arabia, and East Africa. For a brief moment, Ming China had the capability to dominate both oceans. But China chose not to. The Confucian scholar-officials ended the voyages, dismantled the fleet, and turned inward.</p>
+
+    <p>The second link was made by Europeans. In 1498 CE, the Portuguese navigator Vasco da Gama sailed around the Cape of Good Hope and reached the Indian Ocean, connecting the Atlantic and Indian Oceans for the first time. Europeans came from a much smaller, poorer, and less technologically advanced civilization than Ming China or Mughal India. But they had one critical advantage: they developed superior sea technology — better ships, better guns, better navigation — and they were willing to use violence to control trade routes that Asian civilizations had maintained through commerce and diplomacy.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>Ming China had ships five times larger than anything Europe could build, and it chose to stop sailing. Europe had smaller ships and chose to cross every ocean on earth. Why? Think about the internal politics we studied in Week 14 — the eunuch-scholar tension, Taizu's defensive foreign policy — and compare it to the competitive, fragmented political landscape of fifteenth-century Europe. Does the structure of a state determine whether it expands?</p>
+    </div>
+
+    <p>The irony is profound. The two greatest Asian maritime powers — China and India — chose not to pursue maritime dominance. Mughal India, like Ming China, was simply not interested in controlling the seas. The Mughals were a land-based empire focused on agriculture, architecture, and administration (Weeks 11–12). They had access to the Indian Ocean but saw no reason to project power across it. Into this vacuum sailed the Portuguese, then the Dutch, then the British — smaller powers with a hunger for spice, silver, and territory that the great Asian empires did not share.</p>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(3)">← Back</button>
+      <span class="page-indicator">4 / 5</span>
+      <button class="nav-btn" onclick="showPage(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page" id="page-5">
+    <div class="section-num">Part Five</div>
+    <h2>The Early Modern World — and the Course in Full Circle</h2>
+
+    <p>The linking of the world's oceans set in motion a series of changes that would transform the world. A truly global economy emerged for the first time — long-distance trade connecting all continents. India exported indigo and textiles. Southeast Asia exported spices (Week 15). China exported silk, tea, and porcelain (Week 14). The Americas provided sugar, cacao, and furs. Africa — tragically — provided enslaved people to fuel plantation economies. Amsterdam, and later London, rose as the financial hubs of this new system. More sophisticated monetary systems developed to manage the flow of goods and capital across oceans.</p>
+
+    <p>At the same time, large and stable states grew around the world. The Tokugawa shogunate in Japan (compare with Week 13.1's Ashikaga collapse), the Ottoman Empire, the Mughal Empire (Weeks 11–12), and the Qing dynasty in China all represented a new era of powerful, territorial, high-capacity states. World population grew dramatically: from roughly 400–500 million in 1500 CE to 850–950 million by 1800 CE. Land use intensified — forests were cleared, wetlands drained, pastures fenced, and rights were claimed over indigenous peoples.</p>
+
+    <p>New technologies spread across the connected world. New World crops — tobacco, coffee, tea, chocolate, sweet potatoes — transformed diets and economies. Personal firearms and cannons became more accurate, shifting the balance of military power. And printing with moveable type — which Korea had pioneered in 1403 CE (Week 13.2), fifty years before Gutenberg — became the most important technology of the early modern period, enabling the spread of ideas at a scale never before possible.</p>
+
+    <div class="callout">
+      <div class="callout-label">Think About It</div>
+      <p>This course began with the question "What is Asia?" and ends with the moment Asia's oceans became connected to the rest of the world. Looking back across the entire semester — from the Indus Valley to the Indian Ocean — what have you learned about how civilizations develop, connect, borrow from each other, and change? Has this course changed how you think about the relationship between "East" and "West"?</p>
+    </div>
+
+    <p>And so we come full circle. In Week 1, we questioned the idea of "Asia" as a coherent category. Across sixteen weeks, we traced civilizations that developed independently — the Indus Valley, Vedic India, early China — then connected through trade routes, religious missions, and military conquests. Buddhism traveled from India to China to Korea to Japan. The Silk Road linked Chang'an to Rome. The Mongols built an empire that stretched from Korea to Hungary. Islam arrived in South Asia through conquest and in Southeast Asia through trade. Confucianism shaped China, Korea, and Vietnam in different ways. Women wrote the world's first novel in Heian Japan and dominated trade in Southeast Asian ports.</p>
+
+    <p>The Indian Ocean was the thread that connected all of these stories. It was never an empty space waiting for Europeans to discover it. It was the most dynamic, cosmopolitan, and commercially active body of water on earth — a place where Indian, Chinese, Southeast Asian, Arab, Persian, and East African civilizations met, traded, and transformed each other for millennia before any European ship appeared on its horizon.</p>
+
+    <p>The story of Asia before 1500 is not a prelude to the story of European dominance. It is a story in its own right — one of extraordinary creativity, diversity, and connection. This course has been an invitation to see that story clearly, on its own terms, and to understand why it matters.</p>
+
+    <div class="key-takeaways">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>The Indian Ocean — 68,536,000 sq. km. — connected India, China, Southeast Asia, the Middle East, and East Africa through trade, migration, and conquest for millennia.</li>
+        <li>Choke points — the Strait of Malacca, the Strait of Hormuz, the Bab al-Mandeb, and the Suez Canal — determined who controlled the flow of goods between civilizations.</li>
+        <li>The old periodization of Indian Ocean history treated the arrival of Europeans in 1500 CE as the defining event; newer scholarship argues that European influence was marginal until industrialization after 1800 CE.</li>
+        <li>Zheng He's voyages (1405–1433 CE) linked the Chinese and Indian Oceans; Vasco da Gama's voyage (1498 CE) linked the Atlantic and Indian Oceans — together, these created a connected global maritime system.</li>
+        <li>Ming China and Mughal India — the two greatest Asian powers — chose not to pursue maritime dominance, leaving a vacuum that smaller European states filled with superior sea technology and a willingness to use violence.</li>
+        <li>The early modern period (c. 1500–1800 CE) saw the rise of a global economy, large stable states (Tokugawa, Ottomans, Mughals, Qing), dramatic population growth, and the diffusion of new technologies including moveable type and New World crops.</li>
+        <li>The history of Asia before 1500 is not a prelude to European dominance — it is a story of extraordinary creativity, diversity, and connection that stands on its own terms.</li>
+      </ul>
+    </div>
+
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="showPage(4)">← Back</button>
+      <span class="page-indicator">5 / 5</span>
+      <button class="nav-btn" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + n).classList.add('active');
+  for (let i = 1; i <= 5; i++) {
+    const seg = document.getElementById('prog-' + i);
+    if (i <= n) seg.classList.add('active');
+    else seg.classList.remove('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
